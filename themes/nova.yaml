@@ -14,6 +14,13 @@
 # core HA variable — HA doesn't expose a separate "heading font" hook — so
 # this theme carries Manrope (body) and IBM Plex Mono (data/code) instead.
 # Both fonts must be loaded as a Lovelace resource; see the README.
+#
+# The card-mod-* keys near the bottom are read by the card-mod HACS
+# integration, not by Home Assistant itself — HA's own theme loader accepts
+# and silently ignores them if card-mod isn't installed. Unlike everything
+# above, they are NOT validated at theme-load time: a mistake there fails
+# silently rather than erroring, so treat that section as best-effort and
+# check it visually after a hard refresh.
 
 Nova:
   # === Core palette ===
@@ -25,6 +32,11 @@ Nova:
   primary-background-color: "#15110d" # --bg
   secondary-background-color: "#1e1712" # --surface
   divider-color: "#33291f"            # --line-soft
+
+  # Whole-dashboard background: the same soft ember glow behind the hero in
+  # nova-panel-new.js's .wrap (radial-gradient(...#2a1c11...)), generalized
+  # across the full page instead of just the panel's own hero card.
+  lovelace-background: "radial-gradient(ellipse 900px 500px at 18% -10%, #3a220f66 0%, transparent 60%), radial-gradient(ellipse 700px 420px at 100% 0%, #2a1c1140 0%, transparent 55%), #15110d"
 
   primary-text-color: "#f3ece1"       # --ink
   secondary-text-color: "#a89a89"     # --ink-dim
@@ -120,3 +132,33 @@ Nova:
   rgb-warning-color: "232, 178, 61"            # --warn
   rgb-success-color: "95, 191, 122"
   rgb-info-color: "110, 168, 255"
+
+  # === card-mod (optional; unverified — see the note at the top of this file) ===
+  # Required by card-mod: must repeat this theme's own name exactly.
+  card-mod-theme: "Nova"
+
+  # A thin cool-to-ember accent stripe across every card's top edge — Nova's
+  # signature mark, generalized from the same motif on individual area tiles
+  # in nova-panel-new.js — plus a soft ember glow on hover so cards read as
+  # interactive. Applies to every ha-card on every dashboard.
+  card-mod-card: |
+    ha-card {
+      position: relative;
+      overflow: hidden;
+      transition: box-shadow .25s ease, border-color .25s ease;
+    }
+    ha-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #6ea8ff, #f4b860 55%, #e2542f);
+      opacity: .55;
+      pointer-events: none;
+    }
+    ha-card:hover {
+      border-color: #e2542f70;
+      box-shadow: 0 0 18px 1px #e2542f22;
+    }

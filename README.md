@@ -52,6 +52,23 @@ Assistant's theme variables don't expose a separate heading-font hook — there'
 nowhere in core HA's CSS for it to attach to, so it's left out rather than
 forced in somewhere it wouldn't read correctly.
 
+## Background and card-mod accents
+
+The theme sets `lovelace-background`, a soft ember radial glow behind the
+whole dashboard (the same treatment as the hero in Nova's own panel,
+generalized across the page) — this needs nothing extra, it's a plain theme
+variable.
+
+It also carries a small optional **card-mod** section: a thin cool-to-ember
+accent stripe across the top of every card, and a soft ember glow on hover.
+This only does anything if you have the [card-mod](https://github.com/thomasloven/lovelace-card-mod)
+HACS integration installed — if you don't, Home Assistant just ignores those
+extra theme keys. Unlike the rest of this theme, card-mod styling isn't
+validated by Home Assistant at load time (card-mod is a separate integration
+reading its own keys out of the theme), so a mistake there fails silently
+rather than erroring — if it doesn't look right, it's worth checking with
+card-mod's own inspector rather than assuming the theme itself is broken.
+
 ## Scope and upkeep
 
 This covers Home Assistant's stable, long-standing theme variable surface —
