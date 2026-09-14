@@ -1,45 +1,38 @@
-# ha-theme
+# Nova theme for Home Assistant
 
-My Home Assistant frontend themes. One repo, one HACS install — every theme
-under `themes/` becomes available in Home Assistant. Currently contains:
-
-- [Nova](#nova)
-
-## Install via HACS
-
-1. HACS → the three-dot menu → **Custom repositories**.
-2. Add this repository's URL, category **Theme**.
-3. Install, then restart Home Assistant (or reload themes from
-   **Developer Tools → YAML → Themes**).
-4. Pick a theme from your user profile (bottom-left avatar → **Theme**).
-
-## Install manually
-
-1. Copy the theme file(s) you want from `themes/` into your Home Assistant
-   `config/themes/` directory.
-2. Make sure `configuration.yaml` loads that folder:
-   ```yaml
-   frontend:
-     themes: !include_dir_merge_named themes
-   ```
-3. Restart Home Assistant, then pick the theme from your user profile.
-
----
-
-## Nova
-
-`themes/nova.yaml` — a dark theme built from
-[Nova](https://github.com/abz2much/NOVA)'s own "stellar core" visual identity
-— ember (`#e2542f`) and gold (`#f4b860`) accents on warm dark surfaces, in
-place of the default HA blue. Every color is pulled directly from the CSS
-custom properties in Nova's own panel
+A dark Home Assistant frontend theme built from [Nova](https://github.com/abz2much/NOVA)'s
+own "stellar core" visual identity — ember (`#e2542f`) and gold (`#f4b860`) accents on warm
+dark surfaces, in place of the default HA blue. Every color in `themes/nova.yaml` is pulled
+directly from the CSS custom properties in Nova's own panel
 (`custom_components/nova/frontend/nova-panel-new.js`), not reinterpreted.
 
 Mockup: https://claude.ai/artifact/4aTtV4wZCsd9yHzJdMwsNt
 
 Dark-only, on purpose — Nova's own panel has no light variant, so this theme doesn't invent one.
 
-### Fonts
+This repo installs only Nova. It's one of several themes developed together in a local
+workspace — see [abz2much](https://github.com/abz2much?tab=repositories&q=ha-theme) for others
+as they're published, each as its own repo so you only install what you actually want.
+
+## Install via HACS
+
+1. HACS → the three-dot menu → **Custom repositories**.
+2. Add this repository's URL, category **Theme**.
+3. Install **Nova**, then restart Home Assistant (or reload themes from
+   **Developer Tools → YAML → Themes**).
+4. Set the theme from your user profile (bottom-left avatar → **Theme**).
+
+## Install manually
+
+1. Copy `themes/nova.yaml` into your Home Assistant `config/themes/` directory.
+2. Make sure `configuration.yaml` loads that folder:
+   ```yaml
+   frontend:
+     themes: !include_dir_merge_named themes
+   ```
+3. Restart Home Assistant, then set **Nova** as your theme from your user profile.
+
+## Fonts
 
 The theme uses **Manrope** for body text and **IBM Plex Mono** for anything
 data-shaped (state values, timestamps). Home Assistant themes can't load web
@@ -63,7 +56,7 @@ Assistant's theme variables don't expose a separate heading-font hook — there'
 nowhere in core HA's CSS for it to attach to, so it's left out rather than
 forced in somewhere it wouldn't read correctly.
 
-### Background and card-mod accents
+## Background and card-mod accents
 
 The theme sets `lovelace-background`, a soft ember radial glow behind the
 whole dashboard (the same treatment as the hero in Nova's own panel,
@@ -80,7 +73,7 @@ reading its own keys out of the theme), so a mistake there fails silently
 rather than erroring — if it doesn't look right, it's worth checking with
 card-mod's own inspector rather than assuming the theme itself is broken.
 
-### Scope and upkeep
+## Scope and upkeep
 
 This covers Home Assistant's stable, long-standing theme variable surface —
 core colors, sidebar, header, cards, dialogs, sliders/switches, state and
