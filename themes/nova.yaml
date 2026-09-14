@@ -1,0 +1,122 @@
+# Nova — a Home Assistant frontend theme
+#
+# Ember and gold on warm dark surfaces, built to match Nova's own "stellar
+# core" panel identity (custom_components/nova/frontend/nova-panel-new.js).
+# Every color below with a token comment is taken directly from that file's
+# `:host{...}` CSS custom properties — this theme is not a reinterpretation,
+# it's the same palette applied to the standard Home Assistant frontend.
+#
+# Dark-only by design (Nova's own panel has no light variant), so this theme
+# is defined flat rather than under a `modes:` block — it looks the same
+# regardless of the user's light/dark profile preference.
+#
+# Fonts: Fraunces (display, used by Nova's own headings) isn't wired into a
+# core HA variable — HA doesn't expose a separate "heading font" hook — so
+# this theme carries Manrope (body) and IBM Plex Mono (data/code) instead.
+# Both fonts must be loaded as a Lovelace resource; see the README.
+
+Nova:
+  # === Core palette ===
+  primary-color: "#e2542f"            # --ember
+  accent-color: "#f4b860"             # --gold
+  dark-primary-color: "#c2431f"       # derived: ember, darkened
+  light-primary-color: "#f4a98a"      # derived: ember, lightened
+
+  primary-background-color: "#15110d" # --bg
+  secondary-background-color: "#1e1712" # --surface
+  divider-color: "#33291f"            # --line-soft
+
+  primary-text-color: "#f3ece1"       # --ink
+  secondary-text-color: "#a89a89"     # --ink-dim
+  disabled-text-color: "#7a6d5e"      # --ink-faint
+  text-primary-color: "#f3ece1"       # text on top of primary-color (ember)
+
+  # === Sidebar ===
+  sidebar-background-color: "#1e1712"     # --surface
+  sidebar-text-color: "#a89a89"           # --ink-dim
+  sidebar-icon-color: "#a89a89"           # --ink-dim
+  sidebar-selected-background-color: "#2a2119" # --surface-2
+  sidebar-selected-icon-color: "#ffe3ad"  # --gold-pale
+  sidebar-selected-text-color: "#ffe3ad"  # --gold-pale
+  sidebar-divider-color: "#33291f"        # --line-soft
+  sidebar-badge-text-color: "#15110d"     # --bg (dark text on gold badge)
+
+  # === App header / top bar ===
+  app-header-background-color: "#1e1712"  # --surface
+  app-header-text-color: "#f3ece1"        # --ink
+  app-header-edit-background-color: "#2a2119" # --surface-2
+
+  # === Cards & surfaces ===
+  card-background-color: "#1e1712"        # --surface
+  ha-card-background: "#1e1712"           # --surface (modern alias)
+  ha-card-border-color: "#33291f"         # --line-soft
+  ha-card-border-radius: "16px"           # matches nova-panel-new.js .panel
+  ha-card-border-width: "1px"
+  ha-card-box-shadow: "0 0 0 1px #33291f, 0 8px 24px -12px #00000066, 0 0 22px -6px #e2542f26"
+  ha-card-header-color: "#f3ece1"         # --ink
+
+  # === Dialogs ===
+  dialog-background-color: "#1e1712"      # --surface
+  mdc-dialog-scrim-color: "#0a0806cc"     # derived: --bg at high opacity
+
+  # === Sliders, switches & Material components ===
+  switch-checked-color: "#f4b860"         # --gold
+  switch-checked-button-color: "#ffe3ad"  # --gold-pale
+  switch-checked-track-color: "#f4b8604d" # derived: --gold at low opacity
+  switch-unchecked-button-color: "#7a6d5e" # --ink-faint
+  switch-unchecked-track-color: "#33291f" # --line-soft
+  slider-color: "#f4b860"                 # --gold
+  slider-secondary-color: "#33291f"       # --line-soft
+  slider-bar-color: "#f4b860"             # --gold
+
+  mdc-theme-primary: "#e2542f"            # --ember
+  mdc-theme-secondary: "#f4b860"          # --gold
+  mdc-theme-surface: "#1e1712"            # --surface
+  mdc-theme-background: "#15110d"         # --bg
+  mdc-theme-on-primary: "#f3ece1"         # --ink
+  mdc-theme-on-secondary: "#15110d"       # --bg
+  mdc-theme-on-surface: "#f3ece1"         # --ink
+
+  # === State & semantic colors ===
+  state-icon-color: "#a89a89"             # --ink-dim
+  state-icon-active-color: "#f4b860"      # --gold
+  state-active-color: "#f4b860"           # --gold
+  state-inactive-color: "#7a6d5e"         # --ink-faint
+  state-unavailable-color: "#7a6d5e"      # --ink-faint
+
+  error-color: "#ff5a5a"                  # matches nova-panel-new.js log-entry-error
+  warning-color: "#e8b23d"                # --warn
+  success-color: "#5fbf7a"                # matches nova-panel-new.js live-dot / good states
+  info-color: "#6ea8ff"                   # matches nova-panel-new.js area-tile gradient cold end
+
+  # === Label badges ===
+  label-badge-red: "#ff5a5a"
+  label-badge-yellow: "#e8b23d"           # --warn
+  label-badge-green: "#5fbf7a"
+  label-badge-blue: "#6ea8ff"
+  label-badge-grey: "#7a6d5e"             # --ink-faint
+  label-badge-background-color: "#1e1712" # --surface
+  label-badge-text-color: "#f3ece1"       # --ink
+
+  # === Tables ===
+  table-row-background-color: "#1e1712"       # --surface
+  table-row-alternative-background-color: "#241c15" # derived: --surface, slightly darker
+
+  # === Fonts ===
+  primary-font-family: "'Manrope', -apple-system, 'Segoe UI', sans-serif" # --font-body
+  code-font-family: "'IBM Plex Mono', 'SF Mono', monospace"               # --font-mono
+
+  # === RGB variants (used by HA for opacity-aware components) ===
+  rgb-primary-color: "226, 84, 47"        # --ember
+  rgb-accent-color: "244, 184, 96"        # --gold
+  rgb-primary-background-color: "21, 17, 13"   # --bg
+  rgb-secondary-background-color: "30, 23, 18" # --surface
+  rgb-card-background-color: "30, 23, 18"      # --surface
+  rgb-primary-text-color: "243, 236, 225"      # --ink
+  rgb-secondary-text-color: "168, 154, 137"    # --ink-dim
+  rgb-disabled-text-color: "122, 109, 94"      # --ink-faint
+  rgb-state-inactive-color: "122, 109, 94"     # --ink-faint
+  rgb-error-color: "255, 90, 90"
+  rgb-warning-color: "232, 178, 61"            # --warn
+  rgb-success-color: "95, 191, 122"
+  rgb-info-color: "110, 168, 255"
