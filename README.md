@@ -1,5 +1,7 @@
 # Nova theme for Home Assistant
 
+![Nova theme](screenshot.png)
+
 A dark Home Assistant frontend theme built from [Nova](https://github.com/abz2much/NOVA)'s
 own "stellar core" visual identity — ember (`#e2542f`) and gold (`#f4b860`) accents on warm
 dark surfaces, in place of the default HA blue. Every color in `themes/nova.yaml` is pulled
