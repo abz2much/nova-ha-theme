@@ -92,6 +92,30 @@ Nova:
   input-outlined-disabled-border-color: "#33291f" # --line-soft
   input-dropdown-icon-color: "#a89a89"    # --ink-dim
 
+  # === New design-token layer (2026.9+ "wa-" / ha-color-* components) ===
+  # Newer pickers/forms (e.g. ha-entity-name-picker's <wa-input>) don't read
+  # the classic --input-*/--primary-text-color surface at all — they're
+  # styled through a parallel --wa-color-* system aliased to --ha-color-*
+  # tokens (see wa.globals.ts / core.globals.ts upstream), which ships fixed
+  # to HA's stock LIGHT palette (e.g. --ha-color-text-primary: #141414)
+  # regardless of theme or dark/light mode. Left unset, this is the same
+  # unreadable-field bug as above but one layer deeper. Only the neutral
+  # ramp + text tokens are covered here (what drives generic field/border/
+  # text contrast) — the brand/success/warning/danger fill ramps are a
+  # separate, not-yet-covered concern.
+  ha-color-fill-neutral-quiet-resting: "#241c15"  # derived: --surface, darker
+  ha-color-fill-neutral-quiet-hover: "#2a2119"    # --surface-2
+  ha-color-fill-neutral-normal-resting: "#33291f" # --line-soft
+  ha-color-fill-neutral-loud-resting: "#7a6d5e"   # --ink-faint
+  ha-color-border-neutral-quiet: "#33291f"        # --line-soft
+  ha-color-border-neutral-normal: "#7a6d5e"       # --ink-faint
+  ha-color-border-neutral-loud: "#a89a89"         # --ink-dim
+  ha-color-on-neutral-quiet: "#a89a89"            # --ink-dim
+  ha-color-on-neutral-normal: "#f3ece1"           # --ink
+  ha-color-on-neutral-loud: "#f3ece1"             # --ink
+  ha-color-text-primary: "#f3ece1"                # --ink
+  ha-color-text-secondary: "#a89a89"              # --ink-dim
+
   # === Sliders, switches & Material components ===
   switch-checked-color: "#f4b860"         # --gold
   switch-checked-button-color: "#ffe3ad"  # --gold-pale
