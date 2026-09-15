@@ -6,9 +6,31 @@
 # `:host{...}` CSS custom properties — this theme is not a reinterpretation,
 # it's the same palette applied to the standard Home Assistant frontend.
 #
-# Dark-only by design (Nova's own panel has no light variant), so this theme
-# is defined flat rather than under a `modes:` block — it looks the same
-# regardless of the user's light/dark profile preference.
+# Dark-only by design (Nova's own panel has no light variant), so the exact
+# same palette is duplicated under both `modes: dark:` and `modes: light:`
+# below — it looks the same regardless of the user's light/dark profile
+# preference. This theme USED to be written flat (no `modes:` block at all),
+# which HA's own docs say is a legacy format "automatically layered on the
+# default light theme" — that silently broke newer Web Awesome-based
+# components (ha-form/ha-selector's <wa-input>, used by every card editor
+# dialog's text fields and dropdowns), which ship a separate --ha-color-*/
+# --wa-color-* token system with its own light/dark variants that only
+# swaps to dark when the active theme declares itself via `modes:`. See
+# https://www.home-assistant.io/integrations/frontend/#dark-mode-support
+# and https://github.com/home-assistant/frontend/issues/51616 (a maintainer
+# confirming this exact "flat theme = permanently light baseline for the
+# newer semantic layer" behavior). Declaring `modes:` lets HA layer its own
+# dark baseline for that newer layer underneath Nova's own explicit colors,
+# instead of Nova having to hand-map every one of those tokens itself.
+#
+# Caveat: HA picks its light-vs-dark BASELINE from the user's actual active
+# preference (profile setting or system dark-mode), not from which mode
+# key(s) a theme fills in. Duplicating this palette into both `dark:` and
+# `light:` keeps Nova's own colors identical either way (as before), but a
+# user whose profile is set to "light" still gets HA's light baseline for
+# anything Nova doesn't explicitly cover (the newer semantic layer above
+# included) — so for full correctness with a dark-only theme like this,
+# the user's profile should be set to dark mode too.
 #
 # Fonts: Fraunces (display, used by Nova's own headings) isn't wired into a
 # core HA variable — HA doesn't expose a separate "heading font" hook — so
@@ -23,177 +45,11 @@
 # check it visually after a hard refresh.
 
 Nova:
-  # === Core palette ===
-  primary-color: "#e2542f"            # --ember
-  accent-color: "#f4b860"             # --gold
-  dark-primary-color: "#c2431f"       # derived: ember, darkened
-  light-primary-color: "#f4a98a"      # derived: ember, lightened
-
-  primary-background-color: "#15110d" # --bg
-  secondary-background-color: "#1e1712" # --surface
-  divider-color: "#33291f"            # --line-soft
-
-  # Whole-dashboard background: the same soft ember glow behind the hero in
-  # nova-panel-new.js's .wrap (radial-gradient(...#2a1c11...)), generalized
-  # across the full page instead of just the panel's own hero card.
-  lovelace-background: "radial-gradient(ellipse 900px 500px at 18% -10%, #3a220f66 0%, transparent 60%), radial-gradient(ellipse 700px 420px at 100% 0%, #2a1c1140 0%, transparent 55%), #15110d"
-
-  primary-text-color: "#f3ece1"       # --ink
-  secondary-text-color: "#a89a89"     # --ink-dim
-  disabled-text-color: "#7a6d5e"      # --ink-faint
-  text-primary-color: "#f3ece1"       # text on top of primary-color (ember)
-
-  # === Sidebar ===
-  sidebar-background-color: "#1e1712"     # --surface
-  sidebar-text-color: "#a89a89"           # --ink-dim
-  sidebar-icon-color: "#a89a89"           # --ink-dim
-  sidebar-selected-background-color: "#2a2119" # --surface-2
-  sidebar-selected-icon-color: "#ffe3ad"  # --gold-pale
-  sidebar-selected-text-color: "#ffe3ad"  # --gold-pale
-  sidebar-divider-color: "#33291f"        # --line-soft
-  sidebar-badge-text-color: "#15110d"     # --bg (dark text on gold badge)
-
-  # === App header / top bar ===
-  app-header-background-color: "#1e1712"  # --surface
-  app-header-text-color: "#f3ece1"        # --ink
-  app-header-edit-background-color: "#2a2119" # --surface-2
-
-  # === Cards & surfaces ===
-  card-background-color: "#1e1712"        # --surface
-  ha-card-background: "#1e1712"           # --surface (modern alias)
-  ha-card-border-color: "#33291f"         # --line-soft
-  ha-card-border-radius: "16px"           # matches nova-panel-new.js .panel
-  ha-card-border-width: "1px"
-  ha-card-box-shadow: "0 0 0 1px #33291f, 0 8px 24px -12px #00000066, 0 0 22px -6px #e2542f26"
-  ha-card-header-color: "#f3ece1"         # --ink
-
-  # === Dialogs ===
-  dialog-background-color: "#1e1712"      # --surface
-  mdc-dialog-scrim-color: "#0a0806cc"     # derived: --bg at high opacity
-
-  # === Text fields & selects (card editors, form dialogs) ===
-  # HA's Material text fields/selects don't inherit primary-text-color for
-  # their fill/ink — they use this separate --input-* family, which normally
-  # comes from the frontend's own light/dark-mode CSS class, independent of
-  # which theme is selected. A dark-only theme like Nova has to set these
-  # explicitly: left alone, a user whose system/profile is in light mode gets
-  # HA's light-mode input defaults (near-white fill) while Nova's cream
-  # primary-text-color bleeds into the ink on some components, giving pale
-  # text on a pale field — unreadable in card-editor forms.
-  input-fill-color: "#2a2119"             # --surface-2
-  input-disabled-fill-color: "#1e1712"    # --surface
-  input-ink-color: "#f3ece1"              # --ink
-  input-label-ink-color: "#a89a89"        # --ink-dim
-  input-disabled-ink-color: "#7a6d5e"     # --ink-faint
-  input-idle-line-color: "#33291f"        # --line-soft
-  input-hover-line-color: "#f4b860"       # --gold
-  input-outlined-idle-border-color: "#33291f" # --line-soft
-  input-outlined-hover-border-color: "#f4b860" # --gold
-  input-outlined-disabled-border-color: "#33291f" # --line-soft
-  input-dropdown-icon-color: "#a89a89"    # --ink-dim
-
-  # === New design-token layer (2026.9+ "wa-" / ha-color-* components) ===
-  # Newer pickers/forms (e.g. ha-entity-name-picker's <wa-input>) don't read
-  # the classic --input-*/--primary-text-color surface at all — they're
-  # styled through a parallel --wa-color-* system aliased to --ha-color-*
-  # tokens (see wa.globals.ts / core.globals.ts upstream), which ships fixed
-  # to HA's stock LIGHT palette (e.g. --ha-color-text-primary: #141414)
-  # regardless of theme or dark/light mode. Left unset, this is the same
-  # unreadable-field bug as above but one layer deeper. Only the neutral
-  # ramp + text tokens are covered here (what drives generic field/border/
-  # text contrast) — the brand/success/warning/danger fill ramps are a
-  # separate, not-yet-covered concern.
-  ha-color-fill-neutral-quiet-resting: "#241c15"  # derived: --surface, darker
-  ha-color-fill-neutral-quiet-hover: "#2a2119"    # --surface-2
-  ha-color-fill-neutral-normal-resting: "#33291f" # --line-soft
-  ha-color-fill-neutral-loud-resting: "#7a6d5e"   # --ink-faint
-  ha-color-border-neutral-quiet: "#33291f"        # --line-soft
-  ha-color-border-neutral-normal: "#7a6d5e"       # --ink-faint
-  ha-color-border-neutral-loud: "#a89a89"         # --ink-dim
-  ha-color-on-neutral-quiet: "#a89a89"            # --ink-dim
-  ha-color-on-neutral-normal: "#f3ece1"           # --ink
-  ha-color-on-neutral-loud: "#f3ece1"             # --ink
-  ha-color-text-primary: "#f3ece1"                # --ink
-  ha-color-text-secondary: "#a89a89"              # --ink-dim
-
-  # === Sliders, switches & Material components ===
-  switch-checked-color: "#f4b860"         # --gold
-  switch-checked-button-color: "#ffe3ad"  # --gold-pale
-  switch-checked-track-color: "#f4b8604d" # derived: --gold at low opacity
-  switch-unchecked-button-color: "#7a6d5e" # --ink-faint
-  switch-unchecked-track-color: "#33291f" # --line-soft
-  slider-color: "#f4b860"                 # --gold
-  slider-secondary-color: "#33291f"       # --line-soft
-  slider-bar-color: "#f4b860"             # --gold
-
-  mdc-theme-primary: "#e2542f"            # --ember
-  mdc-theme-secondary: "#f4b860"          # --gold
-  mdc-theme-surface: "#1e1712"            # --surface
-  mdc-theme-background: "#15110d"         # --bg
-  mdc-theme-on-primary: "#f3ece1"         # --ink
-  mdc-theme-on-secondary: "#15110d"       # --bg
-  mdc-theme-on-surface: "#f3ece1"         # --ink
-
-  # === State & semantic colors ===
-  state-icon-color: "#a89a89"             # --ink-dim
-  state-icon-active-color: "#f4b860"      # --gold
-  state-active-color: "#f4b860"           # --gold
-  state-inactive-color: "#7a6d5e"         # --ink-faint
-  state-unavailable-color: "#7a6d5e"      # --ink-faint
-
-  # HA colors domain states (e.g. climate hvac_action: auto/cool/dry/fan_only/
-  # heat/heat_cool) by mapping them to these named Material color tokens, not
-  # to any of the vars above. Left unset, they fall back to stock Material
-  # colors (e.g. climate "cool" -> --blue-color: #2196f3) which, rendered at
-  # reduced opacity over Nova's dark surfaces, turn into low-contrast muddy
-  # text — the thermostat-card readability issue this fixes. Mapped onto
-  # colors already in Nova's palette so climate state text (and anything else
-  # HA colors via these same tokens: device_tracker/person/humidifier/valve
-  # =blue, fan=cyan, water_heater=orange/deep-orange, sun/light/switch=amber,
-  # several alarm/lock states=green) reads clearly and stays on-palette.
-  blue-color: "#6ea8ff"                   # --info-color — climate cool
-  deep-orange-color: "#e2542f"            # --ember — climate heat
-  orange-color: "#e8b23d"                 # --warn — climate dry
-  cyan-color: "#6ea8ff"                   # --info-color — climate fan_only
-  green-color: "#5fbf7a"                  # matches success-color — climate auto
-  amber-color: "#f4b860"                  # --gold — climate heat_cool
-
-  error-color: "#ff5a5a"                  # matches nova-panel-new.js log-entry-error
-  warning-color: "#e8b23d"                # --warn
-  success-color: "#5fbf7a"                # matches nova-panel-new.js live-dot / good states
-  info-color: "#6ea8ff"                   # matches nova-panel-new.js area-tile gradient cold end
-
-  # === Label badges ===
-  label-badge-red: "#ff5a5a"
-  label-badge-yellow: "#e8b23d"           # --warn
-  label-badge-green: "#5fbf7a"
-  label-badge-blue: "#6ea8ff"
-  label-badge-grey: "#7a6d5e"             # --ink-faint
-  label-badge-background-color: "#1e1712" # --surface
-  label-badge-text-color: "#f3ece1"       # --ink
-
-  # === Tables ===
-  table-row-background-color: "#1e1712"       # --surface
-  table-row-alternative-background-color: "#241c15" # derived: --surface, slightly darker
-
-  # === Fonts ===
+  # === Mode-independent (fonts, card-mod, structural — not color baseline) ===
   primary-font-family: "'Manrope', -apple-system, 'Segoe UI', sans-serif" # --font-body
   code-font-family: "'IBM Plex Mono', 'SF Mono', monospace"               # --font-mono
-
-  # === RGB variants (used by HA for opacity-aware components) ===
-  rgb-primary-color: "226, 84, 47"        # --ember
-  rgb-accent-color: "244, 184, 96"        # --gold
-  rgb-primary-background-color: "21, 17, 13"   # --bg
-  rgb-secondary-background-color: "30, 23, 18" # --surface
-  rgb-card-background-color: "30, 23, 18"      # --surface
-  rgb-primary-text-color: "243, 236, 225"      # --ink
-  rgb-secondary-text-color: "168, 154, 137"    # --ink-dim
-  rgb-disabled-text-color: "122, 109, 94"      # --ink-faint
-  rgb-state-inactive-color: "122, 109, 94"     # --ink-faint
-  rgb-error-color: "255, 90, 90"
-  rgb-warning-color: "232, 178, 61"            # --warn
-  rgb-success-color: "95, 191, 122"
-  rgb-info-color: "110, 168, 255"
+  ha-card-border-radius: "16px"           # matches nova-panel-new.js .panel
+  ha-card-border-width: "1px"
 
   # === card-mod (optional; unverified — see the note at the top of this file) ===
   # Required by card-mod: must repeat this theme's own name exactly.
@@ -224,3 +80,168 @@ Nova:
       border-color: #e2542f70;
       box-shadow: 0 0 18px 1px #e2542f22;
     }
+
+  # === Everything else: identical Nova palette under both modes ===
+  # See the file header for why this is duplicated rather than left flat.
+  modes:
+    dark: &palette
+      # === Core palette ===
+      primary-color: "#e2542f"            # --ember
+      accent-color: "#f4b860"             # --gold
+      dark-primary-color: "#c2431f"       # derived: ember, darkened
+      light-primary-color: "#f4a98a"      # derived: ember, lightened
+
+      primary-background-color: "#15110d" # --bg
+      secondary-background-color: "#1e1712" # --surface
+      divider-color: "#33291f"            # --line-soft
+
+      # Whole-dashboard background: the same soft ember glow behind the hero
+      # in nova-panel-new.js's .wrap (radial-gradient(...#2a1c11...)),
+      # generalized across the full page instead of just the panel's hero.
+      lovelace-background: "radial-gradient(ellipse 900px 500px at 18% -10%, #3a220f66 0%, transparent 60%), radial-gradient(ellipse 700px 420px at 100% 0%, #2a1c1140 0%, transparent 55%), #15110d"
+
+      primary-text-color: "#f3ece1"       # --ink
+      secondary-text-color: "#a89a89"     # --ink-dim
+      disabled-text-color: "#7a6d5e"      # --ink-faint
+      text-primary-color: "#f3ece1"       # text on top of primary-color (ember)
+
+      # === Sidebar ===
+      sidebar-background-color: "#1e1712"     # --surface
+      sidebar-text-color: "#a89a89"           # --ink-dim
+      sidebar-icon-color: "#a89a89"           # --ink-dim
+      sidebar-selected-background-color: "#2a2119" # --surface-2
+      sidebar-selected-icon-color: "#ffe3ad"  # --gold-pale
+      sidebar-selected-text-color: "#ffe3ad"  # --gold-pale
+      sidebar-divider-color: "#33291f"        # --line-soft
+      sidebar-badge-text-color: "#15110d"     # --bg (dark text on gold badge)
+
+      # === App header / top bar ===
+      app-header-background-color: "#1e1712"  # --surface
+      app-header-text-color: "#f3ece1"        # --ink
+      app-header-edit-background-color: "#2a2119" # --surface-2
+
+      # === Cards & surfaces ===
+      card-background-color: "#1e1712"        # --surface
+      ha-card-background: "#1e1712"           # --surface (modern alias)
+      ha-card-border-color: "#33291f"         # --line-soft
+      ha-card-box-shadow: "0 0 0 1px #33291f, 0 8px 24px -12px #00000066, 0 0 22px -6px #e2542f26"
+      ha-card-header-color: "#f3ece1"         # --ink
+
+      # === Dialogs ===
+      dialog-background-color: "#1e1712"      # --surface
+      mdc-dialog-scrim-color: "#0a0806cc"     # derived: --bg at high opacity
+
+      # === Text fields & selects (card editors, form dialogs) ===
+      # HA's Material text fields/selects don't inherit primary-text-color
+      # for their fill/ink — they use this separate --input-* family.
+      input-fill-color: "#2a2119"             # --surface-2
+      input-disabled-fill-color: "#1e1712"    # --surface
+      input-ink-color: "#f3ece1"              # --ink
+      input-label-ink-color: "#a89a89"        # --ink-dim
+      input-disabled-ink-color: "#7a6d5e"     # --ink-faint
+      input-idle-line-color: "#33291f"        # --line-soft
+      input-hover-line-color: "#f4b860"       # --gold
+      input-outlined-idle-border-color: "#33291f" # --line-soft
+      input-outlined-hover-border-color: "#f4b860" # --gold
+      input-outlined-disabled-border-color: "#33291f" # --line-soft
+      input-dropdown-icon-color: "#a89a89"    # --ink-dim
+
+      # === New design-token layer (2026.9+ "wa-" / ha-color-* components) ===
+      # Belt-and-braces on top of the `modes:` fix above: these are the
+      # neutral fill/border/on + text tokens the newer wa-input/ha-selector
+      # components read. With `modes:` now declared, HA's own dark baseline
+      # for this layer should apply underneath; these explicit overrides
+      # keep Nova's exact palette (rather than HA's generic dark neutrals)
+      # for anything in this family that does respond to a flat override.
+      ha-color-fill-neutral-quiet-resting: "#241c15"  # derived: --surface, darker
+      ha-color-fill-neutral-quiet-hover: "#2a2119"    # --surface-2
+      ha-color-fill-neutral-normal-resting: "#33291f" # --line-soft
+      ha-color-fill-neutral-loud-resting: "#7a6d5e"   # --ink-faint
+      ha-color-border-neutral-quiet: "#33291f"        # --line-soft
+      ha-color-border-neutral-normal: "#7a6d5e"       # --ink-faint
+      ha-color-border-neutral-loud: "#a89a89"         # --ink-dim
+      ha-color-on-neutral-quiet: "#a89a89"            # --ink-dim
+      ha-color-on-neutral-normal: "#f3ece1"           # --ink
+      ha-color-on-neutral-loud: "#f3ece1"             # --ink
+      ha-color-text-primary: "#f3ece1"                # --ink
+      ha-color-text-secondary: "#a89a89"              # --ink-dim
+
+      # === Sliders, switches & Material components ===
+      switch-checked-color: "#f4b860"         # --gold
+      switch-checked-button-color: "#ffe3ad"  # --gold-pale
+      switch-checked-track-color: "#f4b8604d" # derived: --gold at low opacity
+      switch-unchecked-button-color: "#7a6d5e" # --ink-faint
+      switch-unchecked-track-color: "#33291f" # --line-soft
+      slider-color: "#f4b860"                 # --gold
+      slider-secondary-color: "#33291f"       # --line-soft
+      slider-bar-color: "#f4b860"             # --gold
+
+      mdc-theme-primary: "#e2542f"            # --ember
+      mdc-theme-secondary: "#f4b860"          # --gold
+      mdc-theme-surface: "#1e1712"            # --surface
+      mdc-theme-background: "#15110d"         # --bg
+      mdc-theme-on-primary: "#f3ece1"         # --ink
+      mdc-theme-on-secondary: "#15110d"       # --bg
+      mdc-theme-on-surface: "#f3ece1"         # --ink
+
+      # === State & semantic colors ===
+      state-icon-color: "#a89a89"             # --ink-dim
+      state-icon-active-color: "#f4b860"      # --gold
+      state-active-color: "#f4b860"           # --gold
+      state-inactive-color: "#7a6d5e"         # --ink-faint
+      state-unavailable-color: "#7a6d5e"      # --ink-faint
+
+      # HA colors domain states (e.g. climate hvac_action: auto/cool/dry/
+      # fan_only/heat/heat_cool) by mapping them to these named Material
+      # color tokens, not to any of the vars above. Left unset, they fall
+      # back to stock Material colors (e.g. climate "cool" -> --blue-color:
+      # #2196f3) which, rendered at reduced opacity over Nova's dark
+      # surfaces, turn into low-contrast muddy text. Mapped onto colors
+      # already in Nova's palette so climate state text (and anything else
+      # HA colors via these same tokens: device_tracker/person/humidifier/
+      # valve=blue, fan=cyan, water_heater=orange/deep-orange, sun/light/
+      # switch=amber, several alarm/lock states=green) reads clearly and
+      # stays on-palette.
+      blue-color: "#6ea8ff"                   # --info-color — climate cool
+      deep-orange-color: "#e2542f"            # --ember — climate heat
+      orange-color: "#e8b23d"                 # --warn — climate dry
+      cyan-color: "#6ea8ff"                   # --info-color — climate fan_only
+      green-color: "#5fbf7a"                  # matches success-color — climate auto
+      amber-color: "#f4b860"                  # --gold — climate heat_cool
+
+      error-color: "#ff5a5a"                  # matches nova-panel-new.js log-entry-error
+      warning-color: "#e8b23d"                # --warn
+      success-color: "#5fbf7a"                # matches nova-panel-new.js live-dot / good states
+      info-color: "#6ea8ff"                   # matches nova-panel-new.js area-tile gradient cold end
+
+      # === Label badges ===
+      label-badge-red: "#ff5a5a"
+      label-badge-yellow: "#e8b23d"           # --warn
+      label-badge-green: "#5fbf7a"
+      label-badge-blue: "#6ea8ff"
+      label-badge-grey: "#7a6d5e"             # --ink-faint
+      label-badge-background-color: "#1e1712" # --surface
+      label-badge-text-color: "#f3ece1"       # --ink
+
+      # === Tables ===
+      table-row-background-color: "#1e1712"       # --surface
+      table-row-alternative-background-color: "#241c15" # derived: --surface, slightly darker
+
+      # === RGB variants (used by HA for opacity-aware components) ===
+      rgb-primary-color: "226, 84, 47"        # --ember
+      rgb-accent-color: "244, 184, 96"        # --gold
+      rgb-primary-background-color: "21, 17, 13"   # --bg
+      rgb-secondary-background-color: "30, 23, 18" # --surface
+      rgb-card-background-color: "30, 23, 18"      # --surface
+      rgb-primary-text-color: "243, 236, 225"      # --ink
+      rgb-secondary-text-color: "168, 154, 137"    # --ink-dim
+      rgb-disabled-text-color: "122, 109, 94"      # --ink-faint
+      rgb-state-inactive-color: "122, 109, 94"     # --ink-faint
+      rgb-error-color: "255, 90, 90"
+      rgb-warning-color: "232, 178, 61"            # --warn
+      rgb-success-color: "95, 191, 122"
+      rgb-info-color: "110, 168, 255"
+
+    # Nova has no separate light look — reuse the exact same palette so it
+    # renders identically no matter the user's profile light/dark setting.
+    light: *palette
