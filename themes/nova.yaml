@@ -94,17 +94,15 @@ Nova:
 
   # === New design-token layer (2026.9+ "wa-" / ha-color-* components) ===
   # Newer pickers/forms (e.g. ha-entity-name-picker's <wa-input>) don't read
-  # the classic --input-*/--primary-text-color surface — they're styled
-  # through a parallel --wa-color-* system aliased to --ha-color-* tokens
-  # (see wa.globals.ts / core.globals.ts upstream). In practice, on these
-  # components the field background stays stuck on HA's stock light fill
-  # (confirmed: it doesn't reliably follow --wa-form-control-background-color
-  # even when that variable itself resolves correctly) — so rather than
-  # chase the background, force the value text dark so it reads on a light
-  # field regardless. --wa-form-control-value-color is scoped to typed-in
-  # form values specifically, so this doesn't touch primary-text-color or
-  # any other component's (correctly light-on-dark) text elsewhere.
-  wa-form-control-value-color: "#15110d"          # --bg — dark text for wa-input's stubbornly-light field
+  # the classic --input-*/--primary-text-color surface at all — they're
+  # styled through a parallel --wa-color-* system aliased to --ha-color-*
+  # tokens (see wa.globals.ts / core.globals.ts upstream), which ships fixed
+  # to HA's stock LIGHT palette (e.g. --ha-color-text-primary: #141414)
+  # regardless of theme or dark/light mode. Left unset, this is the same
+  # unreadable-field bug as above but one layer deeper. Only the neutral
+  # ramp + text tokens are covered here (what drives generic field/border/
+  # text contrast) — the brand/success/warning/danger fill ramps are a
+  # separate, not-yet-covered concern.
   ha-color-fill-neutral-quiet-resting: "#241c15"  # derived: --surface, darker
   ha-color-fill-neutral-quiet-hover: "#2a2119"    # --surface-2
   ha-color-fill-neutral-normal-resting: "#33291f" # --line-soft
