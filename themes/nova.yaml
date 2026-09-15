@@ -96,6 +96,23 @@ Nova:
   state-inactive-color: "#7a6d5e"         # --ink-faint
   state-unavailable-color: "#7a6d5e"      # --ink-faint
 
+  # HA colors domain states (e.g. climate hvac_action: auto/cool/dry/fan_only/
+  # heat/heat_cool) by mapping them to these named Material color tokens, not
+  # to any of the vars above. Left unset, they fall back to stock Material
+  # colors (e.g. climate "cool" -> --blue-color: #2196f3) which, rendered at
+  # reduced opacity over Nova's dark surfaces, turn into low-contrast muddy
+  # text — the thermostat-card readability issue this fixes. Mapped onto
+  # colors already in Nova's palette so climate state text (and anything else
+  # HA colors via these same tokens: device_tracker/person/humidifier/valve
+  # =blue, fan=cyan, water_heater=orange/deep-orange, sun/light/switch=amber,
+  # several alarm/lock states=green) reads clearly and stays on-palette.
+  blue-color: "#6ea8ff"                   # --info-color — climate cool
+  deep-orange-color: "#e2542f"            # --ember — climate heat
+  orange-color: "#e8b23d"                 # --warn — climate dry
+  cyan-color: "#6ea8ff"                   # --info-color — climate fan_only
+  green-color: "#5fbf7a"                  # matches success-color — climate auto
+  amber-color: "#f4b860"                  # --gold — climate heat_cool
+
   error-color: "#ff5a5a"                  # matches nova-panel-new.js log-entry-error
   warning-color: "#e8b23d"                # --warn
   success-color: "#5fbf7a"                # matches nova-panel-new.js live-dot / good states
