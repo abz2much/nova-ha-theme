@@ -6,8 +6,6 @@ dark surfaces, in place of the default HA blue. Every color in `themes/nova.yaml
 directly from the CSS custom properties in Nova's own panel
 (`custom_components/nova/frontend/nova-panel-new.js`), not reinterpreted.
 
-Mockup: https://claude.ai/artifact/4aTtV4wZCsd9yHzJdMwsNt
-
 Dark-only, on purpose — Nova's own panel has no light variant, so this theme doesn't invent one.
 
 This repo installs only Nova. It's one of several themes developed together in a local
