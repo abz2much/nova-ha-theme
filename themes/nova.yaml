@@ -71,6 +71,27 @@ Nova:
   dialog-background-color: "#1e1712"      # --surface
   mdc-dialog-scrim-color: "#0a0806cc"     # derived: --bg at high opacity
 
+  # === Text fields & selects (card editors, form dialogs) ===
+  # HA's Material text fields/selects don't inherit primary-text-color for
+  # their fill/ink — they use this separate --input-* family, which normally
+  # comes from the frontend's own light/dark-mode CSS class, independent of
+  # which theme is selected. A dark-only theme like Nova has to set these
+  # explicitly: left alone, a user whose system/profile is in light mode gets
+  # HA's light-mode input defaults (near-white fill) while Nova's cream
+  # primary-text-color bleeds into the ink on some components, giving pale
+  # text on a pale field — unreadable in card-editor forms.
+  input-fill-color: "#2a2119"             # --surface-2
+  input-disabled-fill-color: "#1e1712"    # --surface
+  input-ink-color: "#f3ece1"              # --ink
+  input-label-ink-color: "#a89a89"        # --ink-dim
+  input-disabled-ink-color: "#7a6d5e"     # --ink-faint
+  input-idle-line-color: "#33291f"        # --line-soft
+  input-hover-line-color: "#f4b860"       # --gold
+  input-outlined-idle-border-color: "#33291f" # --line-soft
+  input-outlined-hover-border-color: "#f4b860" # --gold
+  input-outlined-disabled-border-color: "#33291f" # --line-soft
+  input-dropdown-icon-color: "#a89a89"    # --ink-dim
+
   # === Sliders, switches & Material components ===
   switch-checked-color: "#f4b860"         # --gold
   switch-checked-button-color: "#ffe3ad"  # --gold-pale
