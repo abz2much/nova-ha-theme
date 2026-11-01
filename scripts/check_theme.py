@@ -62,7 +62,8 @@ GRAPHIC_PAIRS = [(k, "card-background-color") for k in (
     "energy-solar-color", "energy-grid-consumption-color", "energy-battery-out-color",
     "switch-checked-color", "slider-color", "slider-bar-color")]
 
-GLASS_THEMES = {"Nova Deep Teal", "Nova"}
+# Every theme has glass cards except Compact (blur costs performance on wall tablets).
+GLASS_THEMES = {f"Nova {label}" for label in LABELS.values()} | {"Nova"}
 
 HEX = re.compile(r"^#[0-9a-fA-F]{6}$")
 
@@ -157,8 +158,18 @@ def main():
             for needle in ("backdrop-filter", "@supports", ":host-context(ha-card) ha-card"):
                 if needle not in css:
                     errors.append(f"{name}: card-mod-card is missing {needle}")
+            # Cards are translucent, so text sits on the card blended with the page.
+            m = re.search(r"var\(--card-background-color\) (\d+)%", css)
+            card, page = mode_vals.get("card-background-color"), mode_vals.get("primary-background-color")
+            if m and card and page and HEX.match(card) and HEX.match(page):
+                a = int(m.group(1)) / 100
+                eff = "#" + "".join(f"{round(int(card[i:i+2], 16) * a + int(page[i:i+2], 16) * (1 - a)):02x}" for i in (1, 3, 5))
+                for fg in ("primary-text-color", "secondary-text-color", "state-active-color"):
+                    c = mode_vals.get(fg)
+                    if c and HEX.match(c) and contrast(c, eff) < 4.5:
+                        errors.append(f"{name}: {fg} on the glass card is {contrast(c, eff):.2f}:1 (needs 4.5)")
         elif "backdrop-filter" in css:
-            errors.append(f"{name}: glass is not enabled for this theme yet")
+            errors.append(f"{name}: glass is not enabled for this theme")
 
     # "Nova" is an alias of Deep Teal, so dashboards and profiles that still name
     # the old single theme keep working.

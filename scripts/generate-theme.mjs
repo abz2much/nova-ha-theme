@@ -22,6 +22,11 @@ function themeEntries(seed, shape, glass) {
   const dark = seed.style !== "light";
   const A = hex(k.ember), ink = hex(k.ink), surface = hex(k.surface), cell = hex(k["surface-2"]);
   const to = dark ? W : K;
+  // Glass cards let the page show through, so accent text must reach contrast on the blended surface.
+  if (glass && !dark) {
+    const blended = mix(hex(k.bg), surface, 0.72);
+    k.gold = toHex(reach(hex(k.gold), [blended], 4.6, K));
+  }
   const alpha = (c, a) => toHex(c) + a;
   // Energy colours are graphics: 3:1 on the card, stepped the way the panel steps its text.
   const g = c => toHex(reach(typeof c === "string" ? hex(c) : c, [surface], 3, to));
@@ -175,6 +180,13 @@ function themeEntries(seed, shape, glass) {
 function ambientBackground(seed, k, m) {
   const { hex, toHex, mix, W, K } = m;
   const A = hex(k.ember), B = hex(seed.base), info = hex(k.info);
+  if (seed.style === "light") {
+    return [
+      `radial-gradient(900px 620px at 14% 8%,${toHex(A)}33,transparent 62%)`,
+      `radial-gradient(760px 540px at 88% 18%,${toHex(mix(A, info, 0.45))}38,transparent 60%)`,
+      k.page,
+    ].join(",");
+  }
   return [
     `radial-gradient(900px 620px at 14% 8%,${toHex(A)}38,transparent 62%)`,
     `radial-gradient(760px 540px at 88% 18%,${toHex(mix(A, info, 0.45))}5c,transparent 60%)`,
@@ -185,14 +197,19 @@ function ambientBackground(seed, k, m) {
 
 // Frosted cards. Outer cards get the glass; cards nested inside a card are reset so they
 // do not get a second border (the reset needs :host-context, which only Chromium has).
-const GLASS_CSS = [
+function glassCss(k, light) {
+  return [
   "    @supports ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {",
   "      ha-card {",
-  "        background: linear-gradient(180deg, #ffffff17, #ffffff08), color-mix(in srgb, var(--card-background-color) 46%, transparent);",
-  "        -webkit-backdrop-filter: blur(18px) saturate(1.35);",
-  "        backdrop-filter: blur(18px) saturate(1.35);",
-  "        border: 1px solid #ffffff29;",
-  "        box-shadow: 0 18px 40px -22px #000000cc, inset 0 1px 0 #ffffff24;",
+  light
+    ? "        background: linear-gradient(180deg, #ffffff40, #ffffff10), color-mix(in srgb, var(--card-background-color) 72%, transparent);"
+    : "        background: linear-gradient(180deg, #ffffff17, #ffffff08), color-mix(in srgb, var(--card-background-color) 46%, transparent);",
+  `        -webkit-backdrop-filter: blur(18px) saturate(${light ? "1.2" : "1.35"});`,
+  `        backdrop-filter: blur(18px) saturate(${light ? "1.2" : "1.35"});`,
+  light ? "        border: 1px solid #ffffffa6;" : "        border: 1px solid #ffffff29;",
+  light
+    ? `        box-shadow: 0 18px 40px -24px ${k.shadow}80, inset 0 1px 0 #ffffffcc;`
+    : "        box-shadow: 0 18px 40px -22px #000000cc, inset 0 1px 0 #ffffff24;",
   "      }",
   "      :host-context(ha-card) ha-card {",
   "        background: var(--ha-card-background, var(--card-background-color));",
@@ -202,9 +219,10 @@ const GLASS_CSS = [
   "        box-shadow: none;",
   "      }",
   "    }",
-].join("\n");
+  ].join("\n");
+}
 
-function cardMod(k, glass) {
+function cardMod(k, glass, light) {
   return [
     "    ha-card {",
     "      position: relative;",
@@ -222,7 +240,7 @@ function cardMod(k, glass) {
     "      opacity: .55;",
     "      pointer-events: none;",
     "    }",
-    ...(glass ? [GLASS_CSS] : []),
+    ...(glass ? [glassCss(k, light)] : []),
     "    ha-card:hover {",
     `      border-color: ${k.ember}70;`,
     `      box-shadow: 0 0 18px 1px ${k.ember}22;`,
@@ -257,7 +275,7 @@ function themeYaml(name, seed, shapeName, glass = false) {
   if (shape.space) for (const [n, v] of Object.entries(shape.space)) top(`ha-space-${n}`, v, "compact: tighter spacing");
   lines.push("", "  # card-mod (optional). Needs the card-mod or UIX HACS integration; Home Assistant ignores these keys without it.");
   top("card-mod-theme", name, "must repeat this theme's own name exactly");
-  lines.push("  card-mod-card: |", cardMod(k, glass), "", "  modes:", `    ${mode}:`);
+  lines.push("  card-mod-card: |", cardMod(k, glass, seed.style === "light"), "", "  modes:", `    ${mode}:`);
   for (const [title, list] of themeEntries(seed, shape, glass)) {
     lines.push(`      # === ${title} ===`);
     for (const [key, value, comment] of list) lines.push("      " + pad(`${key}: ${q(value)}`, 54, comment) + (comment ? " # " + comment : ""));
@@ -286,7 +304,7 @@ const header = `# Nova: a Home Assistant frontend theme, 12 colour themes from N
 `;
 
 const blocks = [];
-for (const [key, seed] of Object.entries(SEEDS)) blocks.push(themeYaml(`Nova ${seed.label}`, seed, "regular", key === "deep_teal"));
+for (const [key, seed] of Object.entries(SEEDS)) blocks.push(themeYaml(`Nova ${seed.label}`, seed, "regular", true));
 blocks.push(themeYaml("Nova Deep Teal Compact", SEEDS.deep_teal, "compact"));
 // "Nova" was the old single theme. Keep the name as Deep Teal so dashboards and profiles that use it keep working.
 blocks.push(themeYaml("Nova", SEEDS.deep_teal, "regular", true));
