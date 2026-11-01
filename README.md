@@ -24,9 +24,9 @@ does not change them.
 
 ## Upgrading from the single Nova theme
 
-Earlier versions shipped one theme called **Nova** (ember and gold). It no longer exists: this
-release replaces it with the twelve themes above. After updating, pick a new theme from your
-profile, because your old choice will fall back to the default.
+Earlier versions shipped one theme called **Nova** (ember and gold). That look is gone. The name
+**Nova** now points to Nova Deep Teal, so dashboards and profiles that still use it keep working.
+Pick any of the twelve themes above from your profile to change it.
 
 ## What you get
 
