@@ -11,8 +11,8 @@ const FONT_HEADING = "'Fraunces', Georgia, serif";
 const FONT_CODE = "'IBM Plex Mono', 'SF Mono', monospace";
 
 const SHAPE = {
-  regular: { card: "16px", lg: "14px", xl: "20px", scale: null, space: null },
-  compact: { card: "12px", lg: "10px", xl: "14px", scale: "0.92", space: { 2: "6px", 3: "9px", 4: "12px", 5: "15px", 6: "18px" } },
+  regular: { title: "22px", card: "16px", lg: "14px", xl: "20px", scale: null, space: null },
+  compact: { title: "19px", card: "12px", lg: "10px", xl: "14px", scale: "0.92", space: { 2: "6px", 3: "9px", 4: "12px", 5: "15px", 6: "18px" } },
 };
 
 function themeEntries(seed, shape) {
@@ -212,6 +212,8 @@ function themeYaml(name, seed, shapeName) {
   top("ha-font-family-heading", FONT_HEADING, "Fraunces, as the panel's headings");
   top("ha-font-family-code", FONT_CODE);
   top("ha-font-weight-heading", "600");
+  top("ha-card-header-font-family", FONT_HEADING, "card titles in Fraunces, no card-mod needed");
+  top("ha-card-header-font-size", shape.title, "card title size");
   top("ha-font-weight-action", "600");
   if (shape.scale) top("ha-font-size-scale", shape.scale, "compact: smaller type");
   top("ha-card-border-radius", shape.card);
