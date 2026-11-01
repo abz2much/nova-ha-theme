@@ -19,7 +19,7 @@ LABELS = {
     "quantum_ice": "Quantum Ice", "pine_mist": "Pine Mist", "ember": "Ember",
 }
 DARK = ["deep_teal", "midnight_signal", "plum_dusk", "cocoa_bark", "forest_mint", "slate_harbour"]
-EXPECTED = ["Nova " + v for v in LABELS.values()] + ["Nova Deep Teal Compact"]
+EXPECTED = ["Nova " + v for v in LABELS.values()] + ["Nova Deep Teal Compact", "Nova"]
 
 # Tokens every theme must set (inside its mode block).
 REQUIRED = [
@@ -143,6 +143,16 @@ def main():
                 r = contrast(a, b)
                 if r < 3:
                     errors.append(f"{name}: {fg} on {bg} is {r:.2f}:1 (needs 3)")
+
+    # "Nova" is an alias of Deep Teal, so dashboards and profiles that still name
+    # the old single theme keep working.
+    alias, deep = data.get("Nova"), data.get("Nova Deep Teal")
+    if alias and deep:
+        same = lambda t: {k: v for k, v in t.items() if k not in ("card-mod-theme", "card-mod-card")}
+        if same(alias) != same(deep):
+            errors.append("Nova: must match Nova Deep Teal (it is its alias)")
+        if alias.get("card-mod-theme") != "Nova":
+            errors.append("Nova: card-mod-theme must be \"Nova\"")
 
     if errors:
         print(f"FAIL: {len(errors)} problem(s)")
