@@ -256,6 +256,22 @@ Nova Midnight Signal:
       opacity: .55;
       pointer-events: none;
     }
+    @supports ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+      ha-card {
+        background: linear-gradient(180deg, #ffffff17, #ffffff08), color-mix(in srgb, var(--card-background-color) 46%, transparent);
+        -webkit-backdrop-filter: blur(18px) saturate(1.35);
+        backdrop-filter: blur(18px) saturate(1.35);
+        border: 1px solid #ffffff29;
+        box-shadow: 0 18px 40px -22px #000000cc, inset 0 1px 0 #ffffff24;
+      }
+      :host-context(ha-card) ha-card {
+        background: var(--ha-card-background, var(--card-background-color));
+        -webkit-backdrop-filter: none;
+        backdrop-filter: none;
+        border: 0;
+        box-shadow: none;
+      }
+    }
     ha-card:hover {
       border-color: #39ff8870;
       box-shadow: 0 0 18px 1px #39ff8822;
@@ -271,7 +287,7 @@ Nova Midnight Signal:
       primary-background-color: "#0b132b"                    # page
       secondary-background-color: "#1e2438"                  # surface
       divider-color: "#656a79"                               # line-soft
-      lovelace-background: "radial-gradient(1100px 700px at 46% 0%,#373d5199,transparent 62%),radial-gradient(800px 600px at 92% 100%,#39ff8812,transparent 70%),linear-gradient(160deg,#1c243a 0%,#0b132b 55%,#070c1c 100%)"  # page gradient
+      lovelace-background: "radial-gradient(900px 620px at 14% 8%,#39ff8838,transparent 62%),radial-gradient(760px 540px at 88% 18%,#57dfbe5c,transparent 60%),radial-gradient(900px 760px at 58% 104%,#1b664c66,transparent 66%),linear-gradient(160deg,#373d51 0%,#0b132b 52%,#060a18 100%)"  # page gradient with ambient glow
       primary-text-color: "#f0f1f2"                          # ink
       secondary-text-color: "#d3d4d8"                        # ink-dim
       disabled-text-color: "#a9acb4"                         # ink-faint
@@ -445,6 +461,22 @@ Nova Plum Dusk:
       opacity: .55;
       pointer-events: none;
     }
+    @supports ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+      ha-card {
+        background: linear-gradient(180deg, #ffffff17, #ffffff08), color-mix(in srgb, var(--card-background-color) 46%, transparent);
+        -webkit-backdrop-filter: blur(18px) saturate(1.35);
+        backdrop-filter: blur(18px) saturate(1.35);
+        border: 1px solid #ffffff29;
+        box-shadow: 0 18px 40px -22px #000000cc, inset 0 1px 0 #ffffff24;
+      }
+      :host-context(ha-card) ha-card {
+        background: var(--ha-card-background, var(--card-background-color));
+        -webkit-backdrop-filter: none;
+        backdrop-filter: none;
+        border: 0;
+        box-shadow: none;
+      }
+    }
     ha-card:hover {
       border-color: #ffb7a570;
       box-shadow: 0 0 18px 1px #ffb7a522;
@@ -460,7 +492,7 @@ Nova Plum Dusk:
       primary-background-color: "#1a0b2e"                    # page
       secondary-background-color: "#2a1e3b"                  # surface
       divider-color: "#6e657b"                               # line-soft
-      lovelace-background: "radial-gradient(1100px 700px at 46% 0%,#43375499,transparent 62%),radial-gradient(800px 600px at 92% 100%,#ffb7a512,transparent 70%),linear-gradient(160deg,#2a1c3d 0%,#1a0b2e 55%,#11071e 100%)"  # page gradient
+      lovelace-background: "radial-gradient(900px 620px at 14% 8%,#ffb7a538,transparent 62%),radial-gradient(760px 540px at 88% 18%,#c4b7ce5c,transparent 60%),radial-gradient(900px 760px at 58% 104%,#6a475866,transparent 66%),linear-gradient(160deg,#433754 0%,#1a0b2e 52%,#0e0619 100%)"  # page gradient with ambient glow
       primary-text-color: "#f1f0f2"                          # ink
       secondary-text-color: "#d6d3d9"                        # ink-dim
       disabled-text-color: "#ada8b3"                         # ink-faint
@@ -634,6 +666,22 @@ Nova Cocoa Bark:
       opacity: .55;
       pointer-events: none;
     }
+    @supports ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+      ha-card {
+        background: linear-gradient(180deg, #ffffff17, #ffffff08), color-mix(in srgb, var(--card-background-color) 46%, transparent);
+        -webkit-backdrop-filter: blur(18px) saturate(1.35);
+        backdrop-filter: blur(18px) saturate(1.35);
+        border: 1px solid #ffffff29;
+        box-shadow: 0 18px 40px -22px #000000cc, inset 0 1px 0 #ffffff24;
+      }
+      :host-context(ha-card) ha-card {
+        background: var(--ha-card-background, var(--card-background-color));
+        -webkit-backdrop-filter: none;
+        backdrop-filter: none;
+        border: 0;
+        box-shadow: none;
+      }
+    }
     ha-card:hover {
       border-color: #c1a09470;
       box-shadow: 0 0 18px 1px #c1a09422;
@@ -649,7 +697,7 @@ Nova Cocoa Bark:
       primary-background-color: "#382a28"                    # page
       secondary-background-color: "#3c302e"                  # surface
       divider-color: "#605553"                               # line-soft
-      lovelace-background: "radial-gradient(1100px 700px at 46% 0%,#5c504f99,transparent 62%),radial-gradient(800px 600px at 92% 100%,#c1a09412,transparent 70%),linear-gradient(160deg,#463937 0%,#382a28 55%,#241b1a 100%)"  # page gradient
+      lovelace-background: "radial-gradient(900px 620px at 14% 8%,#c1a09438,transparent 62%),radial-gradient(760px 540px at 88% 18%,#a2abc45c,transparent 60%),radial-gradient(900px 760px at 58% 104%,#68534e66,transparent 66%),linear-gradient(160deg,#5c504f 0%,#382a28 52%,#1f1716 100%)"  # page gradient with ambient glow
       primary-text-color: "#f3f2f2"                          # ink
       secondary-text-color: "#d8d5d5"                        # ink-dim
       disabled-text-color: "#b2adac"                         # ink-faint
@@ -823,6 +871,22 @@ Nova Forest Mint:
       opacity: .55;
       pointer-events: none;
     }
+    @supports ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+      ha-card {
+        background: linear-gradient(180deg, #ffffff17, #ffffff08), color-mix(in srgb, var(--card-background-color) 46%, transparent);
+        -webkit-backdrop-filter: blur(18px) saturate(1.35);
+        backdrop-filter: blur(18px) saturate(1.35);
+        border: 1px solid #ffffff29;
+        box-shadow: 0 18px 40px -22px #000000cc, inset 0 1px 0 #ffffff24;
+      }
+      :host-context(ha-card) ha-card {
+        background: var(--ha-card-background, var(--card-background-color));
+        -webkit-backdrop-filter: none;
+        backdrop-filter: none;
+        border: 0;
+        box-shadow: none;
+      }
+    }
     ha-card:hover {
       border-color: #b7ff7270;
       box-shadow: 0 0 18px 1px #b7ff7222;
@@ -838,7 +902,7 @@ Nova Forest Mint:
       primary-background-color: "#18251d"                    # page
       secondary-background-color: "#253029"                  # surface
       divider-color: "#5c655f"                               # line-soft
-      lovelace-background: "radial-gradient(1100px 700px at 46% 0%,#424c4699,transparent 62%),radial-gradient(800px 600px at 92% 100%,#b7ff7212,transparent 70%),linear-gradient(160deg,#28342d 0%,#18251d 55%,#101813 100%)"  # page gradient
+      lovelace-background: "radial-gradient(900px 620px at 14% 8%,#b7ff7238,transparent 62%),radial-gradient(760px 540px at 88% 18%,#9cdfb15c,transparent 60%),radial-gradient(900px 760px at 58% 104%,#50713b66,transparent 66%),linear-gradient(160deg,#424c46 0%,#18251d 52%,#0d1410 100%)"  # page gradient with ambient glow
       primary-text-color: "#f1f2f1"                          # ink
       secondary-text-color: "#d4d6d5"                        # ink-dim
       disabled-text-color: "#acb0ad"                         # ink-faint
@@ -1012,6 +1076,22 @@ Nova Slate Harbour:
       opacity: .55;
       pointer-events: none;
     }
+    @supports ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+      ha-card {
+        background: linear-gradient(180deg, #ffffff17, #ffffff08), color-mix(in srgb, var(--card-background-color) 46%, transparent);
+        -webkit-backdrop-filter: blur(18px) saturate(1.35);
+        backdrop-filter: blur(18px) saturate(1.35);
+        border: 1px solid #ffffff29;
+        box-shadow: 0 18px 40px -22px #000000cc, inset 0 1px 0 #ffffff24;
+      }
+      :host-context(ha-card) ha-card {
+        background: var(--ha-card-background, var(--card-background-color));
+        -webkit-backdrop-filter: none;
+        backdrop-filter: none;
+        border: 0;
+        box-shadow: none;
+      }
+    }
     ha-card:hover {
       border-color: #9ba8ab70;
       box-shadow: 0 0 18px 1px #9ba8ab22;
@@ -1027,7 +1107,7 @@ Nova Slate Harbour:
       primary-background-color: "#11212d"                    # page
       secondary-background-color: "#202d38"                  # surface
       divider-color: "#5b666e"                               # line-soft
-      lovelace-background: "radial-gradient(1100px 700px at 46% 0%,#3c495399,transparent 62%),radial-gradient(800px 600px at 92% 100%,#9ba8ab12,transparent 70%),linear-gradient(160deg,#22313c 0%,#11212d 55%,#0b151d 100%)"  # page gradient
+      lovelace-background: "radial-gradient(900px 620px at 14% 8%,#9ba8ab38,transparent 62%),radial-gradient(760px 540px at 88% 18%,#8dafd15c,transparent 60%),radial-gradient(900px 760px at 58% 104%,#41505966,transparent 66%),linear-gradient(160deg,#3c4953 0%,#11212d 52%,#091219 100%)"  # page gradient with ambient glow
       primary-text-color: "#f1f2f2"                          # ink
       secondary-text-color: "#d3d6d8"                        # ink-dim
       disabled-text-color: "#aab0b4"                         # ink-faint
@@ -1201,6 +1281,22 @@ Nova Classic:
       opacity: .55;
       pointer-events: none;
     }
+    @supports ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+      ha-card {
+        background: linear-gradient(180deg, #ffffff40, #ffffff10), color-mix(in srgb, var(--card-background-color) 72%, transparent);
+        -webkit-backdrop-filter: blur(18px) saturate(1.2);
+        backdrop-filter: blur(18px) saturate(1.2);
+        border: 1px solid #ffffffa6;
+        box-shadow: 0 18px 40px -24px #211e1b80, inset 0 1px 0 #ffffffcc;
+      }
+      :host-context(ha-card) ha-card {
+        background: var(--ha-card-background, var(--card-background-color));
+        -webkit-backdrop-filter: none;
+        backdrop-filter: none;
+        border: 0;
+        box-shadow: none;
+      }
+    }
     ha-card:hover {
       border-color: #b9dc8a70;
       box-shadow: 0 0 18px 1px #b9dc8a22;
@@ -1210,13 +1306,13 @@ Nova Classic:
     light:
       # === Core palette ===
       primary-color: "#b9dc8a"                               # accent seed
-      accent-color: "#51613d"                                # accent as text
+      accent-color: "#475536"                                # accent as text
       dark-primary-color: "#94b06e"                          # derived: accent, darkened
       light-primary-color: "#cee7ad"                         # derived: accent, lightened
       primary-background-color: "#a99a8c"                    # page
       secondary-background-color: "#ddd7d2"                  # surface
       divider-color: "#c2bdb8"                               # line-soft
-      lovelace-background: "radial-gradient(1100px 700px at 46% 0%,#ffffffb3,transparent 62%),radial-gradient(800px 600px at 92% 100%,#6c635aa6,transparent 70%),linear-gradient(160deg,#cbbdae 0%,#a99a8c 55%,#8a7b6e 100%)"  # page gradient
+      lovelace-background: "radial-gradient(900px 620px at 14% 8%,#b9dc8a33,transparent 62%),radial-gradient(760px 540px at 88% 18%,#749ea538,transparent 60%),radial-gradient(1100px 700px at 46% 0%,#ffffffb3,transparent 62%),radial-gradient(800px 600px at 92% 100%,#6c635aa6,transparent 70%),linear-gradient(160deg,#cbbdae 0%,#a99a8c 55%,#8a7b6e 100%)"  # page gradient with ambient glow
       primary-text-color: "#1f1a17"                          # ink
       secondary-text-color: "#3f3a37"                        # ink-dim
       disabled-text-color: "#615c59"                         # ink-faint
@@ -1227,8 +1323,8 @@ Nova Classic:
       sidebar-text-color: "#3f3a37"
       sidebar-icon-color: "#3f3a37"
       sidebar-selected-background-color: "#e8e5e2"
-      sidebar-selected-icon-color: "#51613d"
-      sidebar-selected-text-color: "#51613d"
+      sidebar-selected-icon-color: "#475536"
+      sidebar-selected-text-color: "#475536"
       sidebar-divider-color: "#c2bdb8"
       sidebar-badge-text-color: "#1c2115"
 
@@ -1253,9 +1349,9 @@ Nova Classic:
       input-label-ink-color: "#3f3a37"
       input-disabled-ink-color: "#615c59"
       input-idle-line-color: "#c2bdb8"
-      input-hover-line-color: "#51613d"
+      input-hover-line-color: "#475536"
       input-outlined-idle-border-color: "#c2bdb8"
-      input-outlined-hover-border-color: "#51613d"
+      input-outlined-hover-border-color: "#475536"
       input-outlined-disabled-border-color: "#c2bdb8"
       input-dropdown-icon-color: "#3f3a37"
 
@@ -1266,16 +1362,16 @@ Nova Classic:
       ha-color-text-primary: "#1f1a17"
       ha-color-text-secondary: "#3f3a37"
       ha-color-text-disabled: "#615c59"
-      ha-color-text-link: "#51613d"
-      ha-color-focus: "#51613d"
+      ha-color-text-link: "#475536"
+      ha-color-focus: "#475536"
       ha-color-fill-primary-loud-resting: "#b9dc8a"
       ha-color-fill-primary-loud-hover: "#9fbd77"            # derived: accent, towards contrast
       ha-color-fill-primary-loud-active: "#8da769"           # derived: accent, towards contrast
       ha-color-on-primary-loud: "#1c2115"
       ha-color-fill-primary-normal-resting: "#d5d8c2"        # derived: surface and accent
-      ha-color-on-primary-normal: "#51613d"
+      ha-color-on-primary-normal: "#475536"
       ha-color-fill-primary-quiet-resting: "#d9d8cb"         # derived: surface and accent
-      ha-color-on-primary-quiet: "#51613d"
+      ha-color-on-primary-quiet: "#475536"
       ha-color-border-primary-normal: "#b9dc8a"
       ha-color-fill-neutral-quiet-resting: "#d5cfcb"         # derived: surface, towards text
       ha-color-fill-neutral-quiet-hover: "#e8e5e2"
@@ -1298,7 +1394,7 @@ Nova Classic:
       slider-secondary-color: "#c2bdb8"
       slider-bar-color: "#6b8050"                            # accent, stepped to 3:1
       mdc-theme-primary: "#b9dc8a"
-      mdc-theme-secondary: "#51613d"
+      mdc-theme-secondary: "#475536"
       mdc-theme-surface: "#ddd7d2"
       mdc-theme-background: "#a99a8c"
       mdc-theme-on-primary: "#1c2115"
@@ -1307,8 +1403,8 @@ Nova Classic:
 
       # === State and semantic colours ===
       state-icon-color: "#3f3a37"
-      state-icon-active-color: "#51613d"
-      state-active-color: "#51613d"
+      state-icon-active-color: "#475536"
+      state-active-color: "#475536"
       state-inactive-color: "#615c59"
       state-unavailable-color: "#615c59"
       blue-color: "#1f53c5"                                  # climate cool
@@ -1316,7 +1412,7 @@ Nova Classic:
       orange-color: "#7a5200"                                # climate dry
       cyan-color: "#1f53c5"                                  # climate fan only
       green-color: "#3e681b"                                 # climate auto
-      amber-color: "#51613d"                                 # climate heat and cool
+      amber-color: "#475536"                                 # climate heat and cool
       error-color: "#9a3a1d"
       warning-color: "#7a5200"
       success-color: "#3e681b"
@@ -1342,7 +1438,7 @@ Nova Classic:
 
       # === RGB variants (opacity-aware components) ===
       rgb-primary-color: "185, 220, 138"                     # ember
-      rgb-accent-color: "81, 97, 61"                         # gold
+      rgb-accent-color: "71, 85, 54"                         # gold
       rgb-primary-background-color: "169, 154, 140"          # bg
       rgb-secondary-background-color: "221, 215, 210"        # surface
       rgb-card-background-color: "221, 215, 210"             # surface
@@ -1390,6 +1486,22 @@ Nova Violet Mist:
       opacity: .55;
       pointer-events: none;
     }
+    @supports ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+      ha-card {
+        background: linear-gradient(180deg, #ffffff40, #ffffff10), color-mix(in srgb, var(--card-background-color) 72%, transparent);
+        -webkit-backdrop-filter: blur(18px) saturate(1.2);
+        backdrop-filter: blur(18px) saturate(1.2);
+        border: 1px solid #ffffffa6;
+        box-shadow: 0 18px 40px -24px #2f2f3080, inset 0 1px 0 #ffffffcc;
+      }
+      :host-context(ha-card) ha-card {
+        background: var(--ha-card-background, var(--card-background-color));
+        -webkit-backdrop-filter: none;
+        backdrop-filter: none;
+        border: 0;
+        box-shadow: none;
+      }
+    }
     ha-card:hover {
       border-color: #7a35ff70;
       box-shadow: 0 0 18px 1px #7a35ff22;
@@ -1399,13 +1511,13 @@ Nova Violet Mist:
     light:
       # === Core palette ===
       primary-color: "#7a35ff"                               # accent seed
-      accent-color: "#7a35ff"                                # accent as text
+      accent-color: "#7332f0"                                # accent as text
       dark-primary-color: "#622acc"                          # derived: accent, darkened
       light-primary-color: "#a272ff"                         # derived: accent, lightened
       primary-background-color: "#cccdd0"                    # page
       secondary-background-color: "#eaebec"                  # surface
       divider-color: "#cdcecf"                               # line-soft
-      lovelace-background: "radial-gradient(1100px 700px at 46% 0%,#ffffffb3,transparent 62%),radial-gradient(800px 600px at 92% 100%,#9a9b9da6,transparent 70%),linear-gradient(160deg,#e0e2e5 0%,#cccdd0 55%,#b5b7b9 100%)"  # page gradient
+      lovelace-background: "radial-gradient(900px 620px at 14% 8%,#7a35ff33,transparent 62%),radial-gradient(760px 540px at 88% 18%,#5348f238,transparent 60%),radial-gradient(1100px 700px at 46% 0%,#ffffffb3,transparent 62%),radial-gradient(800px 600px at 92% 100%,#9a9b9da6,transparent 70%),linear-gradient(160deg,#e0e2e5 0%,#cccdd0 55%,#b5b7b9 100%)"  # page gradient with ambient glow
       primary-text-color: "#1d1d1d"                          # ink
       secondary-text-color: "#3f3f3f"                        # ink-dim
       disabled-text-color: "#686868"                         # ink-faint
@@ -1416,8 +1528,8 @@ Nova Violet Mist:
       sidebar-text-color: "#3f3f3f"
       sidebar-icon-color: "#3f3f3f"
       sidebar-selected-background-color: "#f1f2f2"
-      sidebar-selected-icon-color: "#7a35ff"
-      sidebar-selected-text-color: "#7a35ff"
+      sidebar-selected-icon-color: "#7332f0"
+      sidebar-selected-text-color: "#7332f0"
       sidebar-divider-color: "#cdcecf"
       sidebar-badge-text-color: "#ffffff"
 
@@ -1442,9 +1554,9 @@ Nova Violet Mist:
       input-label-ink-color: "#3f3f3f"
       input-disabled-ink-color: "#686868"
       input-idle-line-color: "#cdcecf"
-      input-hover-line-color: "#7a35ff"
+      input-hover-line-color: "#7332f0"
       input-outlined-idle-border-color: "#cdcecf"
-      input-outlined-hover-border-color: "#7a35ff"
+      input-outlined-hover-border-color: "#7332f0"
       input-outlined-disabled-border-color: "#cdcecf"
       input-dropdown-icon-color: "#3f3f3f"
 
@@ -1455,16 +1567,16 @@ Nova Violet Mist:
       ha-color-text-primary: "#1d1d1d"
       ha-color-text-secondary: "#3f3f3f"
       ha-color-text-disabled: "#686868"
-      ha-color-text-link: "#7a35ff"
-      ha-color-focus: "#7a35ff"
+      ha-color-text-link: "#7332f0"
+      ha-color-focus: "#7332f0"
       ha-color-fill-primary-loud-resting: "#7a35ff"
       ha-color-fill-primary-loud-hover: "#692edb"            # derived: accent, towards contrast
       ha-color-fill-primary-loud-active: "#5d28c2"           # derived: accent, towards contrast
       ha-color-on-primary-loud: "#ffffff"
       ha-color-fill-primary-normal-resting: "#d1c3f0"        # derived: surface and accent
-      ha-color-on-primary-normal: "#7a35ff"
+      ha-color-on-primary-normal: "#7332f0"
       ha-color-fill-primary-quiet-resting: "#dfd9ee"         # derived: surface and accent
-      ha-color-on-primary-quiet: "#7a35ff"
+      ha-color-on-primary-quiet: "#7332f0"
       ha-color-border-primary-normal: "#7a35ff"
       ha-color-fill-neutral-quiet-resting: "#e2e3e4"         # derived: surface, towards text
       ha-color-fill-neutral-quiet-hover: "#f1f2f2"
@@ -1487,7 +1599,7 @@ Nova Violet Mist:
       slider-secondary-color: "#cdcecf"
       slider-bar-color: "#7a35ff"                            # accent, stepped to 3:1
       mdc-theme-primary: "#7a35ff"
-      mdc-theme-secondary: "#7a35ff"
+      mdc-theme-secondary: "#7332f0"
       mdc-theme-surface: "#eaebec"
       mdc-theme-background: "#cccdd0"
       mdc-theme-on-primary: "#ffffff"
@@ -1496,8 +1608,8 @@ Nova Violet Mist:
 
       # === State and semantic colours ===
       state-icon-color: "#3f3f3f"
-      state-icon-active-color: "#7a35ff"
-      state-active-color: "#7a35ff"
+      state-icon-active-color: "#7332f0"
+      state-active-color: "#7332f0"
       state-inactive-color: "#686868"
       state-unavailable-color: "#686868"
       blue-color: "#245fe2"                                  # climate cool
@@ -1505,7 +1617,7 @@ Nova Violet Mist:
       orange-color: "#7a5200"                                # climate dry
       cyan-color: "#245fe2"                                  # climate fan only
       green-color: "#3f6a1c"                                 # climate auto
-      amber-color: "#7a35ff"                                 # climate heat and cool
+      amber-color: "#7332f0"                                 # climate heat and cool
       error-color: "#9a3a1d"
       warning-color: "#7a5200"
       success-color: "#3f6a1c"
@@ -1531,7 +1643,7 @@ Nova Violet Mist:
 
       # === RGB variants (opacity-aware components) ===
       rgb-primary-color: "122, 53, 255"                      # ember
-      rgb-accent-color: "122, 53, 255"                       # gold
+      rgb-accent-color: "115, 50, 240"                       # gold
       rgb-primary-background-color: "204, 205, 208"          # bg
       rgb-secondary-background-color: "234, 235, 236"        # surface
       rgb-card-background-color: "234, 235, 236"             # surface
@@ -1579,6 +1691,22 @@ Nova Berry Sky:
       opacity: .55;
       pointer-events: none;
     }
+    @supports ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+      ha-card {
+        background: linear-gradient(180deg, #ffffff40, #ffffff10), color-mix(in srgb, var(--card-background-color) 72%, transparent);
+        -webkit-backdrop-filter: blur(18px) saturate(1.2);
+        backdrop-filter: blur(18px) saturate(1.2);
+        border: 1px solid #ffffffa6;
+        box-shadow: 0 18px 40px -24px #2c2f3280, inset 0 1px 0 #ffffffcc;
+      }
+      :host-context(ha-card) ha-card {
+        background: var(--ha-card-background, var(--card-background-color));
+        -webkit-backdrop-filter: none;
+        backdrop-filter: none;
+        border: 0;
+        box-shadow: none;
+      }
+    }
     ha-card:hover {
       border-color: #c2185b70;
       box-shadow: 0 0 18px 1px #c2185b22;
@@ -1588,13 +1716,13 @@ Nova Berry Sky:
     light:
       # === Core palette ===
       primary-color: "#c2185b"                               # accent seed
-      accent-color: "#c2185b"                                # accent as text
+      accent-color: "#be1859"                                # accent as text
       dark-primary-color: "#9b1349"                          # derived: accent, darkened
       light-primary-color: "#d45d8c"                         # derived: accent, lightened
       primary-background-color: "#becdd8"                    # page
       secondary-background-color: "#e5ebee"                  # surface
       divider-color: "#c9ced1"                               # line-soft
-      lovelace-background: "radial-gradient(1100px 700px at 46% 0%,#ffffffb3,transparent 62%),radial-gradient(800px 600px at 92% 100%,#8f9ba3a6,transparent 70%),linear-gradient(160deg,#d1e2ee 0%,#becdd8 55%,#a9b7c0 100%)"  # page gradient
+      lovelace-background: "radial-gradient(900px 620px at 14% 8%,#c2185b33,transparent 62%),radial-gradient(760px 540px at 88% 18%,#7a379638,transparent 60%),radial-gradient(1100px 700px at 46% 0%,#ffffffb3,transparent 62%),radial-gradient(800px 600px at 92% 100%,#8f9ba3a6,transparent 70%),linear-gradient(160deg,#d1e2ee 0%,#becdd8 55%,#a9b7c0 100%)"  # page gradient with ambient glow
       primary-text-color: "#1b1d1e"                          # ink
       secondary-text-color: "#3d3f41"                        # ink-dim
       disabled-text-color: "#65686a"                         # ink-faint
@@ -1605,8 +1733,8 @@ Nova Berry Sky:
       sidebar-text-color: "#3d3f41"
       sidebar-icon-color: "#3d3f41"
       sidebar-selected-background-color: "#eef2f4"
-      sidebar-selected-icon-color: "#c2185b"
-      sidebar-selected-text-color: "#c2185b"
+      sidebar-selected-icon-color: "#be1859"
+      sidebar-selected-text-color: "#be1859"
       sidebar-divider-color: "#c9ced1"
       sidebar-badge-text-color: "#ffffff"
 
@@ -1631,9 +1759,9 @@ Nova Berry Sky:
       input-label-ink-color: "#3d3f41"
       input-disabled-ink-color: "#65686a"
       input-idle-line-color: "#c9ced1"
-      input-hover-line-color: "#c2185b"
+      input-hover-line-color: "#be1859"
       input-outlined-idle-border-color: "#c9ced1"
-      input-outlined-hover-border-color: "#c2185b"
+      input-outlined-hover-border-color: "#be1859"
       input-outlined-disabled-border-color: "#c9ced1"
       input-dropdown-icon-color: "#3d3f41"
 
@@ -1644,16 +1772,16 @@ Nova Berry Sky:
       ha-color-text-primary: "#1b1d1e"
       ha-color-text-secondary: "#3d3f41"
       ha-color-text-disabled: "#65686a"
-      ha-color-text-link: "#c2185b"
-      ha-color-focus: "#c2185b"
+      ha-color-text-link: "#be1859"
+      ha-color-focus: "#be1859"
       ha-color-fill-primary-loud-resting: "#c2185b"
       ha-color-fill-primary-loud-hover: "#a7154e"            # derived: accent, towards contrast
       ha-color-fill-primary-loud-active: "#931245"           # derived: accent, towards contrast
       ha-color-on-primary-loud: "#ffffff"
       ha-color-fill-primary-normal-resting: "#ddbdce"        # derived: surface and accent
-      ha-color-on-primary-normal: "#c2185b"
+      ha-color-on-primary-normal: "#be1859"
       ha-color-fill-primary-quiet-resting: "#e2d6df"         # derived: surface and accent
-      ha-color-on-primary-quiet: "#c2185b"
+      ha-color-on-primary-quiet: "#be1859"
       ha-color-border-primary-normal: "#c2185b"
       ha-color-fill-neutral-quiet-resting: "#dde3e6"         # derived: surface, towards text
       ha-color-fill-neutral-quiet-hover: "#eef2f4"
@@ -1676,7 +1804,7 @@ Nova Berry Sky:
       slider-secondary-color: "#c9ced1"
       slider-bar-color: "#c2185b"                            # accent, stepped to 3:1
       mdc-theme-primary: "#c2185b"
-      mdc-theme-secondary: "#c2185b"
+      mdc-theme-secondary: "#be1859"
       mdc-theme-surface: "#e5ebee"
       mdc-theme-background: "#becdd8"
       mdc-theme-on-primary: "#ffffff"
@@ -1685,8 +1813,8 @@ Nova Berry Sky:
 
       # === State and semantic colours ===
       state-icon-color: "#3d3f41"
-      state-icon-active-color: "#c2185b"
-      state-active-color: "#c2185b"
+      state-icon-active-color: "#be1859"
+      state-active-color: "#be1859"
       state-inactive-color: "#65686a"
       state-unavailable-color: "#65686a"
       blue-color: "#235ddd"                                  # climate cool
@@ -1694,7 +1822,7 @@ Nova Berry Sky:
       orange-color: "#7a5200"                                # climate dry
       cyan-color: "#235ddd"                                  # climate fan only
       green-color: "#3f6a1c"                                 # climate auto
-      amber-color: "#c2185b"                                 # climate heat and cool
+      amber-color: "#be1859"                                 # climate heat and cool
       error-color: "#9a3a1d"
       warning-color: "#7a5200"
       success-color: "#3f6a1c"
@@ -1720,7 +1848,7 @@ Nova Berry Sky:
 
       # === RGB variants (opacity-aware components) ===
       rgb-primary-color: "194, 24, 91"                       # ember
-      rgb-accent-color: "194, 24, 91"                        # gold
+      rgb-accent-color: "190, 24, 89"                        # gold
       rgb-primary-background-color: "190, 205, 216"          # bg
       rgb-secondary-background-color: "229, 235, 238"        # surface
       rgb-card-background-color: "229, 235, 238"             # surface
@@ -1768,6 +1896,22 @@ Nova Quantum Ice:
       opacity: .55;
       pointer-events: none;
     }
+    @supports ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+      ha-card {
+        background: linear-gradient(180deg, #ffffff40, #ffffff10), color-mix(in srgb, var(--card-background-color) 72%, transparent);
+        -webkit-backdrop-filter: blur(18px) saturate(1.2);
+        backdrop-filter: blur(18px) saturate(1.2);
+        border: 1px solid #ffffffa6;
+        box-shadow: 0 18px 40px -24px #2c303280, inset 0 1px 0 #ffffffcc;
+      }
+      :host-context(ha-card) ha-card {
+        background: var(--ha-card-background, var(--card-background-color));
+        -webkit-backdrop-filter: none;
+        backdrop-filter: none;
+        border: 0;
+        box-shadow: none;
+      }
+    }
     ha-card:hover {
       border-color: #2457ff70;
       box-shadow: 0 0 18px 1px #2457ff22;
@@ -1777,13 +1921,13 @@ Nova Quantum Ice:
     light:
       # === Core palette ===
       primary-color: "#2457ff"                               # accent seed
-      accent-color: "#2355fa"                                # accent as text
+      accent-color: "#2252f0"                                # accent as text
       dark-primary-color: "#1d46cc"                          # derived: accent, darkened
       light-primary-color: "#6689ff"                         # derived: accent, lightened
       primary-background-color: "#bdd2d8"                    # page
       secondary-background-color: "#e5ecef"                  # surface
       divider-color: "#c9cfd1"                               # line-soft
-      lovelace-background: "radial-gradient(1100px 700px at 46% 0%,#ffffffb3,transparent 62%),radial-gradient(800px 600px at 92% 100%,#8f9ea3a6,transparent 70%),linear-gradient(160deg,#d1e7ee 0%,#bdd2d8 55%,#a8bbc1 100%)"  # page gradient
+      lovelace-background: "radial-gradient(900px 620px at 14% 8%,#2457ff33,transparent 62%),radial-gradient(760px 540px at 88% 18%,#245bf238,transparent 60%),radial-gradient(1100px 700px at 46% 0%,#ffffffb3,transparent 62%),radial-gradient(800px 600px at 92% 100%,#8f9ea3a6,transparent 70%),linear-gradient(160deg,#d1e7ee 0%,#bdd2d8 55%,#a8bbc1 100%)"  # page gradient with ambient glow
       primary-text-color: "#1b1e1f"                          # ink
       secondary-text-color: "#3d4041"                        # ink-dim
       disabled-text-color: "#65696a"                         # ink-faint
@@ -1794,8 +1938,8 @@ Nova Quantum Ice:
       sidebar-text-color: "#3d4041"
       sidebar-icon-color: "#3d4041"
       sidebar-selected-background-color: "#eef3f4"
-      sidebar-selected-icon-color: "#2355fa"
-      sidebar-selected-text-color: "#2355fa"
+      sidebar-selected-icon-color: "#2252f0"
+      sidebar-selected-text-color: "#2252f0"
       sidebar-divider-color: "#c9cfd1"
       sidebar-badge-text-color: "#ffffff"
 
@@ -1820,9 +1964,9 @@ Nova Quantum Ice:
       input-label-ink-color: "#3d4041"
       input-disabled-ink-color: "#65696a"
       input-idle-line-color: "#c9cfd1"
-      input-hover-line-color: "#2355fa"
+      input-hover-line-color: "#2252f0"
       input-outlined-idle-border-color: "#c9cfd1"
-      input-outlined-hover-border-color: "#2355fa"
+      input-outlined-hover-border-color: "#2252f0"
       input-outlined-disabled-border-color: "#c9cfd1"
       input-dropdown-icon-color: "#3d4041"
 
@@ -1833,16 +1977,16 @@ Nova Quantum Ice:
       ha-color-text-primary: "#1b1e1f"
       ha-color-text-secondary: "#3d4041"
       ha-color-text-disabled: "#65696a"
-      ha-color-text-link: "#2355fa"
-      ha-color-focus: "#2355fa"
+      ha-color-text-link: "#2252f0"
+      ha-color-focus: "#2252f0"
       ha-color-fill-primary-loud-resting: "#2457ff"
       ha-color-fill-primary-loud-hover: "#1f4bdb"            # derived: accent, towards contrast
       ha-color-fill-primary-loud-active: "#1b42c2"           # derived: accent, towards contrast
       ha-color-on-primary-loud: "#ffffff"
       ha-color-fill-primary-normal-resting: "#bbcbf3"        # derived: surface and accent
-      ha-color-on-primary-normal: "#2355fa"
+      ha-color-on-primary-normal: "#2252f0"
       ha-color-fill-primary-quiet-resting: "#d2ddf1"         # derived: surface and accent
-      ha-color-on-primary-quiet: "#2355fa"
+      ha-color-on-primary-quiet: "#2252f0"
       ha-color-border-primary-normal: "#2457ff"
       ha-color-fill-neutral-quiet-resting: "#dde4e7"         # derived: surface, towards text
       ha-color-fill-neutral-quiet-hover: "#eef3f4"
@@ -1865,7 +2009,7 @@ Nova Quantum Ice:
       slider-secondary-color: "#c9cfd1"
       slider-bar-color: "#2457ff"                            # accent, stepped to 3:1
       mdc-theme-primary: "#2457ff"
-      mdc-theme-secondary: "#2355fa"
+      mdc-theme-secondary: "#2252f0"
       mdc-theme-surface: "#e5ecef"
       mdc-theme-background: "#bdd2d8"
       mdc-theme-on-primary: "#ffffff"
@@ -1874,8 +2018,8 @@ Nova Quantum Ice:
 
       # === State and semantic colours ===
       state-icon-color: "#3d4041"
-      state-icon-active-color: "#2355fa"
-      state-active-color: "#2355fa"
+      state-icon-active-color: "#2252f0"
+      state-active-color: "#2252f0"
       state-inactive-color: "#65696a"
       state-unavailable-color: "#65696a"
       blue-color: "#245fe2"                                  # climate cool
@@ -1883,7 +2027,7 @@ Nova Quantum Ice:
       orange-color: "#7a5200"                                # climate dry
       cyan-color: "#245fe2"                                  # climate fan only
       green-color: "#3f6a1c"                                 # climate auto
-      amber-color: "#2355fa"                                 # climate heat and cool
+      amber-color: "#2252f0"                                 # climate heat and cool
       error-color: "#9a3a1d"
       warning-color: "#7a5200"
       success-color: "#3f6a1c"
@@ -1909,7 +2053,7 @@ Nova Quantum Ice:
 
       # === RGB variants (opacity-aware components) ===
       rgb-primary-color: "36, 87, 255"                       # ember
-      rgb-accent-color: "35, 85, 250"                        # gold
+      rgb-accent-color: "34, 82, 240"                        # gold
       rgb-primary-background-color: "189, 210, 216"          # bg
       rgb-secondary-background-color: "229, 236, 239"        # surface
       rgb-card-background-color: "229, 236, 239"             # surface
@@ -1957,6 +2101,22 @@ Nova Pine Mist:
       opacity: .55;
       pointer-events: none;
     }
+    @supports ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+      ha-card {
+        background: linear-gradient(180deg, #ffffff40, #ffffff10), color-mix(in srgb, var(--card-background-color) 72%, transparent);
+        -webkit-backdrop-filter: blur(18px) saturate(1.2);
+        backdrop-filter: blur(18px) saturate(1.2);
+        border: 1px solid #ffffffa6;
+        box-shadow: 0 18px 40px -24px #2b2f2c80, inset 0 1px 0 #ffffffcc;
+      }
+      :host-context(ha-card) ha-card {
+        background: var(--ha-card-background, var(--card-background-color));
+        -webkit-backdrop-filter: none;
+        backdrop-filter: none;
+        border: 0;
+        box-shadow: none;
+      }
+    }
     ha-card:hover {
       border-color: #23534770;
       box-shadow: 0 0 18px 1px #23534722;
@@ -1972,7 +2132,7 @@ Nova Pine Mist:
       primary-background-color: "#afc2b2"                    # page
       secondary-background-color: "#dfe6e0"                  # surface
       divider-color: "#c4cac5"                               # line-soft
-      lovelace-background: "radial-gradient(1100px 700px at 46% 0%,#ffffffb3,transparent 62%),radial-gradient(800px 600px at 92% 100%,#8c9a8ea6,transparent 70%),linear-gradient(160deg,#c8ddcb 0%,#afc2b2 55%,#95a497 100%)"  # page gradient
+      lovelace-background: "radial-gradient(900px 620px at 14% 8%,#23534733,transparent 62%),radial-gradient(760px 540px at 88% 18%,#23578838,transparent 60%),radial-gradient(1100px 700px at 46% 0%,#ffffffb3,transparent 62%),radial-gradient(800px 600px at 92% 100%,#8c9a8ea6,transparent 70%),linear-gradient(160deg,#c8ddcb 0%,#afc2b2 55%,#95a497 100%)"  # page gradient with ambient glow
       primary-text-color: "#1a1d1b"                          # ink
       secondary-text-color: "#3b3e3c"                        # ink-dim
       disabled-text-color: "#626562"                         # ink-faint
@@ -2146,6 +2306,22 @@ Nova Ember:
       opacity: .55;
       pointer-events: none;
     }
+    @supports ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+      ha-card {
+        background: linear-gradient(180deg, #ffffff40, #ffffff10), color-mix(in srgb, var(--card-background-color) 72%, transparent);
+        -webkit-backdrop-filter: blur(18px) saturate(1.2);
+        backdrop-filter: blur(18px) saturate(1.2);
+        border: 1px solid #ffffffa6;
+        box-shadow: 0 18px 40px -24px #32313080, inset 0 1px 0 #ffffffcc;
+      }
+      :host-context(ha-card) ha-card {
+        background: var(--ha-card-background, var(--card-background-color));
+        -webkit-backdrop-filter: none;
+        backdrop-filter: none;
+        border: 0;
+        box-shadow: none;
+      }
+    }
     ha-card:hover {
       border-color: #ff611570;
       box-shadow: 0 0 18px 1px #ff611522;
@@ -2155,13 +2331,13 @@ Nova Ember:
     light:
       # === Core palette ===
       primary-color: "#ff6115"                               # accent seed
-      accent-color: "#b8460f"                                # accent as text
+      accent-color: "#b1430e"                                # accent as text
       dark-primary-color: "#cc4e11"                          # derived: accent, darkened
       light-primary-color: "#ff905b"                         # derived: accent, lightened
       primary-background-color: "#d8d6cf"                    # page
       secondary-background-color: "#efeeeb"                  # surface
       divider-color: "#d1d1ce"                               # line-soft
-      lovelace-background: "radial-gradient(1100px 700px at 46% 0%,#ffffffb3,transparent 62%),radial-gradient(800px 600px at 92% 100%,#a3a19ca6,transparent 70%),linear-gradient(160deg,#eeece4 0%,#d8d6cf 55%,#c1beb8 100%)"  # page gradient
+      lovelace-background: "radial-gradient(900px 620px at 14% 8%,#ff611533,transparent 62%),radial-gradient(760px 540px at 88% 18%,#9c607138,transparent 60%),radial-gradient(1100px 700px at 46% 0%,#ffffffb3,transparent 62%),radial-gradient(800px 600px at 92% 100%,#a3a19ca6,transparent 70%),linear-gradient(160deg,#eeece4 0%,#d8d6cf 55%,#c1beb8 100%)"  # page gradient with ambient glow
       primary-text-color: "#1f1e1d"                          # ink
       secondary-text-color: "#41403f"                        # ink-dim
       disabled-text-color: "#6a6968"                         # ink-faint
@@ -2172,8 +2348,8 @@ Nova Ember:
       sidebar-text-color: "#41403f"
       sidebar-icon-color: "#41403f"
       sidebar-selected-background-color: "#f4f4f2"
-      sidebar-selected-icon-color: "#b8460f"
-      sidebar-selected-text-color: "#b8460f"
+      sidebar-selected-icon-color: "#b1430e"
+      sidebar-selected-text-color: "#b1430e"
       sidebar-divider-color: "#d1d1ce"
       sidebar-badge-text-color: "#260f03"
 
@@ -2198,9 +2374,9 @@ Nova Ember:
       input-label-ink-color: "#41403f"
       input-disabled-ink-color: "#6a6968"
       input-idle-line-color: "#d1d1ce"
-      input-hover-line-color: "#b8460f"
+      input-hover-line-color: "#b1430e"
       input-outlined-idle-border-color: "#d1d1ce"
-      input-outlined-hover-border-color: "#b8460f"
+      input-outlined-hover-border-color: "#b1430e"
       input-outlined-disabled-border-color: "#d1d1ce"
       input-dropdown-icon-color: "#41403f"
 
@@ -2211,16 +2387,16 @@ Nova Ember:
       ha-color-text-primary: "#1f1e1d"
       ha-color-text-secondary: "#41403f"
       ha-color-text-disabled: "#6a6968"
-      ha-color-text-link: "#b8460f"
-      ha-color-focus: "#b8460f"
+      ha-color-text-link: "#b1430e"
+      ha-color-focus: "#b1430e"
       ha-color-fill-primary-loud-resting: "#ff6115"
       ha-color-fill-primary-loud-hover: "#db5312"            # derived: accent, towards contrast
       ha-color-fill-primary-loud-active: "#c24a10"           # derived: accent, towards contrast
       ha-color-on-primary-loud: "#260f03"
       ha-color-fill-primary-normal-resting: "#f3cfbc"        # derived: surface and accent
-      ha-color-on-primary-normal: "#b8460f"
+      ha-color-on-primary-normal: "#b1430e"
       ha-color-fill-primary-quiet-resting: "#f1e0d6"         # derived: surface and accent
-      ha-color-on-primary-quiet: "#b8460f"
+      ha-color-on-primary-quiet: "#b1430e"
       ha-color-border-primary-normal: "#ff6115"
       ha-color-fill-neutral-quiet-resting: "#e7e6e3"         # derived: surface, towards text
       ha-color-fill-neutral-quiet-hover: "#f4f4f2"
@@ -2243,7 +2419,7 @@ Nova Ember:
       slider-secondary-color: "#d1d1ce"
       slider-bar-color: "#eb5913"                            # accent, stepped to 3:1
       mdc-theme-primary: "#ff6115"
-      mdc-theme-secondary: "#b8460f"
+      mdc-theme-secondary: "#b1430e"
       mdc-theme-surface: "#efeeeb"
       mdc-theme-background: "#d8d6cf"
       mdc-theme-on-primary: "#260f03"
@@ -2252,8 +2428,8 @@ Nova Ember:
 
       # === State and semantic colours ===
       state-icon-color: "#41403f"
-      state-icon-active-color: "#b8460f"
-      state-active-color: "#b8460f"
+      state-icon-active-color: "#b1430e"
+      state-active-color: "#b1430e"
       state-inactive-color: "#6a6968"
       state-unavailable-color: "#6a6968"
       blue-color: "#245fe2"                                  # climate cool
@@ -2261,7 +2437,7 @@ Nova Ember:
       orange-color: "#7a5200"                                # climate dry
       cyan-color: "#245fe2"                                  # climate fan only
       green-color: "#3f6a1c"                                 # climate auto
-      amber-color: "#b8460f"                                 # climate heat and cool
+      amber-color: "#b1430e"                                 # climate heat and cool
       error-color: "#9a3a1d"
       warning-color: "#7a5200"
       success-color: "#3f6a1c"
@@ -2287,7 +2463,7 @@ Nova Ember:
 
       # === RGB variants (opacity-aware components) ===
       rgb-primary-color: "255, 97, 21"                       # ember
-      rgb-accent-color: "184, 70, 15"                        # gold
+      rgb-accent-color: "177, 67, 14"                        # gold
       rgb-primary-background-color: "216, 214, 207"          # bg
       rgb-secondary-background-color: "239, 238, 235"        # surface
       rgb-card-background-color: "239, 238, 235"             # surface
