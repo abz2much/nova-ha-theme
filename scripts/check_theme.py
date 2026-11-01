@@ -62,6 +62,8 @@ GRAPHIC_PAIRS = [(k, "card-background-color") for k in (
     "energy-solar-color", "energy-grid-consumption-color", "energy-battery-out-color",
     "switch-checked-color", "slider-color", "slider-bar-color")]
 
+GLASS_THEMES = {"Nova Deep Teal", "Nova"}
+
 HEX = re.compile(r"^#[0-9a-fA-F]{6}$")
 
 
@@ -143,6 +145,20 @@ def main():
                 r = contrast(a, b)
                 if r < 3:
                     errors.append(f"{name}: {fg} on {bg} is {r:.2f}:1 (needs 3)")
+
+    # Glass cards: only Deep Teal (and its alias) have them for now. The glass needs an
+    # ambient background to sit over, a fallback, and a reset for nested cards.
+    for name, theme in data.items():
+        mode_vals = mode_block(theme)
+        css = theme.get("card-mod-card", "")
+        if name in GLASS_THEMES:
+            if mode_vals.get("lovelace-background", "").count("radial-gradient") < 3:
+                errors.append(f"{name}: lovelace-background needs the ambient glow (3 radial gradients)")
+            for needle in ("backdrop-filter", "@supports", ":host-context(ha-card) ha-card"):
+                if needle not in css:
+                    errors.append(f"{name}: card-mod-card is missing {needle}")
+        elif "backdrop-filter" in css:
+            errors.append(f"{name}: glass is not enabled for this theme yet")
 
     # "Nova" is an alias of Deep Teal, so dashboards and profiles that still name
     # the old single theme keep working.
