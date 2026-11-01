@@ -1,18 +1,49 @@
-# Nova theme for Home Assistant
+# Nova themes for Home Assistant
 
-![Nova theme](screenshot.png)
+Twelve Home Assistant frontend themes that match [Nova](https://github.com/abz2much/NOVA)'s own
+panel. Pick the one you like from your profile, just as you pick a theme in Nova's settings.
 
-A dark Home Assistant frontend theme built from [Nova](https://github.com/abz2much/NOVA)'s
-own "stellar core" visual identity — ember (`#e2542f`) and gold (`#f4b860`) accents on warm
-dark surfaces, in place of the default HA blue. Every color in `themes/nova.yaml` is pulled
-directly from the CSS custom properties in Nova's own panel
-(`custom_components/nova/frontend/nova-panel-new.js`), not reinterpreted.
+Each theme is built from two seed colours, a base and an accent, by the same colour maths the Nova
+panel uses. Text, surfaces, borders and status colours are worked out from those two colours, and
+every text colour reaches 4.5:1 contrast on the card it sits on.
 
-Dark-only, on purpose — Nova's own panel has no light variant, so this theme doesn't invent one.
+| Dark | Light |
+|---|---|
+| Nova Deep Teal (Nova's default) | Nova Classic |
+| Nova Midnight Signal | Nova Violet Mist |
+| Nova Plum Dusk | Nova Berry Sky |
+| Nova Cocoa Bark | Nova Quantum Ice |
+| Nova Forest Mint | Nova Pine Mist |
+| Nova Slate Harbour | Nova Ember |
 
-This repo installs only Nova. It's one of several themes developed together in a local
-workspace — see [abz2much](https://github.com/abz2much?tab=repositories&q=ha-theme) for others
-as they're published, each as its own repo so you only install what you actually want.
+There is also **Nova Deep Teal Compact**: the same colours with tighter spacing, smaller type and
+smaller corners, for wall tablets.
+
+Dark themes are dark only and light themes are light only. Your profile's light and dark setting
+does not change them.
+
+## Upgrading from the single Nova theme
+
+Earlier versions shipped one theme called **Nova** (ember and gold). It no longer exists: this
+release replaces it with the twelve themes above. After updating, pick a new theme from your
+profile, because your old choice will fall back to the default.
+
+## What you get
+
+- Fraunces headings and Manrope body text, with IBM Plex Mono for values and code.
+- Rounder corners and a consistent shape across cards and dialogs.
+- Energy dashboard colours for solar, grid and battery. In light themes they are darkened so they
+  stay visible on light cards.
+- Readable card editors: text fields and dropdowns follow the theme instead of showing white fields.
+- Matching sidebar, header, dialogs, switches, sliders, badges and tables.
+
+## Requirements
+
+- A recent Home Assistant. The theme uses the newer `ha-font-*`, `ha-border-radius-*` and
+  `ha-color-*` tokens, checked against Home Assistant frontend release 20260930.5. On an older
+  release some of them are ignored.
+- The Google Fonts resource below, for the fonts.
+- card-mod is optional. See the last section.
 
 ## Install via HACS
 
@@ -20,7 +51,7 @@ as they're published, each as its own repo so you only install what you actually
 2. Add this repository's URL, category **Theme**.
 3. Install **Nova**, then restart Home Assistant (or reload themes from
    **Developer Tools → YAML → Themes**).
-4. Set the theme from your user profile (bottom-left avatar → **Theme**).
+4. Pick a theme from your user profile (bottom-left avatar → **Theme**).
 
 ## Install manually
 
@@ -30,59 +61,43 @@ as they're published, each as its own repo so you only install what you actually
    frontend:
      themes: !include_dir_merge_named themes
    ```
-3. Restart Home Assistant, then set **Nova** as your theme from your user profile.
+3. Reload themes from **Developer Tools → YAML → Themes**, then pick a theme from your profile.
 
 ## Fonts
 
-The theme uses **Manrope** for body text and **IBM Plex Mono** for anything
-data-shaped (state values, timestamps). Home Assistant themes can't load web
-fonts on their own — add this as a dashboard resource so the fonts are
-actually fetched, or the theme silently falls back to your system sans-serif:
+Home Assistant themes cannot load web fonts on their own. Add this as a dashboard resource, or the
+theme falls back to your system fonts:
 
 **Settings → Dashboards → ⋮ → Resources → Add Resource**
-- URL: `https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap`
+- URL: `https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,500;9..144,600&family=IBM+Plex+Mono:wght@400;500;600&display=swap`
 - Resource type: **CSS Stylesheet**
 
 Or, in YAML-mode dashboards:
 ```yaml
 lovelace:
   resources:
-    - url: https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap
+    - url: https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,500;9..144,600&family=IBM+Plex+Mono:wght@400;500;600&display=swap
       type: css
 ```
 
-Nova's panel also uses **Fraunces** for large display headings, but Home
-Assistant's theme variables don't expose a separate heading-font hook — there's
-nowhere in core HA's CSS for it to attach to, so it's left out rather than
-forced in somewhere it wouldn't read correctly.
+## Optional card-mod accents
 
-## Background and card-mod accents
+Each theme carries a small card-mod section: a thin accent stripe along the top of every card and
+a soft glow on hover. It only does anything if you have the
+[card-mod](https://github.com/thomasloven/lovelace-card-mod) HACS integration (or its successor,
+UIX) installed. Without it, Home Assistant ignores those keys and nothing else changes.
 
-The theme sets `lovelace-background`, a soft ember radial glow behind the
-whole dashboard (the same treatment as the hero in Nova's own panel,
-generalized across the page) — this needs nothing extra, it's a plain theme
-variable.
+card-mod keys are not checked by Home Assistant, so a mistake there fails silently. If the stripe
+does not show, check card-mod's own inspector before blaming the theme.
 
-It also carries a small optional **card-mod** section: a thin cool-to-ember
-accent stripe across the top of every card, and a soft ember glow on hover.
-This only does anything if you have the [card-mod](https://github.com/thomasloven/lovelace-card-mod)
-HACS integration installed — if you don't, Home Assistant just ignores those
-extra theme keys. Unlike the rest of this theme, card-mod styling isn't
-validated by Home Assistant at load time (card-mod is a separate integration
-reading its own keys out of the theme), so a mistake there fails silently
-rather than erroring — if it doesn't look right, it's worth checking with
-card-mod's own inspector rather than assuming the theme itself is broken.
+## For maintainers
 
-## Scope and upkeep
+`themes/nova.yaml` is generated. Do not edit it by hand.
 
-This covers Home Assistant's stable, long-standing theme variable surface —
-core colors, sidebar, header, cards, dialogs, sliders/switches, state and
-semantic colors, label badges, tables, and fonts. HA occasionally adds new
-theme variables in newer frontend releases; if something in a very recent HA
-version doesn't pick up the theme, it's likely a variable added after this
-was written rather than a bug in the palette itself.
+```sh
+node scripts/generate-theme.mjs     # writes themes/nova.yaml from the 12 seed colours
+python3 scripts/check_theme.py      # needs PyYAML; checks themes, tokens and contrast
+```
 
-If Nova's own panel palette changes in the future, update the token comments
-in `themes/nova.yaml` against the current `:host{...}` block in
-`custom_components/nova/frontend/nova-panel-new.js` and carry the new values
-through — every themed value traces back to that one source.
+The seed colours and the colour maths live in `scripts/nova-colours.mjs`, copied from Nova's
+panel. If Nova's themes change, copy them again, then run the two commands above.
