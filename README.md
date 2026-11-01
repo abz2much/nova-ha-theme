@@ -30,7 +30,7 @@ profile, because your old choice will fall back to the default.
 
 ## What you get
 
-- Fraunces headings and Manrope body text, with IBM Plex Mono for values and code.
+- Fraunces card titles and Manrope body text, with IBM Plex Mono for values and code.
 - Rounder corners and a consistent shape across cards and dialogs.
 - Energy dashboard colours for solar, grid and battery. In light themes they are darkened so they
   stay visible on light cards.
@@ -79,6 +79,13 @@ lovelace:
     - url: https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,500;9..144,600&family=IBM+Plex+Mono:wght@400;500;600&display=swap
       type: css
 ```
+
+## Good to know
+
+- **Reload after switching theme.** Home Assistant's sidebar can keep the previous theme's colours
+  until you reload the page. A reload fixes it.
+- **The built-in Home (Overview) page ignores dashboard resources.** The fonts and the card-mod
+  stripe show on classic dashboards, such as Security and Energy, but not on that page.
 
 ## Optional card-mod accents
 
