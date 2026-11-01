@@ -15,7 +15,7 @@ const SHAPE = {
   compact: { title: "19px", card: "12px", lg: "10px", xl: "14px", scale: "0.92", space: { 2: "6px", 3: "9px", 4: "12px", 5: "15px", 6: "18px" } },
 };
 
-function themeEntries(seed, shape) {
+function themeEntries(seed, shape, glass) {
   const built = themeBuild(seed);
   const k = built.tokens;
   const { hex, toHex, mix, reach, W, K } = built.math;
@@ -36,7 +36,7 @@ function themeEntries(seed, shape) {
       e("primary-background-color", k.bg, "page"),
       e("secondary-background-color", k.surface, "surface"),
       e("divider-color", k["line-soft"], "line-soft"),
-      e("lovelace-background", k.page, "page gradient"),
+      e("lovelace-background", glass ? ambientBackground(seed, k, built.math) : k.page, glass ? "page gradient with ambient glow" : "page gradient"),
       e("primary-text-color", k.ink, "ink"),
       e("secondary-text-color", k["ink-dim"], "ink-dim"),
       e("disabled-text-color", k["ink-faint"], "ink-faint"),
@@ -171,7 +171,40 @@ function themeEntries(seed, shape) {
   ].map(([title, list]) => [title, list]);
 }
 
-function cardMod(k) {
+// A page with soft pools of light, so frosted cards have something to sit over.
+function ambientBackground(seed, k, m) {
+  const { hex, toHex, mix, W, K } = m;
+  const A = hex(k.ember), B = hex(seed.base), info = hex(k.info);
+  return [
+    `radial-gradient(900px 620px at 14% 8%,${toHex(A)}38,transparent 62%)`,
+    `radial-gradient(760px 540px at 88% 18%,${toHex(mix(A, info, 0.45))}5c,transparent 60%)`,
+    `radial-gradient(900px 760px at 58% 104%,${toHex(mix(B, A, 0.35))}66,transparent 66%)`,
+    `linear-gradient(160deg,${toHex(mix(B, W, 0.18))} 0%,${toHex(B)} 52%,${toHex(mix(B, K, 0.45))} 100%)`,
+  ].join(",");
+}
+
+// Frosted cards. Outer cards get the glass; cards nested inside a card are reset so they
+// do not get a second border (the reset needs :host-context, which only Chromium has).
+const GLASS_CSS = [
+  "    @supports ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {",
+  "      ha-card {",
+  "        background: linear-gradient(180deg, #ffffff17, #ffffff08), color-mix(in srgb, var(--card-background-color) 46%, transparent);",
+  "        -webkit-backdrop-filter: blur(18px) saturate(1.35);",
+  "        backdrop-filter: blur(18px) saturate(1.35);",
+  "        border: 1px solid #ffffff29;",
+  "        box-shadow: 0 18px 40px -22px #000000cc, inset 0 1px 0 #ffffff24;",
+  "      }",
+  "      :host-context(ha-card) ha-card {",
+  "        background: var(--ha-card-background, var(--card-background-color));",
+  "        -webkit-backdrop-filter: none;",
+  "        backdrop-filter: none;",
+  "        border: 0;",
+  "        box-shadow: none;",
+  "      }",
+  "    }",
+].join("\n");
+
+function cardMod(k, glass) {
   return [
     "    ha-card {",
     "      position: relative;",
@@ -189,6 +222,7 @@ function cardMod(k) {
     "      opacity: .55;",
     "      pointer-events: none;",
     "    }",
+    ...(glass ? [GLASS_CSS] : []),
     "    ha-card:hover {",
     `      border-color: ${k.ember}70;`,
     `      box-shadow: 0 0 18px 1px ${k.ember}22;`,
@@ -199,7 +233,7 @@ function cardMod(k) {
 const q = v => JSON.stringify(String(v));
 const pad = (s, n, comment) => (comment ? s + " ".repeat(Math.max(1, n - s.length)) : s);
 
-function themeYaml(name, seed, shapeName) {
+function themeYaml(name, seed, shapeName, glass = false) {
   const shape = SHAPE[shapeName];
   const k = themeBuild(seed).tokens;
   const mode = seed.style === "light" ? "light" : "dark";
@@ -223,8 +257,8 @@ function themeYaml(name, seed, shapeName) {
   if (shape.space) for (const [n, v] of Object.entries(shape.space)) top(`ha-space-${n}`, v, "compact: tighter spacing");
   lines.push("", "  # card-mod (optional). Needs the card-mod or UIX HACS integration; Home Assistant ignores these keys without it.");
   top("card-mod-theme", name, "must repeat this theme's own name exactly");
-  lines.push("  card-mod-card: |", cardMod(k), "", "  modes:", `    ${mode}:`);
-  for (const [title, list] of themeEntries(seed, shape)) {
+  lines.push("  card-mod-card: |", cardMod(k, glass), "", "  modes:", `    ${mode}:`);
+  for (const [title, list] of themeEntries(seed, shape, glass)) {
     lines.push(`      # === ${title} ===`);
     for (const [key, value, comment] of list) lines.push("      " + pad(`${key}: ${q(value)}`, 54, comment) + (comment ? " # " + comment : ""));
     lines.push("");
@@ -252,9 +286,9 @@ const header = `# Nova: a Home Assistant frontend theme, 12 colour themes from N
 `;
 
 const blocks = [];
-for (const [key, seed] of Object.entries(SEEDS)) blocks.push(themeYaml(`Nova ${seed.label}`, seed, "regular"));
+for (const [key, seed] of Object.entries(SEEDS)) blocks.push(themeYaml(`Nova ${seed.label}`, seed, "regular", key === "deep_teal"));
 blocks.push(themeYaml("Nova Deep Teal Compact", SEEDS.deep_teal, "compact"));
 // "Nova" was the old single theme. Keep the name as Deep Teal so dashboards and profiles that use it keep working.
-blocks.push(themeYaml("Nova", SEEDS.deep_teal, "regular"));
+blocks.push(themeYaml("Nova", SEEDS.deep_teal, "regular", true));
 writeFileSync(OUT, header + "\n" + blocks.join("\n"));
 console.log(`wrote ${blocks.length} themes to themes/nova.yaml`);
