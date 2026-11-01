@@ -29,7 +29,7 @@ REQUIRED = [
     "text-primary-color", "divider-color", "lovelace-background",
     # idea 1 and 2: fonts, shape
     "ha-font-family-body", "ha-font-family-heading", "ha-font-family-code",
-    "ha-font-weight-heading", "ha-card-border-radius", "ha-border-radius-lg", "ha-border-radius-xl",
+    "ha-font-weight-heading", "ha-card-header-font-family", "ha-card-header-font-size", "ha-card-border-radius", "ha-border-radius-lg", "ha-border-radius-xl",
     # idea 4: energy colours
     "energy-solar-color", "energy-grid-consumption-color", "energy-grid-return-color",
     "energy-battery-in-color", "energy-battery-out-color",
@@ -81,6 +81,10 @@ def mode_block(theme):
     return modes.get("dark") or modes.get("light") or {}
 
 
+def get_top(theme, block, key):
+    return block.get(key, theme.get(key))
+
+
 def main():
     errors = []
     if not THEME_FILE.exists():
@@ -120,6 +124,8 @@ def main():
         if other in modes:
             errors.append(f"{name}: must be {want}-only, but declares `{other}`")
         block = modes.get(want) or {}
+        if get_top(theme, block, "ha-card-header-font-family") != get_top(theme, block, "ha-font-family-heading"):
+            errors.append(f"{name}: card titles must use the heading font (ha-card-header-font-family)")
         for tok in REQUIRED:
             if tok not in block and tok not in theme:
                 errors.append(f"{name}: missing token {tok}")

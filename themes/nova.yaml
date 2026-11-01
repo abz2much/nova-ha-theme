@@ -24,6 +24,8 @@ Nova Deep Teal:
   ha-font-family-heading: "'Fraunces', Georgia, serif"  # Fraunces, as the panel's headings
   ha-font-family-code: "'IBM Plex Mono', 'SF Mono', monospace"
   ha-font-weight-heading: "600"
+  ha-card-header-font-family: "'Fraunces', Georgia, serif"  # card titles in Fraunces, no card-mod needed
+  ha-card-header-font-size: "22px"               # card title size
   ha-font-weight-action: "600"
   ha-card-border-radius: "16px"
   ha-card-border-width: "1px"
@@ -211,6 +213,8 @@ Nova Midnight Signal:
   ha-font-family-heading: "'Fraunces', Georgia, serif"  # Fraunces, as the panel's headings
   ha-font-family-code: "'IBM Plex Mono', 'SF Mono', monospace"
   ha-font-weight-heading: "600"
+  ha-card-header-font-family: "'Fraunces', Georgia, serif"  # card titles in Fraunces, no card-mod needed
+  ha-card-header-font-size: "22px"               # card title size
   ha-font-weight-action: "600"
   ha-card-border-radius: "16px"
   ha-card-border-width: "1px"
@@ -398,6 +402,8 @@ Nova Plum Dusk:
   ha-font-family-heading: "'Fraunces', Georgia, serif"  # Fraunces, as the panel's headings
   ha-font-family-code: "'IBM Plex Mono', 'SF Mono', monospace"
   ha-font-weight-heading: "600"
+  ha-card-header-font-family: "'Fraunces', Georgia, serif"  # card titles in Fraunces, no card-mod needed
+  ha-card-header-font-size: "22px"               # card title size
   ha-font-weight-action: "600"
   ha-card-border-radius: "16px"
   ha-card-border-width: "1px"
@@ -585,6 +591,8 @@ Nova Cocoa Bark:
   ha-font-family-heading: "'Fraunces', Georgia, serif"  # Fraunces, as the panel's headings
   ha-font-family-code: "'IBM Plex Mono', 'SF Mono', monospace"
   ha-font-weight-heading: "600"
+  ha-card-header-font-family: "'Fraunces', Georgia, serif"  # card titles in Fraunces, no card-mod needed
+  ha-card-header-font-size: "22px"               # card title size
   ha-font-weight-action: "600"
   ha-card-border-radius: "16px"
   ha-card-border-width: "1px"
@@ -772,6 +780,8 @@ Nova Forest Mint:
   ha-font-family-heading: "'Fraunces', Georgia, serif"  # Fraunces, as the panel's headings
   ha-font-family-code: "'IBM Plex Mono', 'SF Mono', monospace"
   ha-font-weight-heading: "600"
+  ha-card-header-font-family: "'Fraunces', Georgia, serif"  # card titles in Fraunces, no card-mod needed
+  ha-card-header-font-size: "22px"               # card title size
   ha-font-weight-action: "600"
   ha-card-border-radius: "16px"
   ha-card-border-width: "1px"
@@ -959,6 +969,8 @@ Nova Slate Harbour:
   ha-font-family-heading: "'Fraunces', Georgia, serif"  # Fraunces, as the panel's headings
   ha-font-family-code: "'IBM Plex Mono', 'SF Mono', monospace"
   ha-font-weight-heading: "600"
+  ha-card-header-font-family: "'Fraunces', Georgia, serif"  # card titles in Fraunces, no card-mod needed
+  ha-card-header-font-size: "22px"               # card title size
   ha-font-weight-action: "600"
   ha-card-border-radius: "16px"
   ha-card-border-width: "1px"
@@ -1146,6 +1158,8 @@ Nova Classic:
   ha-font-family-heading: "'Fraunces', Georgia, serif"  # Fraunces, as the panel's headings
   ha-font-family-code: "'IBM Plex Mono', 'SF Mono', monospace"
   ha-font-weight-heading: "600"
+  ha-card-header-font-family: "'Fraunces', Georgia, serif"  # card titles in Fraunces, no card-mod needed
+  ha-card-header-font-size: "22px"               # card title size
   ha-font-weight-action: "600"
   ha-card-border-radius: "16px"
   ha-card-border-width: "1px"
@@ -1333,6 +1347,8 @@ Nova Violet Mist:
   ha-font-family-heading: "'Fraunces', Georgia, serif"  # Fraunces, as the panel's headings
   ha-font-family-code: "'IBM Plex Mono', 'SF Mono', monospace"
   ha-font-weight-heading: "600"
+  ha-card-header-font-family: "'Fraunces', Georgia, serif"  # card titles in Fraunces, no card-mod needed
+  ha-card-header-font-size: "22px"               # card title size
   ha-font-weight-action: "600"
   ha-card-border-radius: "16px"
   ha-card-border-width: "1px"
@@ -1520,6 +1536,8 @@ Nova Berry Sky:
   ha-font-family-heading: "'Fraunces', Georgia, serif"  # Fraunces, as the panel's headings
   ha-font-family-code: "'IBM Plex Mono', 'SF Mono', monospace"
   ha-font-weight-heading: "600"
+  ha-card-header-font-family: "'Fraunces', Georgia, serif"  # card titles in Fraunces, no card-mod needed
+  ha-card-header-font-size: "22px"               # card title size
   ha-font-weight-action: "600"
   ha-card-border-radius: "16px"
   ha-card-border-width: "1px"
@@ -1707,6 +1725,8 @@ Nova Quantum Ice:
   ha-font-family-heading: "'Fraunces', Georgia, serif"  # Fraunces, as the panel's headings
   ha-font-family-code: "'IBM Plex Mono', 'SF Mono', monospace"
   ha-font-weight-heading: "600"
+  ha-card-header-font-family: "'Fraunces', Georgia, serif"  # card titles in Fraunces, no card-mod needed
+  ha-card-header-font-size: "22px"               # card title size
   ha-font-weight-action: "600"
   ha-card-border-radius: "16px"
   ha-card-border-width: "1px"
@@ -1894,6 +1914,8 @@ Nova Pine Mist:
   ha-font-family-heading: "'Fraunces', Georgia, serif"  # Fraunces, as the panel's headings
   ha-font-family-code: "'IBM Plex Mono', 'SF Mono', monospace"
   ha-font-weight-heading: "600"
+  ha-card-header-font-family: "'Fraunces', Georgia, serif"  # card titles in Fraunces, no card-mod needed
+  ha-card-header-font-size: "22px"               # card title size
   ha-font-weight-action: "600"
   ha-card-border-radius: "16px"
   ha-card-border-width: "1px"
@@ -2081,6 +2103,8 @@ Nova Ember:
   ha-font-family-heading: "'Fraunces', Georgia, serif"  # Fraunces, as the panel's headings
   ha-font-family-code: "'IBM Plex Mono', 'SF Mono', monospace"
   ha-font-weight-heading: "600"
+  ha-card-header-font-family: "'Fraunces', Georgia, serif"  # card titles in Fraunces, no card-mod needed
+  ha-card-header-font-size: "22px"               # card title size
   ha-font-weight-action: "600"
   ha-card-border-radius: "16px"
   ha-card-border-width: "1px"
@@ -2268,6 +2292,8 @@ Nova Deep Teal Compact:
   ha-font-family-heading: "'Fraunces', Georgia, serif"  # Fraunces, as the panel's headings
   ha-font-family-code: "'IBM Plex Mono', 'SF Mono', monospace"
   ha-font-weight-heading: "600"
+  ha-card-header-font-family: "'Fraunces', Georgia, serif"  # card titles in Fraunces, no card-mod needed
+  ha-card-header-font-size: "19px"               # card title size
   ha-font-weight-action: "600"
   ha-font-size-scale: "0.92"                     # compact: smaller type
   ha-card-border-radius: "12px"
