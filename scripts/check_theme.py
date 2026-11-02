@@ -153,7 +153,10 @@ def main():
         mode_vals = mode_block(theme)
         css = theme.get("card-mod-card", "")
         if name in GLASS_THEMES:
-            if mode_vals.get("lovelace-background", "").count("radial-gradient") < 3:
+            bgv = mode_vals.get("lovelace-background", "")
+            if len(re.findall(r"radial-gradient\(ellipse \d+% \d+% at", bgv)) < 2:
+                errors.append(f"{name}: the lit background must scale with the screen (percentage ellipses)")
+            if bgv.count("radial-gradient") < 3:
                 errors.append(f"{name}: lovelace-background needs the ambient glow (3 radial gradients)")
             for needle in ("backdrop-filter", "@supports", ":host-context(ha-card) ha-card"):
                 if needle not in css:

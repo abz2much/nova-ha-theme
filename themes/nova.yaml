@@ -126,7 +126,7 @@ Nova Deep Teal:
       primary-background-color: "#03313a"                    # page
       secondary-background-color: "#0f373f"                  # surface
       divider-color: "#3b5e65"                               # line-soft
-      lovelace-background: "radial-gradient(900px 620px at 14% 8%,#8fffe038,transparent 62%),radial-gradient(760px 540px at 88% 18%,#86dfee5c,transparent 60%),radial-gradient(900px 760px at 58% 104%,#34797466,transparent 66%),linear-gradient(160deg,#30565d 0%,#03313a 52%,#021b20 100%)"  # page gradient with ambient glow
+      lovelace-background: "radial-gradient(ellipse 85% 95% at 10% 0%,#8fffe066 0%,transparent 62%),radial-gradient(ellipse 75% 85% at 96% 14%,#86dfee7a 0%,transparent 58%),radial-gradient(ellipse 95% 95% at 52% 110%,#3b837c99 0%,transparent 64%),linear-gradient(160deg,#30565d 0%,#03313a 50%,#021b20 100%)"  # page gradient with ambient glow
       primary-text-color: "#f0f3f3"                          # ink
       secondary-text-color: "#cfd7d9"                        # ink-dim
       disabled-text-color: "#a1b1b4"                         # ink-faint
@@ -375,7 +375,7 @@ Nova Midnight Signal:
       primary-background-color: "#0b132b"                    # page
       secondary-background-color: "#1e2438"                  # surface
       divider-color: "#656a79"                               # line-soft
-      lovelace-background: "radial-gradient(900px 620px at 14% 8%,#39ff8838,transparent 62%),radial-gradient(760px 540px at 88% 18%,#57dfbe5c,transparent 60%),radial-gradient(900px 760px at 58% 104%,#1b664c66,transparent 66%),linear-gradient(160deg,#373d51 0%,#0b132b 52%,#060a18 100%)"  # page gradient with ambient glow
+      lovelace-background: "radial-gradient(ellipse 85% 95% at 10% 0%,#39ff8866 0%,transparent 62%),radial-gradient(ellipse 75% 85% at 96% 14%,#57dfbe7a 0%,transparent 58%),radial-gradient(ellipse 95% 95% at 52% 110%,#1d715099 0%,transparent 64%),linear-gradient(160deg,#373d51 0%,#0b132b 50%,#060a18 100%)"  # page gradient with ambient glow
       primary-text-color: "#f0f1f2"                          # ink
       secondary-text-color: "#d3d4d8"                        # ink-dim
       disabled-text-color: "#a9acb4"                         # ink-faint
@@ -624,7 +624,7 @@ Nova Plum Dusk:
       primary-background-color: "#1a0b2e"                    # page
       secondary-background-color: "#2a1e3b"                  # surface
       divider-color: "#6e657b"                               # line-soft
-      lovelace-background: "radial-gradient(900px 620px at 14% 8%,#ffb7a538,transparent 62%),radial-gradient(760px 540px at 88% 18%,#c4b7ce5c,transparent 60%),radial-gradient(900px 760px at 58% 104%,#6a475866,transparent 66%),linear-gradient(160deg,#433754 0%,#1a0b2e 52%,#0e0619 100%)"  # page gradient with ambient glow
+      lovelace-background: "radial-gradient(ellipse 85% 95% at 10% 0%,#ffb7a566 0%,transparent 62%),radial-gradient(ellipse 75% 85% at 96% 14%,#c4b7ce7a 0%,transparent 58%),radial-gradient(ellipse 95% 95% at 52% 110%,#76505e99 0%,transparent 64%),linear-gradient(160deg,#433754 0%,#1a0b2e 50%,#0e0619 100%)"  # page gradient with ambient glow
       primary-text-color: "#f1f0f2"                          # ink
       secondary-text-color: "#d6d3d9"                        # ink-dim
       disabled-text-color: "#ada8b3"                         # ink-faint
@@ -873,7 +873,7 @@ Nova Cocoa Bark:
       primary-background-color: "#382a28"                    # page
       secondary-background-color: "#3c302e"                  # surface
       divider-color: "#605553"                               # line-soft
-      lovelace-background: "radial-gradient(900px 620px at 14% 8%,#c1a09438,transparent 62%),radial-gradient(760px 540px at 88% 18%,#a2abc45c,transparent 60%),radial-gradient(900px 760px at 58% 104%,#68534e66,transparent 66%),linear-gradient(160deg,#5c504f 0%,#382a28 52%,#1f1716 100%)"  # page gradient with ambient glow
+      lovelace-background: "radial-gradient(ellipse 85% 95% at 10% 0%,#c1a09466 0%,transparent 62%),radial-gradient(ellipse 75% 85% at 96% 14%,#a2abc47a 0%,transparent 58%),radial-gradient(ellipse 95% 95% at 52% 110%,#6f595399 0%,transparent 64%),linear-gradient(160deg,#5c504f 0%,#382a28 50%,#1f1716 100%)"  # page gradient with ambient glow
       primary-text-color: "#f3f2f2"                          # ink
       secondary-text-color: "#d8d5d5"                        # ink-dim
       disabled-text-color: "#b2adac"                         # ink-faint
@@ -1122,7 +1122,7 @@ Nova Forest Mint:
       primary-background-color: "#18251d"                    # page
       secondary-background-color: "#253029"                  # surface
       divider-color: "#5c655f"                               # line-soft
-      lovelace-background: "radial-gradient(900px 620px at 14% 8%,#b7ff7238,transparent 62%),radial-gradient(760px 540px at 88% 18%,#9cdfb15c,transparent 60%),radial-gradient(900px 760px at 58% 104%,#50713b66,transparent 66%),linear-gradient(160deg,#424c46 0%,#18251d 52%,#0d1410 100%)"  # page gradient with ambient glow
+      lovelace-background: "radial-gradient(ellipse 85% 95% at 10% 0%,#b7ff7266 0%,transparent 62%),radial-gradient(ellipse 75% 85% at 96% 14%,#9cdfb17a 0%,transparent 58%),radial-gradient(ellipse 95% 95% at 52% 110%,#587c3f99 0%,transparent 64%),linear-gradient(160deg,#424c46 0%,#18251d 50%,#0d1410 100%)"  # page gradient with ambient glow
       primary-text-color: "#f1f2f1"                          # ink
       secondary-text-color: "#d4d6d5"                        # ink-dim
       disabled-text-color: "#acb0ad"                         # ink-faint
@@ -1371,7 +1371,7 @@ Nova Slate Harbour:
       primary-background-color: "#11212d"                    # page
       secondary-background-color: "#202d38"                  # surface
       divider-color: "#5b666e"                               # line-soft
-      lovelace-background: "radial-gradient(900px 620px at 14% 8%,#9ba8ab38,transparent 62%),radial-gradient(760px 540px at 88% 18%,#8dafd15c,transparent 60%),radial-gradient(900px 760px at 58% 104%,#41505966,transparent 66%),linear-gradient(160deg,#3c4953 0%,#11212d 52%,#091219 100%)"  # page gradient with ambient glow
+      lovelace-background: "radial-gradient(ellipse 85% 95% at 10% 0%,#9ba8ab66 0%,transparent 62%),radial-gradient(ellipse 75% 85% at 96% 14%,#8dafd17a 0%,transparent 58%),radial-gradient(ellipse 95% 95% at 52% 110%,#48575f99 0%,transparent 64%),linear-gradient(160deg,#3c4953 0%,#11212d 50%,#091219 100%)"  # page gradient with ambient glow
       primary-text-color: "#f1f2f2"                          # ink
       secondary-text-color: "#d3d6d8"                        # ink-dim
       disabled-text-color: "#aab0b4"                         # ink-faint
@@ -1620,7 +1620,7 @@ Nova Classic:
       primary-background-color: "#a99a8c"                    # page
       secondary-background-color: "#ddd7d2"                  # surface
       divider-color: "#c2bdb8"                               # line-soft
-      lovelace-background: "radial-gradient(900px 620px at 14% 8%,#b9dc8a33,transparent 62%),radial-gradient(760px 540px at 88% 18%,#749ea538,transparent 60%),radial-gradient(1100px 700px at 46% 0%,#ffffffb3,transparent 62%),radial-gradient(800px 600px at 92% 100%,#6c635aa6,transparent 70%),linear-gradient(160deg,#cbbdae 0%,#a99a8c 55%,#8a7b6e 100%)"  # page gradient with ambient glow
+      lovelace-background: "radial-gradient(ellipse 85% 95% at 10% 0%,#b9dc8a55 0%,transparent 62%),radial-gradient(ellipse 75% 85% at 96% 14%,#749ea55c 0%,transparent 58%),radial-gradient(1100px 700px at 46% 0%,#ffffffb3,transparent 62%),radial-gradient(800px 600px at 92% 100%,#6c635aa6,transparent 70%),linear-gradient(160deg,#cbbdae 0%,#a99a8c 55%,#8a7b6e 100%)"  # page gradient with ambient glow
       primary-text-color: "#1f1a17"                          # ink
       secondary-text-color: "#3f3a37"                        # ink-dim
       disabled-text-color: "#615c59"                         # ink-faint
@@ -1869,7 +1869,7 @@ Nova Violet Mist:
       primary-background-color: "#cccdd0"                    # page
       secondary-background-color: "#eaebec"                  # surface
       divider-color: "#cdcecf"                               # line-soft
-      lovelace-background: "radial-gradient(900px 620px at 14% 8%,#7a35ff33,transparent 62%),radial-gradient(760px 540px at 88% 18%,#5348f238,transparent 60%),radial-gradient(1100px 700px at 46% 0%,#ffffffb3,transparent 62%),radial-gradient(800px 600px at 92% 100%,#9a9b9da6,transparent 70%),linear-gradient(160deg,#e0e2e5 0%,#cccdd0 55%,#b5b7b9 100%)"  # page gradient with ambient glow
+      lovelace-background: "radial-gradient(ellipse 85% 95% at 10% 0%,#7a35ff55 0%,transparent 62%),radial-gradient(ellipse 75% 85% at 96% 14%,#5348f25c 0%,transparent 58%),radial-gradient(1100px 700px at 46% 0%,#ffffffb3,transparent 62%),radial-gradient(800px 600px at 92% 100%,#9a9b9da6,transparent 70%),linear-gradient(160deg,#e0e2e5 0%,#cccdd0 55%,#b5b7b9 100%)"  # page gradient with ambient glow
       primary-text-color: "#1d1d1d"                          # ink
       secondary-text-color: "#3f3f3f"                        # ink-dim
       disabled-text-color: "#686868"                         # ink-faint
@@ -2118,7 +2118,7 @@ Nova Berry Sky:
       primary-background-color: "#becdd8"                    # page
       secondary-background-color: "#e5ebee"                  # surface
       divider-color: "#c9ced1"                               # line-soft
-      lovelace-background: "radial-gradient(900px 620px at 14% 8%,#c2185b33,transparent 62%),radial-gradient(760px 540px at 88% 18%,#7a379638,transparent 60%),radial-gradient(1100px 700px at 46% 0%,#ffffffb3,transparent 62%),radial-gradient(800px 600px at 92% 100%,#8f9ba3a6,transparent 70%),linear-gradient(160deg,#d1e2ee 0%,#becdd8 55%,#a9b7c0 100%)"  # page gradient with ambient glow
+      lovelace-background: "radial-gradient(ellipse 85% 95% at 10% 0%,#c2185b55 0%,transparent 62%),radial-gradient(ellipse 75% 85% at 96% 14%,#7a37965c 0%,transparent 58%),radial-gradient(1100px 700px at 46% 0%,#ffffffb3,transparent 62%),radial-gradient(800px 600px at 92% 100%,#8f9ba3a6,transparent 70%),linear-gradient(160deg,#d1e2ee 0%,#becdd8 55%,#a9b7c0 100%)"  # page gradient with ambient glow
       primary-text-color: "#1b1d1e"                          # ink
       secondary-text-color: "#3d3f41"                        # ink-dim
       disabled-text-color: "#65686a"                         # ink-faint
@@ -2367,7 +2367,7 @@ Nova Quantum Ice:
       primary-background-color: "#bdd2d8"                    # page
       secondary-background-color: "#e5ecef"                  # surface
       divider-color: "#c9cfd1"                               # line-soft
-      lovelace-background: "radial-gradient(900px 620px at 14% 8%,#2457ff33,transparent 62%),radial-gradient(760px 540px at 88% 18%,#245bf238,transparent 60%),radial-gradient(1100px 700px at 46% 0%,#ffffffb3,transparent 62%),radial-gradient(800px 600px at 92% 100%,#8f9ea3a6,transparent 70%),linear-gradient(160deg,#d1e7ee 0%,#bdd2d8 55%,#a8bbc1 100%)"  # page gradient with ambient glow
+      lovelace-background: "radial-gradient(ellipse 85% 95% at 10% 0%,#2457ff55 0%,transparent 62%),radial-gradient(ellipse 75% 85% at 96% 14%,#245bf25c 0%,transparent 58%),radial-gradient(1100px 700px at 46% 0%,#ffffffb3,transparent 62%),radial-gradient(800px 600px at 92% 100%,#8f9ea3a6,transparent 70%),linear-gradient(160deg,#d1e7ee 0%,#bdd2d8 55%,#a8bbc1 100%)"  # page gradient with ambient glow
       primary-text-color: "#1b1e1f"                          # ink
       secondary-text-color: "#3d4041"                        # ink-dim
       disabled-text-color: "#65696a"                         # ink-faint
@@ -2616,7 +2616,7 @@ Nova Pine Mist:
       primary-background-color: "#afc2b2"                    # page
       secondary-background-color: "#dfe6e0"                  # surface
       divider-color: "#c4cac5"                               # line-soft
-      lovelace-background: "radial-gradient(900px 620px at 14% 8%,#23534733,transparent 62%),radial-gradient(760px 540px at 88% 18%,#23578838,transparent 60%),radial-gradient(1100px 700px at 46% 0%,#ffffffb3,transparent 62%),radial-gradient(800px 600px at 92% 100%,#8c9a8ea6,transparent 70%),linear-gradient(160deg,#c8ddcb 0%,#afc2b2 55%,#95a497 100%)"  # page gradient with ambient glow
+      lovelace-background: "radial-gradient(ellipse 85% 95% at 10% 0%,#23534755 0%,transparent 62%),radial-gradient(ellipse 75% 85% at 96% 14%,#2357885c 0%,transparent 58%),radial-gradient(1100px 700px at 46% 0%,#ffffffb3,transparent 62%),radial-gradient(800px 600px at 92% 100%,#8c9a8ea6,transparent 70%),linear-gradient(160deg,#c8ddcb 0%,#afc2b2 55%,#95a497 100%)"  # page gradient with ambient glow
       primary-text-color: "#1a1d1b"                          # ink
       secondary-text-color: "#3b3e3c"                        # ink-dim
       disabled-text-color: "#626562"                         # ink-faint
@@ -2865,7 +2865,7 @@ Nova Ember:
       primary-background-color: "#d8d6cf"                    # page
       secondary-background-color: "#efeeeb"                  # surface
       divider-color: "#d1d1ce"                               # line-soft
-      lovelace-background: "radial-gradient(900px 620px at 14% 8%,#ff611533,transparent 62%),radial-gradient(760px 540px at 88% 18%,#9c607138,transparent 60%),radial-gradient(1100px 700px at 46% 0%,#ffffffb3,transparent 62%),radial-gradient(800px 600px at 92% 100%,#a3a19ca6,transparent 70%),linear-gradient(160deg,#eeece4 0%,#d8d6cf 55%,#c1beb8 100%)"  # page gradient with ambient glow
+      lovelace-background: "radial-gradient(ellipse 85% 95% at 10% 0%,#ff611555 0%,transparent 62%),radial-gradient(ellipse 75% 85% at 96% 14%,#9c60715c 0%,transparent 58%),radial-gradient(1100px 700px at 46% 0%,#ffffffb3,transparent 62%),radial-gradient(800px 600px at 92% 100%,#a3a19ca6,transparent 70%),linear-gradient(160deg,#eeece4 0%,#d8d6cf 55%,#c1beb8 100%)"  # page gradient with ambient glow
       primary-text-color: "#1f1e1d"                          # ink
       secondary-text-color: "#41403f"                        # ink-dim
       disabled-text-color: "#6a6968"                         # ink-faint
@@ -3350,7 +3350,7 @@ Nova:
       primary-background-color: "#03313a"                    # page
       secondary-background-color: "#0f373f"                  # surface
       divider-color: "#3b5e65"                               # line-soft
-      lovelace-background: "radial-gradient(900px 620px at 14% 8%,#8fffe038,transparent 62%),radial-gradient(760px 540px at 88% 18%,#86dfee5c,transparent 60%),radial-gradient(900px 760px at 58% 104%,#34797466,transparent 66%),linear-gradient(160deg,#30565d 0%,#03313a 52%,#021b20 100%)"  # page gradient with ambient glow
+      lovelace-background: "radial-gradient(ellipse 85% 95% at 10% 0%,#8fffe066 0%,transparent 62%),radial-gradient(ellipse 75% 85% at 96% 14%,#86dfee7a 0%,transparent 58%),radial-gradient(ellipse 95% 95% at 52% 110%,#3b837c99 0%,transparent 64%),linear-gradient(160deg,#30565d 0%,#03313a 50%,#021b20 100%)"  # page gradient with ambient glow
       primary-text-color: "#f0f3f3"                          # ink
       secondary-text-color: "#cfd7d9"                        # ink-dim
       disabled-text-color: "#a1b1b4"                         # ink-faint
