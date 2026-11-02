@@ -36,8 +36,8 @@ Nova Deep Teal:
   card-mod-theme: "Nova Deep Teal"               # must repeat this theme's own name exactly
   card-mod-sidebar: |
     ha-list-item-button {
-      border-radius: 12px;
-      margin: 2px 10px;
+      border-radius: 12px !important;
+      margin: 2px 10px !important;
       transition: background .2s ease, box-shadow .2s ease, transform .15s ease;
     }
     ha-list-item-button:hover {
@@ -285,8 +285,8 @@ Nova Midnight Signal:
   card-mod-theme: "Nova Midnight Signal"         # must repeat this theme's own name exactly
   card-mod-sidebar: |
     ha-list-item-button {
-      border-radius: 12px;
-      margin: 2px 10px;
+      border-radius: 12px !important;
+      margin: 2px 10px !important;
       transition: background .2s ease, box-shadow .2s ease, transform .15s ease;
     }
     ha-list-item-button:hover {
@@ -534,8 +534,8 @@ Nova Plum Dusk:
   card-mod-theme: "Nova Plum Dusk"               # must repeat this theme's own name exactly
   card-mod-sidebar: |
     ha-list-item-button {
-      border-radius: 12px;
-      margin: 2px 10px;
+      border-radius: 12px !important;
+      margin: 2px 10px !important;
       transition: background .2s ease, box-shadow .2s ease, transform .15s ease;
     }
     ha-list-item-button:hover {
@@ -783,8 +783,8 @@ Nova Cocoa Bark:
   card-mod-theme: "Nova Cocoa Bark"              # must repeat this theme's own name exactly
   card-mod-sidebar: |
     ha-list-item-button {
-      border-radius: 12px;
-      margin: 2px 10px;
+      border-radius: 12px !important;
+      margin: 2px 10px !important;
       transition: background .2s ease, box-shadow .2s ease, transform .15s ease;
     }
     ha-list-item-button:hover {
@@ -1032,8 +1032,8 @@ Nova Forest Mint:
   card-mod-theme: "Nova Forest Mint"             # must repeat this theme's own name exactly
   card-mod-sidebar: |
     ha-list-item-button {
-      border-radius: 12px;
-      margin: 2px 10px;
+      border-radius: 12px !important;
+      margin: 2px 10px !important;
       transition: background .2s ease, box-shadow .2s ease, transform .15s ease;
     }
     ha-list-item-button:hover {
@@ -1281,8 +1281,8 @@ Nova Slate Harbour:
   card-mod-theme: "Nova Slate Harbour"           # must repeat this theme's own name exactly
   card-mod-sidebar: |
     ha-list-item-button {
-      border-radius: 12px;
-      margin: 2px 10px;
+      border-radius: 12px !important;
+      margin: 2px 10px !important;
       transition: background .2s ease, box-shadow .2s ease, transform .15s ease;
     }
     ha-list-item-button:hover {
@@ -1530,8 +1530,8 @@ Nova Classic:
   card-mod-theme: "Nova Classic"                 # must repeat this theme's own name exactly
   card-mod-sidebar: |
     ha-list-item-button {
-      border-radius: 12px;
-      margin: 2px 10px;
+      border-radius: 12px !important;
+      margin: 2px 10px !important;
       transition: background .2s ease, box-shadow .2s ease, transform .15s ease;
     }
     ha-list-item-button:hover {
@@ -1779,8 +1779,8 @@ Nova Violet Mist:
   card-mod-theme: "Nova Violet Mist"             # must repeat this theme's own name exactly
   card-mod-sidebar: |
     ha-list-item-button {
-      border-radius: 12px;
-      margin: 2px 10px;
+      border-radius: 12px !important;
+      margin: 2px 10px !important;
       transition: background .2s ease, box-shadow .2s ease, transform .15s ease;
     }
     ha-list-item-button:hover {
@@ -2028,8 +2028,8 @@ Nova Berry Sky:
   card-mod-theme: "Nova Berry Sky"               # must repeat this theme's own name exactly
   card-mod-sidebar: |
     ha-list-item-button {
-      border-radius: 12px;
-      margin: 2px 10px;
+      border-radius: 12px !important;
+      margin: 2px 10px !important;
       transition: background .2s ease, box-shadow .2s ease, transform .15s ease;
     }
     ha-list-item-button:hover {
@@ -2277,8 +2277,8 @@ Nova Quantum Ice:
   card-mod-theme: "Nova Quantum Ice"             # must repeat this theme's own name exactly
   card-mod-sidebar: |
     ha-list-item-button {
-      border-radius: 12px;
-      margin: 2px 10px;
+      border-radius: 12px !important;
+      margin: 2px 10px !important;
       transition: background .2s ease, box-shadow .2s ease, transform .15s ease;
     }
     ha-list-item-button:hover {
@@ -2526,8 +2526,8 @@ Nova Pine Mist:
   card-mod-theme: "Nova Pine Mist"               # must repeat this theme's own name exactly
   card-mod-sidebar: |
     ha-list-item-button {
-      border-radius: 12px;
-      margin: 2px 10px;
+      border-radius: 12px !important;
+      margin: 2px 10px !important;
       transition: background .2s ease, box-shadow .2s ease, transform .15s ease;
     }
     ha-list-item-button:hover {
@@ -2775,8 +2775,8 @@ Nova Ember:
   card-mod-theme: "Nova Ember"                   # must repeat this theme's own name exactly
   card-mod-sidebar: |
     ha-list-item-button {
-      border-radius: 12px;
-      margin: 2px 10px;
+      border-radius: 12px !important;
+      margin: 2px 10px !important;
       transition: background .2s ease, box-shadow .2s ease, transform .15s ease;
     }
     ha-list-item-button:hover {
@@ -3030,8 +3030,8 @@ Nova Deep Teal Compact:
   card-mod-theme: "Nova Deep Teal Compact"       # must repeat this theme's own name exactly
   card-mod-sidebar: |
     ha-list-item-button {
-      border-radius: 12px;
-      margin: 2px 10px;
+      border-radius: 12px !important;
+      margin: 2px 10px !important;
       transition: background .2s ease, box-shadow .2s ease, transform .15s ease;
     }
     ha-list-item-button:hover {
@@ -3260,8 +3260,8 @@ Nova:
   card-mod-theme: "Nova"                         # must repeat this theme's own name exactly
   card-mod-sidebar: |
     ha-list-item-button {
-      border-radius: 12px;
-      margin: 2px 10px;
+      border-radius: 12px !important;
+      margin: 2px 10px !important;
       transition: background .2s ease, box-shadow .2s ease, transform .15s ease;
     }
     ha-list-item-button:hover {
