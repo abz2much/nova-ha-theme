@@ -153,7 +153,10 @@ def main():
         mode_vals = mode_block(theme)
         css = theme.get("card-mod-card", "")
         if name in GLASS_THEMES:
-            if mode_vals.get("lovelace-background", "").count("radial-gradient") < 3:
+            bgv = mode_vals.get("lovelace-background", "")
+            if len(re.findall(r"radial-gradient\(ellipse \d+% \d+% at", bgv)) < 2:
+                errors.append(f"{name}: the lit background must scale with the screen (percentage ellipses)")
+            if bgv.count("radial-gradient") < 3:
                 errors.append(f"{name}: lovelace-background needs the ambient glow (3 radial gradients)")
             for needle in ("backdrop-filter", "@supports", ":host-context(ha-card) ha-card"):
                 if needle not in css:
@@ -179,6 +182,9 @@ def main():
             errors.append(f"{name}: card-mod-sidebar must style the selected sidebar item")
         if "border-radius: 12px !important" not in side or "margin: 2px 10px !important" not in side:
             errors.append(f"{name}: sidebar pill radius and margin need !important (Home Assistant's own styles win otherwise)")
+        row = theme.get("card-mod-row", "")
+        if ":host" not in row or "border-radius: 14px" not in row or ":hover" not in row:
+            errors.append(f"{name}: card-mod-row must turn entity rows into pills with a hover state")
         if ".header" not in root:
             errors.append(f"{name}: card-mod-root must style the header bar")
         if ":has(" not in card or ":active" not in card:

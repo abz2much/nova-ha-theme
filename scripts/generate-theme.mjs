@@ -180,18 +180,19 @@ function themeEntries(seed, shape, glass) {
 function ambientBackground(seed, k, m) {
   const { hex, toHex, mix, W, K } = m;
   const A = hex(k.ember), B = hex(seed.base), info = hex(k.info);
+  // Sized in percentages so the light fills a full-size screen, not only a small frame.
   if (seed.style === "light") {
     return [
-      `radial-gradient(900px 620px at 14% 8%,${toHex(A)}33,transparent 62%)`,
-      `radial-gradient(760px 540px at 88% 18%,${toHex(mix(A, info, 0.45))}38,transparent 60%)`,
+      `radial-gradient(ellipse 85% 95% at 10% 0%,${toHex(A)}55 0%,transparent 62%)`,
+      `radial-gradient(ellipse 75% 85% at 96% 14%,${toHex(mix(A, info, 0.45))}5c 0%,transparent 58%)`,
       k.page,
     ].join(",");
   }
   return [
-    `radial-gradient(900px 620px at 14% 8%,${toHex(A)}38,transparent 62%)`,
-    `radial-gradient(760px 540px at 88% 18%,${toHex(mix(A, info, 0.45))}5c,transparent 60%)`,
-    `radial-gradient(900px 760px at 58% 104%,${toHex(mix(B, A, 0.35))}66,transparent 66%)`,
-    `linear-gradient(160deg,${toHex(mix(B, W, 0.18))} 0%,${toHex(B)} 52%,${toHex(mix(B, K, 0.45))} 100%)`,
+    `radial-gradient(ellipse 85% 95% at 10% 0%,${toHex(A)}66 0%,transparent 62%)`,
+    `radial-gradient(ellipse 75% 85% at 96% 14%,${toHex(mix(A, info, 0.45))}7a 0%,transparent 58%)`,
+    `radial-gradient(ellipse 95% 95% at 52% 110%,${toHex(mix(B, A, 0.4))}99 0%,transparent 64%)`,
+    `linear-gradient(160deg,${toHex(mix(B, W, 0.18))} 0%,${toHex(B)} 50%,${toHex(mix(B, K, 0.45))} 100%)`,
   ].join(",");
 }
 
@@ -264,6 +265,24 @@ const SIDEBAR_CSS = [
   "    }",
 ].join("\n");
 
+// Rows in entities cards become pills, so lists read like the rest of the glass.
+const ROW_CSS = [
+  "    :host {",
+  "      display: flex;",
+  "      align-items: center;",
+  "      box-sizing: border-box;",
+  "      margin: 4px 0;",
+  "      padding: 6px 12px;",
+  "      min-height: 44px;",
+  "      border-radius: 14px;",
+  "      background: color-mix(in srgb, var(--primary-text-color) 6%, transparent);",
+  "      transition: background .2s ease;",
+  "    }",
+  "    :host(:hover) {",
+  "      background: color-mix(in srgb, var(--primary-color) 12%, transparent);",
+  "    }",
+].join("\n");
+
 // The header bar gets an accent underline, and is frosted where cards are.
 function headerCss(glass) {
   return [
@@ -333,7 +352,7 @@ function themeYaml(name, seed, shapeName, glass = false) {
   if (shape.space) for (const [n, v] of Object.entries(shape.space)) top(`ha-space-${n}`, v, "compact: tighter spacing");
   lines.push("", "  # card-mod (optional). Needs the card-mod or UIX HACS integration; Home Assistant ignores these keys without it.");
   top("card-mod-theme", name, "must repeat this theme's own name exactly");
-  lines.push("  card-mod-sidebar: |", SIDEBAR_CSS, "", "  card-mod-root: |", headerCss(glass), "", "  card-mod-card: |", cardMod(k, glass, seed.style === "light"), "", "  modes:", `    ${mode}:`);
+  lines.push("  card-mod-sidebar: |", SIDEBAR_CSS, "", "  card-mod-root: |", headerCss(glass), "", "  card-mod-row: |", ROW_CSS, "", "  card-mod-card: |", cardMod(k, glass, seed.style === "light"), "", "  modes:", `    ${mode}:`);
   for (const [title, list] of themeEntries(seed, shape, glass)) {
     lines.push(`      # === ${title} ===`);
     for (const [key, value, comment] of list) lines.push("      " + pad(`${key}: ${q(value)}`, 54, comment) + (comment ? " # " + comment : ""));
