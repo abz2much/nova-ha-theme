@@ -1,5 +1,9 @@
 # Nova themes for Home Assistant
 
+![All twelve Nova themes](images/themes.png)
+
+*All twelve themes, drawn from the generated theme file with made-up example data.*
+
 Twelve Home Assistant frontend themes that match [Nova](https://github.com/abz2much/NOVA)'s own
 panel. Pick the one you like from your profile, just as you pick a theme in Nova's settings.
 
@@ -30,6 +34,8 @@ Pick any of the twelve themes above from your profile to change it.
 
 ## What you get
 
+- Frosted glass cards over a softly lit page, with a frosted header bar (card-mod).
+- A sidebar pill with an accent edge and glow, and tiles that lift and glow when you hover them (card-mod).
 - Fraunces card titles and Manrope body text, with IBM Plex Mono for values and code.
 - Rounder corners and a consistent shape across cards and dialogs.
 - Energy dashboard colours for solar, grid and battery. In light themes they are darkened so they
