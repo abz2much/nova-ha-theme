@@ -34,6 +34,32 @@ Nova Deep Teal:
 
   # card-mod (optional). Needs the card-mod or UIX HACS integration; Home Assistant ignores these keys without it.
   card-mod-theme: "Nova Deep Teal"               # must repeat this theme's own name exactly
+  card-mod-sidebar: |
+    ha-list-item-button {
+      border-radius: 12px;
+      margin: 2px 10px;
+      transition: background .2s ease, box-shadow .2s ease, transform .15s ease;
+    }
+    ha-list-item-button:hover {
+      background: color-mix(in srgb, var(--primary-color) 10%, transparent);
+    }
+    ha-list-item-button:active {
+      transform: scale(.98);
+    }
+    ha-list-item-button.selected {
+      background: color-mix(in srgb, var(--primary-color) 18%, transparent);
+      box-shadow: inset 3px 0 0 var(--accent-color), 0 0 18px -6px var(--accent-color);
+    }
+
+  card-mod-root: |
+    .header {
+      background: color-mix(in srgb, var(--app-header-background-color) 62%, transparent) !important;
+      -webkit-backdrop-filter: blur(16px) saturate(1.3);
+      backdrop-filter: blur(16px) saturate(1.3);
+      border-bottom: 1px solid color-mix(in srgb, var(--accent-color) 32%, transparent);
+      box-shadow: 0 10px 30px -18px color-mix(in srgb, var(--accent-color) 45%, transparent);
+    }
+
   card-mod-card: |
     ha-card {
       position: relative;
@@ -70,6 +96,24 @@ Nova Deep Teal:
     ha-card:hover {
       border-color: #8fffe070;
       box-shadow: 0 0 18px 1px #8fffe022;
+    }
+    ha-card:has(ha-tile-container, mushroom-card, mushroom-state-item, mushroom-shape-icon) {
+      transition: transform .18s ease, box-shadow .2s ease, border-color .2s ease;
+      cursor: pointer;
+    }
+    ha-card:has(ha-tile-container, mushroom-card, mushroom-state-item, mushroom-shape-icon):hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px -14px var(--accent-color), 0 0 0 1px color-mix(in srgb, var(--accent-color) 50%, transparent);
+    }
+    ha-card:has(ha-tile-container, mushroom-card, mushroom-state-item, mushroom-shape-icon):active {
+      transform: translateY(0) scale(.985);
+      box-shadow: 0 4px 12px -8px var(--accent-color);
+    }
+    @media (prefers-reduced-motion: reduce) {
+      ha-card:has(ha-tile-container, mushroom-card, mushroom-state-item, mushroom-shape-icon), ha-card:has(ha-tile-container, mushroom-card, mushroom-state-item, mushroom-shape-icon):hover, ha-card:has(ha-tile-container, mushroom-card, mushroom-state-item, mushroom-shape-icon):active {
+        transform: none;
+        transition: none;
+      }
     }
 
   modes:
@@ -239,6 +283,32 @@ Nova Midnight Signal:
 
   # card-mod (optional). Needs the card-mod or UIX HACS integration; Home Assistant ignores these keys without it.
   card-mod-theme: "Nova Midnight Signal"         # must repeat this theme's own name exactly
+  card-mod-sidebar: |
+    ha-list-item-button {
+      border-radius: 12px;
+      margin: 2px 10px;
+      transition: background .2s ease, box-shadow .2s ease, transform .15s ease;
+    }
+    ha-list-item-button:hover {
+      background: color-mix(in srgb, var(--primary-color) 10%, transparent);
+    }
+    ha-list-item-button:active {
+      transform: scale(.98);
+    }
+    ha-list-item-button.selected {
+      background: color-mix(in srgb, var(--primary-color) 18%, transparent);
+      box-shadow: inset 3px 0 0 var(--accent-color), 0 0 18px -6px var(--accent-color);
+    }
+
+  card-mod-root: |
+    .header {
+      background: color-mix(in srgb, var(--app-header-background-color) 62%, transparent) !important;
+      -webkit-backdrop-filter: blur(16px) saturate(1.3);
+      backdrop-filter: blur(16px) saturate(1.3);
+      border-bottom: 1px solid color-mix(in srgb, var(--accent-color) 32%, transparent);
+      box-shadow: 0 10px 30px -18px color-mix(in srgb, var(--accent-color) 45%, transparent);
+    }
+
   card-mod-card: |
     ha-card {
       position: relative;
@@ -275,6 +345,24 @@ Nova Midnight Signal:
     ha-card:hover {
       border-color: #39ff8870;
       box-shadow: 0 0 18px 1px #39ff8822;
+    }
+    ha-card:has(ha-tile-container, mushroom-card, mushroom-state-item, mushroom-shape-icon) {
+      transition: transform .18s ease, box-shadow .2s ease, border-color .2s ease;
+      cursor: pointer;
+    }
+    ha-card:has(ha-tile-container, mushroom-card, mushroom-state-item, mushroom-shape-icon):hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px -14px var(--accent-color), 0 0 0 1px color-mix(in srgb, var(--accent-color) 50%, transparent);
+    }
+    ha-card:has(ha-tile-container, mushroom-card, mushroom-state-item, mushroom-shape-icon):active {
+      transform: translateY(0) scale(.985);
+      box-shadow: 0 4px 12px -8px var(--accent-color);
+    }
+    @media (prefers-reduced-motion: reduce) {
+      ha-card:has(ha-tile-container, mushroom-card, mushroom-state-item, mushroom-shape-icon), ha-card:has(ha-tile-container, mushroom-card, mushroom-state-item, mushroom-shape-icon):hover, ha-card:has(ha-tile-container, mushroom-card, mushroom-state-item, mushroom-shape-icon):active {
+        transform: none;
+        transition: none;
+      }
     }
 
   modes:
@@ -444,6 +532,32 @@ Nova Plum Dusk:
 
   # card-mod (optional). Needs the card-mod or UIX HACS integration; Home Assistant ignores these keys without it.
   card-mod-theme: "Nova Plum Dusk"               # must repeat this theme's own name exactly
+  card-mod-sidebar: |
+    ha-list-item-button {
+      border-radius: 12px;
+      margin: 2px 10px;
+      transition: background .2s ease, box-shadow .2s ease, transform .15s ease;
+    }
+    ha-list-item-button:hover {
+      background: color-mix(in srgb, var(--primary-color) 10%, transparent);
+    }
+    ha-list-item-button:active {
+      transform: scale(.98);
+    }
+    ha-list-item-button.selected {
+      background: color-mix(in srgb, var(--primary-color) 18%, transparent);
+      box-shadow: inset 3px 0 0 var(--accent-color), 0 0 18px -6px var(--accent-color);
+    }
+
+  card-mod-root: |
+    .header {
+      background: color-mix(in srgb, var(--app-header-background-color) 62%, transparent) !important;
+      -webkit-backdrop-filter: blur(16px) saturate(1.3);
+      backdrop-filter: blur(16px) saturate(1.3);
+      border-bottom: 1px solid color-mix(in srgb, var(--accent-color) 32%, transparent);
+      box-shadow: 0 10px 30px -18px color-mix(in srgb, var(--accent-color) 45%, transparent);
+    }
+
   card-mod-card: |
     ha-card {
       position: relative;
@@ -480,6 +594,24 @@ Nova Plum Dusk:
     ha-card:hover {
       border-color: #ffb7a570;
       box-shadow: 0 0 18px 1px #ffb7a522;
+    }
+    ha-card:has(ha-tile-container, mushroom-card, mushroom-state-item, mushroom-shape-icon) {
+      transition: transform .18s ease, box-shadow .2s ease, border-color .2s ease;
+      cursor: pointer;
+    }
+    ha-card:has(ha-tile-container, mushroom-card, mushroom-state-item, mushroom-shape-icon):hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px -14px var(--accent-color), 0 0 0 1px color-mix(in srgb, var(--accent-color) 50%, transparent);
+    }
+    ha-card:has(ha-tile-container, mushroom-card, mushroom-state-item, mushroom-shape-icon):active {
+      transform: translateY(0) scale(.985);
+      box-shadow: 0 4px 12px -8px var(--accent-color);
+    }
+    @media (prefers-reduced-motion: reduce) {
+      ha-card:has(ha-tile-container, mushroom-card, mushroom-state-item, mushroom-shape-icon), ha-card:has(ha-tile-container, mushroom-card, mushroom-state-item, mushroom-shape-icon):hover, ha-card:has(ha-tile-container, mushroom-card, mushroom-state-item, mushroom-shape-icon):active {
+        transform: none;
+        transition: none;
+      }
     }
 
   modes:
@@ -649,6 +781,32 @@ Nova Cocoa Bark:
 
   # card-mod (optional). Needs the card-mod or UIX HACS integration; Home Assistant ignores these keys without it.
   card-mod-theme: "Nova Cocoa Bark"              # must repeat this theme's own name exactly
+  card-mod-sidebar: |
+    ha-list-item-button {
+      border-radius: 12px;
+      margin: 2px 10px;
+      transition: background .2s ease, box-shadow .2s ease, transform .15s ease;
+    }
+    ha-list-item-button:hover {
+      background: color-mix(in srgb, var(--primary-color) 10%, transparent);
+    }
+    ha-list-item-button:active {
+      transform: scale(.98);
+    }
+    ha-list-item-button.selected {
+      background: color-mix(in srgb, var(--primary-color) 18%, transparent);
+      box-shadow: inset 3px 0 0 var(--accent-color), 0 0 18px -6px var(--accent-color);
+    }
+
+  card-mod-root: |
+    .header {
+      background: color-mix(in srgb, var(--app-header-background-color) 62%, transparent) !important;
+      -webkit-backdrop-filter: blur(16px) saturate(1.3);
+      backdrop-filter: blur(16px) saturate(1.3);
+      border-bottom: 1px solid color-mix(in srgb, var(--accent-color) 32%, transparent);
+      box-shadow: 0 10px 30px -18px color-mix(in srgb, var(--accent-color) 45%, transparent);
+    }
+
   card-mod-card: |
     ha-card {
       position: relative;
@@ -685,6 +843,24 @@ Nova Cocoa Bark:
     ha-card:hover {
       border-color: #c1a09470;
       box-shadow: 0 0 18px 1px #c1a09422;
+    }
+    ha-card:has(ha-tile-container, mushroom-card, mushroom-state-item, mushroom-shape-icon) {
+      transition: transform .18s ease, box-shadow .2s ease, border-color .2s ease;
+      cursor: pointer;
+    }
+    ha-card:has(ha-tile-container, mushroom-card, mushroom-state-item, mushroom-shape-icon):hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px -14px var(--accent-color), 0 0 0 1px color-mix(in srgb, var(--accent-color) 50%, transparent);
+    }
+    ha-card:has(ha-tile-container, mushroom-card, mushroom-state-item, mushroom-shape-icon):active {
+      transform: translateY(0) scale(.985);
+      box-shadow: 0 4px 12px -8px var(--accent-color);
+    }
+    @media (prefers-reduced-motion: reduce) {
+      ha-card:has(ha-tile-container, mushroom-card, mushroom-state-item, mushroom-shape-icon), ha-card:has(ha-tile-container, mushroom-card, mushroom-state-item, mushroom-shape-icon):hover, ha-card:has(ha-tile-container, mushroom-card, mushroom-state-item, mushroom-shape-icon):active {
+        transform: none;
+        transition: none;
+      }
     }
 
   modes:
@@ -854,6 +1030,32 @@ Nova Forest Mint:
 
   # card-mod (optional). Needs the card-mod or UIX HACS integration; Home Assistant ignores these keys without it.
   card-mod-theme: "Nova Forest Mint"             # must repeat this theme's own name exactly
+  card-mod-sidebar: |
+    ha-list-item-button {
+      border-radius: 12px;
+      margin: 2px 10px;
+      transition: background .2s ease, box-shadow .2s ease, transform .15s ease;
+    }
+    ha-list-item-button:hover {
+      background: color-mix(in srgb, var(--primary-color) 10%, transparent);
+    }
+    ha-list-item-button:active {
+      transform: scale(.98);
+    }
+    ha-list-item-button.selected {
+      background: color-mix(in srgb, var(--primary-color) 18%, transparent);
+      box-shadow: inset 3px 0 0 var(--accent-color), 0 0 18px -6px var(--accent-color);
+    }
+
+  card-mod-root: |
+    .header {
+      background: color-mix(in srgb, var(--app-header-background-color) 62%, transparent) !important;
+      -webkit-backdrop-filter: blur(16px) saturate(1.3);
+      backdrop-filter: blur(16px) saturate(1.3);
+      border-bottom: 1px solid color-mix(in srgb, var(--accent-color) 32%, transparent);
+      box-shadow: 0 10px 30px -18px color-mix(in srgb, var(--accent-color) 45%, transparent);
+    }
+
   card-mod-card: |
     ha-card {
       position: relative;
@@ -890,6 +1092,24 @@ Nova Forest Mint:
     ha-card:hover {
       border-color: #b7ff7270;
       box-shadow: 0 0 18px 1px #b7ff7222;
+    }
+    ha-card:has(ha-tile-container, mushroom-card, mushroom-state-item, mushroom-shape-icon) {
+      transition: transform .18s ease, box-shadow .2s ease, border-color .2s ease;
+      cursor: pointer;
+    }
+    ha-card:has(ha-tile-container, mushroom-card, mushroom-state-item, mushroom-shape-icon):hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px -14px var(--accent-color), 0 0 0 1px color-mix(in srgb, var(--accent-color) 50%, transparent);
+    }
+    ha-card:has(ha-tile-container, mushroom-card, mushroom-state-item, mushroom-shape-icon):active {
+      transform: translateY(0) scale(.985);
+      box-shadow: 0 4px 12px -8px var(--accent-color);
+    }
+    @media (prefers-reduced-motion: reduce) {
+      ha-card:has(ha-tile-container, mushroom-card, mushroom-state-item, mushroom-shape-icon), ha-card:has(ha-tile-container, mushroom-card, mushroom-state-item, mushroom-shape-icon):hover, ha-card:has(ha-tile-container, mushroom-card, mushroom-state-item, mushroom-shape-icon):active {
+        transform: none;
+        transition: none;
+      }
     }
 
   modes:
@@ -1059,6 +1279,32 @@ Nova Slate Harbour:
 
   # card-mod (optional). Needs the card-mod or UIX HACS integration; Home Assistant ignores these keys without it.
   card-mod-theme: "Nova Slate Harbour"           # must repeat this theme's own name exactly
+  card-mod-sidebar: |
+    ha-list-item-button {
+      border-radius: 12px;
+      margin: 2px 10px;
+      transition: background .2s ease, box-shadow .2s ease, transform .15s ease;
+    }
+    ha-list-item-button:hover {
+      background: color-mix(in srgb, var(--primary-color) 10%, transparent);
+    }
+    ha-list-item-button:active {
+      transform: scale(.98);
+    }
+    ha-list-item-button.selected {
+      background: color-mix(in srgb, var(--primary-color) 18%, transparent);
+      box-shadow: inset 3px 0 0 var(--accent-color), 0 0 18px -6px var(--accent-color);
+    }
+
+  card-mod-root: |
+    .header {
+      background: color-mix(in srgb, var(--app-header-background-color) 62%, transparent) !important;
+      -webkit-backdrop-filter: blur(16px) saturate(1.3);
+      backdrop-filter: blur(16px) saturate(1.3);
+      border-bottom: 1px solid color-mix(in srgb, var(--accent-color) 32%, transparent);
+      box-shadow: 0 10px 30px -18px color-mix(in srgb, var(--accent-color) 45%, transparent);
+    }
+
   card-mod-card: |
     ha-card {
       position: relative;
@@ -1095,6 +1341,24 @@ Nova Slate Harbour:
     ha-card:hover {
       border-color: #9ba8ab70;
       box-shadow: 0 0 18px 1px #9ba8ab22;
+    }
+    ha-card:has(ha-tile-container, mushroom-card, mushroom-state-item, mushroom-shape-icon) {
+      transition: transform .18s ease, box-shadow .2s ease, border-color .2s ease;
+      cursor: pointer;
+    }
+    ha-card:has(ha-tile-container, mushroom-card, mushroom-state-item, mushroom-shape-icon):hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px -14px var(--accent-color), 0 0 0 1px color-mix(in srgb, var(--accent-color) 50%, transparent);
+    }
+    ha-card:has(ha-tile-container, mushroom-card, mushroom-state-item, mushroom-shape-icon):active {
+      transform: translateY(0) scale(.985);
+      box-shadow: 0 4px 12px -8px var(--accent-color);
+    }
+    @media (prefers-reduced-motion: reduce) {
+      ha-card:has(ha-tile-container, mushroom-card, mushroom-state-item, mushroom-shape-icon), ha-card:has(ha-tile-container, mushroom-card, mushroom-state-item, mushroom-shape-icon):hover, ha-card:has(ha-tile-container, mushroom-card, mushroom-state-item, mushroom-shape-icon):active {
+        transform: none;
+        transition: none;
+      }
     }
 
   modes:
@@ -1264,6 +1528,32 @@ Nova Classic:
 
   # card-mod (optional). Needs the card-mod or UIX HACS integration; Home Assistant ignores these keys without it.
   card-mod-theme: "Nova Classic"                 # must repeat this theme's own name exactly
+  card-mod-sidebar: |
+    ha-list-item-button {
+      border-radius: 12px;
+      margin: 2px 10px;
+      transition: background .2s ease, box-shadow .2s ease, transform .15s ease;
+    }
+    ha-list-item-button:hover {
+      background: color-mix(in srgb, var(--primary-color) 10%, transparent);
+    }
+    ha-list-item-button:active {
+      transform: scale(.98);
+    }
+    ha-list-item-button.selected {
+      background: color-mix(in srgb, var(--primary-color) 18%, transparent);
+      box-shadow: inset 3px 0 0 var(--accent-color), 0 0 18px -6px var(--accent-color);
+    }
+
+  card-mod-root: |
+    .header {
+      background: color-mix(in srgb, var(--app-header-background-color) 62%, transparent) !important;
+      -webkit-backdrop-filter: blur(16px) saturate(1.3);
+      backdrop-filter: blur(16px) saturate(1.3);
+      border-bottom: 1px solid color-mix(in srgb, var(--accent-color) 32%, transparent);
+      box-shadow: 0 10px 30px -18px color-mix(in srgb, var(--accent-color) 45%, transparent);
+    }
+
   card-mod-card: |
     ha-card {
       position: relative;
@@ -1300,6 +1590,24 @@ Nova Classic:
     ha-card:hover {
       border-color: #b9dc8a70;
       box-shadow: 0 0 18px 1px #b9dc8a22;
+    }
+    ha-card:has(ha-tile-container, mushroom-card, mushroom-state-item, mushroom-shape-icon) {
+      transition: transform .18s ease, box-shadow .2s ease, border-color .2s ease;
+      cursor: pointer;
+    }
+    ha-card:has(ha-tile-container, mushroom-card, mushroom-state-item, mushroom-shape-icon):hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px -14px var(--accent-color), 0 0 0 1px color-mix(in srgb, var(--accent-color) 50%, transparent);
+    }
+    ha-card:has(ha-tile-container, mushroom-card, mushroom-state-item, mushroom-shape-icon):active {
+      transform: translateY(0) scale(.985);
+      box-shadow: 0 4px 12px -8px var(--accent-color);
+    }
+    @media (prefers-reduced-motion: reduce) {
+      ha-card:has(ha-tile-container, mushroom-card, mushroom-state-item, mushroom-shape-icon), ha-card:has(ha-tile-container, mushroom-card, mushroom-state-item, mushroom-shape-icon):hover, ha-card:has(ha-tile-container, mushroom-card, mushroom-state-item, mushroom-shape-icon):active {
+        transform: none;
+        transition: none;
+      }
     }
 
   modes:
@@ -1469,6 +1777,32 @@ Nova Violet Mist:
 
   # card-mod (optional). Needs the card-mod or UIX HACS integration; Home Assistant ignores these keys without it.
   card-mod-theme: "Nova Violet Mist"             # must repeat this theme's own name exactly
+  card-mod-sidebar: |
+    ha-list-item-button {
+      border-radius: 12px;
+      margin: 2px 10px;
+      transition: background .2s ease, box-shadow .2s ease, transform .15s ease;
+    }
+    ha-list-item-button:hover {
+      background: color-mix(in srgb, var(--primary-color) 10%, transparent);
+    }
+    ha-list-item-button:active {
+      transform: scale(.98);
+    }
+    ha-list-item-button.selected {
+      background: color-mix(in srgb, var(--primary-color) 18%, transparent);
+      box-shadow: inset 3px 0 0 var(--accent-color), 0 0 18px -6px var(--accent-color);
+    }
+
+  card-mod-root: |
+    .header {
+      background: color-mix(in srgb, var(--app-header-background-color) 62%, transparent) !important;
+      -webkit-backdrop-filter: blur(16px) saturate(1.3);
+      backdrop-filter: blur(16px) saturate(1.3);
+      border-bottom: 1px solid color-mix(in srgb, var(--accent-color) 32%, transparent);
+      box-shadow: 0 10px 30px -18px color-mix(in srgb, var(--accent-color) 45%, transparent);
+    }
+
   card-mod-card: |
     ha-card {
       position: relative;
@@ -1505,6 +1839,24 @@ Nova Violet Mist:
     ha-card:hover {
       border-color: #7a35ff70;
       box-shadow: 0 0 18px 1px #7a35ff22;
+    }
+    ha-card:has(ha-tile-container, mushroom-card, mushroom-state-item, mushroom-shape-icon) {
+      transition: transform .18s ease, box-shadow .2s ease, border-color .2s ease;
+      cursor: pointer;
+    }
+    ha-card:has(ha-tile-container, mushroom-card, mushroom-state-item, mushroom-shape-icon):hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px -14px var(--accent-color), 0 0 0 1px color-mix(in srgb, var(--accent-color) 50%, transparent);
+    }
+    ha-card:has(ha-tile-container, mushroom-card, mushroom-state-item, mushroom-shape-icon):active {
+      transform: translateY(0) scale(.985);
+      box-shadow: 0 4px 12px -8px var(--accent-color);
+    }
+    @media (prefers-reduced-motion: reduce) {
+      ha-card:has(ha-tile-container, mushroom-card, mushroom-state-item, mushroom-shape-icon), ha-card:has(ha-tile-container, mushroom-card, mushroom-state-item, mushroom-shape-icon):hover, ha-card:has(ha-tile-container, mushroom-card, mushroom-state-item, mushroom-shape-icon):active {
+        transform: none;
+        transition: none;
+      }
     }
 
   modes:
@@ -1674,6 +2026,32 @@ Nova Berry Sky:
 
   # card-mod (optional). Needs the card-mod or UIX HACS integration; Home Assistant ignores these keys without it.
   card-mod-theme: "Nova Berry Sky"               # must repeat this theme's own name exactly
+  card-mod-sidebar: |
+    ha-list-item-button {
+      border-radius: 12px;
+      margin: 2px 10px;
+      transition: background .2s ease, box-shadow .2s ease, transform .15s ease;
+    }
+    ha-list-item-button:hover {
+      background: color-mix(in srgb, var(--primary-color) 10%, transparent);
+    }
+    ha-list-item-button:active {
+      transform: scale(.98);
+    }
+    ha-list-item-button.selected {
+      background: color-mix(in srgb, var(--primary-color) 18%, transparent);
+      box-shadow: inset 3px 0 0 var(--accent-color), 0 0 18px -6px var(--accent-color);
+    }
+
+  card-mod-root: |
+    .header {
+      background: color-mix(in srgb, var(--app-header-background-color) 62%, transparent) !important;
+      -webkit-backdrop-filter: blur(16px) saturate(1.3);
+      backdrop-filter: blur(16px) saturate(1.3);
+      border-bottom: 1px solid color-mix(in srgb, var(--accent-color) 32%, transparent);
+      box-shadow: 0 10px 30px -18px color-mix(in srgb, var(--accent-color) 45%, transparent);
+    }
+
   card-mod-card: |
     ha-card {
       position: relative;
@@ -1710,6 +2088,24 @@ Nova Berry Sky:
     ha-card:hover {
       border-color: #c2185b70;
       box-shadow: 0 0 18px 1px #c2185b22;
+    }
+    ha-card:has(ha-tile-container, mushroom-card, mushroom-state-item, mushroom-shape-icon) {
+      transition: transform .18s ease, box-shadow .2s ease, border-color .2s ease;
+      cursor: pointer;
+    }
+    ha-card:has(ha-tile-container, mushroom-card, mushroom-state-item, mushroom-shape-icon):hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px -14px var(--accent-color), 0 0 0 1px color-mix(in srgb, var(--accent-color) 50%, transparent);
+    }
+    ha-card:has(ha-tile-container, mushroom-card, mushroom-state-item, mushroom-shape-icon):active {
+      transform: translateY(0) scale(.985);
+      box-shadow: 0 4px 12px -8px var(--accent-color);
+    }
+    @media (prefers-reduced-motion: reduce) {
+      ha-card:has(ha-tile-container, mushroom-card, mushroom-state-item, mushroom-shape-icon), ha-card:has(ha-tile-container, mushroom-card, mushroom-state-item, mushroom-shape-icon):hover, ha-card:has(ha-tile-container, mushroom-card, mushroom-state-item, mushroom-shape-icon):active {
+        transform: none;
+        transition: none;
+      }
     }
 
   modes:
@@ -1879,6 +2275,32 @@ Nova Quantum Ice:
 
   # card-mod (optional). Needs the card-mod or UIX HACS integration; Home Assistant ignores these keys without it.
   card-mod-theme: "Nova Quantum Ice"             # must repeat this theme's own name exactly
+  card-mod-sidebar: |
+    ha-list-item-button {
+      border-radius: 12px;
+      margin: 2px 10px;
+      transition: background .2s ease, box-shadow .2s ease, transform .15s ease;
+    }
+    ha-list-item-button:hover {
+      background: color-mix(in srgb, var(--primary-color) 10%, transparent);
+    }
+    ha-list-item-button:active {
+      transform: scale(.98);
+    }
+    ha-list-item-button.selected {
+      background: color-mix(in srgb, var(--primary-color) 18%, transparent);
+      box-shadow: inset 3px 0 0 var(--accent-color), 0 0 18px -6px var(--accent-color);
+    }
+
+  card-mod-root: |
+    .header {
+      background: color-mix(in srgb, var(--app-header-background-color) 62%, transparent) !important;
+      -webkit-backdrop-filter: blur(16px) saturate(1.3);
+      backdrop-filter: blur(16px) saturate(1.3);
+      border-bottom: 1px solid color-mix(in srgb, var(--accent-color) 32%, transparent);
+      box-shadow: 0 10px 30px -18px color-mix(in srgb, var(--accent-color) 45%, transparent);
+    }
+
   card-mod-card: |
     ha-card {
       position: relative;
@@ -1915,6 +2337,24 @@ Nova Quantum Ice:
     ha-card:hover {
       border-color: #2457ff70;
       box-shadow: 0 0 18px 1px #2457ff22;
+    }
+    ha-card:has(ha-tile-container, mushroom-card, mushroom-state-item, mushroom-shape-icon) {
+      transition: transform .18s ease, box-shadow .2s ease, border-color .2s ease;
+      cursor: pointer;
+    }
+    ha-card:has(ha-tile-container, mushroom-card, mushroom-state-item, mushroom-shape-icon):hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px -14px var(--accent-color), 0 0 0 1px color-mix(in srgb, var(--accent-color) 50%, transparent);
+    }
+    ha-card:has(ha-tile-container, mushroom-card, mushroom-state-item, mushroom-shape-icon):active {
+      transform: translateY(0) scale(.985);
+      box-shadow: 0 4px 12px -8px var(--accent-color);
+    }
+    @media (prefers-reduced-motion: reduce) {
+      ha-card:has(ha-tile-container, mushroom-card, mushroom-state-item, mushroom-shape-icon), ha-card:has(ha-tile-container, mushroom-card, mushroom-state-item, mushroom-shape-icon):hover, ha-card:has(ha-tile-container, mushroom-card, mushroom-state-item, mushroom-shape-icon):active {
+        transform: none;
+        transition: none;
+      }
     }
 
   modes:
@@ -2084,6 +2524,32 @@ Nova Pine Mist:
 
   # card-mod (optional). Needs the card-mod or UIX HACS integration; Home Assistant ignores these keys without it.
   card-mod-theme: "Nova Pine Mist"               # must repeat this theme's own name exactly
+  card-mod-sidebar: |
+    ha-list-item-button {
+      border-radius: 12px;
+      margin: 2px 10px;
+      transition: background .2s ease, box-shadow .2s ease, transform .15s ease;
+    }
+    ha-list-item-button:hover {
+      background: color-mix(in srgb, var(--primary-color) 10%, transparent);
+    }
+    ha-list-item-button:active {
+      transform: scale(.98);
+    }
+    ha-list-item-button.selected {
+      background: color-mix(in srgb, var(--primary-color) 18%, transparent);
+      box-shadow: inset 3px 0 0 var(--accent-color), 0 0 18px -6px var(--accent-color);
+    }
+
+  card-mod-root: |
+    .header {
+      background: color-mix(in srgb, var(--app-header-background-color) 62%, transparent) !important;
+      -webkit-backdrop-filter: blur(16px) saturate(1.3);
+      backdrop-filter: blur(16px) saturate(1.3);
+      border-bottom: 1px solid color-mix(in srgb, var(--accent-color) 32%, transparent);
+      box-shadow: 0 10px 30px -18px color-mix(in srgb, var(--accent-color) 45%, transparent);
+    }
+
   card-mod-card: |
     ha-card {
       position: relative;
@@ -2120,6 +2586,24 @@ Nova Pine Mist:
     ha-card:hover {
       border-color: #23534770;
       box-shadow: 0 0 18px 1px #23534722;
+    }
+    ha-card:has(ha-tile-container, mushroom-card, mushroom-state-item, mushroom-shape-icon) {
+      transition: transform .18s ease, box-shadow .2s ease, border-color .2s ease;
+      cursor: pointer;
+    }
+    ha-card:has(ha-tile-container, mushroom-card, mushroom-state-item, mushroom-shape-icon):hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px -14px var(--accent-color), 0 0 0 1px color-mix(in srgb, var(--accent-color) 50%, transparent);
+    }
+    ha-card:has(ha-tile-container, mushroom-card, mushroom-state-item, mushroom-shape-icon):active {
+      transform: translateY(0) scale(.985);
+      box-shadow: 0 4px 12px -8px var(--accent-color);
+    }
+    @media (prefers-reduced-motion: reduce) {
+      ha-card:has(ha-tile-container, mushroom-card, mushroom-state-item, mushroom-shape-icon), ha-card:has(ha-tile-container, mushroom-card, mushroom-state-item, mushroom-shape-icon):hover, ha-card:has(ha-tile-container, mushroom-card, mushroom-state-item, mushroom-shape-icon):active {
+        transform: none;
+        transition: none;
+      }
     }
 
   modes:
@@ -2289,6 +2773,32 @@ Nova Ember:
 
   # card-mod (optional). Needs the card-mod or UIX HACS integration; Home Assistant ignores these keys without it.
   card-mod-theme: "Nova Ember"                   # must repeat this theme's own name exactly
+  card-mod-sidebar: |
+    ha-list-item-button {
+      border-radius: 12px;
+      margin: 2px 10px;
+      transition: background .2s ease, box-shadow .2s ease, transform .15s ease;
+    }
+    ha-list-item-button:hover {
+      background: color-mix(in srgb, var(--primary-color) 10%, transparent);
+    }
+    ha-list-item-button:active {
+      transform: scale(.98);
+    }
+    ha-list-item-button.selected {
+      background: color-mix(in srgb, var(--primary-color) 18%, transparent);
+      box-shadow: inset 3px 0 0 var(--accent-color), 0 0 18px -6px var(--accent-color);
+    }
+
+  card-mod-root: |
+    .header {
+      background: color-mix(in srgb, var(--app-header-background-color) 62%, transparent) !important;
+      -webkit-backdrop-filter: blur(16px) saturate(1.3);
+      backdrop-filter: blur(16px) saturate(1.3);
+      border-bottom: 1px solid color-mix(in srgb, var(--accent-color) 32%, transparent);
+      box-shadow: 0 10px 30px -18px color-mix(in srgb, var(--accent-color) 45%, transparent);
+    }
+
   card-mod-card: |
     ha-card {
       position: relative;
@@ -2325,6 +2835,24 @@ Nova Ember:
     ha-card:hover {
       border-color: #ff611570;
       box-shadow: 0 0 18px 1px #ff611522;
+    }
+    ha-card:has(ha-tile-container, mushroom-card, mushroom-state-item, mushroom-shape-icon) {
+      transition: transform .18s ease, box-shadow .2s ease, border-color .2s ease;
+      cursor: pointer;
+    }
+    ha-card:has(ha-tile-container, mushroom-card, mushroom-state-item, mushroom-shape-icon):hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px -14px var(--accent-color), 0 0 0 1px color-mix(in srgb, var(--accent-color) 50%, transparent);
+    }
+    ha-card:has(ha-tile-container, mushroom-card, mushroom-state-item, mushroom-shape-icon):active {
+      transform: translateY(0) scale(.985);
+      box-shadow: 0 4px 12px -8px var(--accent-color);
+    }
+    @media (prefers-reduced-motion: reduce) {
+      ha-card:has(ha-tile-container, mushroom-card, mushroom-state-item, mushroom-shape-icon), ha-card:has(ha-tile-container, mushroom-card, mushroom-state-item, mushroom-shape-icon):hover, ha-card:has(ha-tile-container, mushroom-card, mushroom-state-item, mushroom-shape-icon):active {
+        transform: none;
+        transition: none;
+      }
     }
 
   modes:
@@ -2500,6 +3028,29 @@ Nova Deep Teal Compact:
 
   # card-mod (optional). Needs the card-mod or UIX HACS integration; Home Assistant ignores these keys without it.
   card-mod-theme: "Nova Deep Teal Compact"       # must repeat this theme's own name exactly
+  card-mod-sidebar: |
+    ha-list-item-button {
+      border-radius: 12px;
+      margin: 2px 10px;
+      transition: background .2s ease, box-shadow .2s ease, transform .15s ease;
+    }
+    ha-list-item-button:hover {
+      background: color-mix(in srgb, var(--primary-color) 10%, transparent);
+    }
+    ha-list-item-button:active {
+      transform: scale(.98);
+    }
+    ha-list-item-button.selected {
+      background: color-mix(in srgb, var(--primary-color) 18%, transparent);
+      box-shadow: inset 3px 0 0 var(--accent-color), 0 0 18px -6px var(--accent-color);
+    }
+
+  card-mod-root: |
+    .header {
+      border-bottom: 1px solid color-mix(in srgb, var(--accent-color) 32%, transparent);
+      box-shadow: 0 10px 30px -18px color-mix(in srgb, var(--accent-color) 45%, transparent);
+    }
+
   card-mod-card: |
     ha-card {
       position: relative;
@@ -2520,6 +3071,24 @@ Nova Deep Teal Compact:
     ha-card:hover {
       border-color: #8fffe070;
       box-shadow: 0 0 18px 1px #8fffe022;
+    }
+    ha-card:has(ha-tile-container, mushroom-card, mushroom-state-item, mushroom-shape-icon) {
+      transition: transform .18s ease, box-shadow .2s ease, border-color .2s ease;
+      cursor: pointer;
+    }
+    ha-card:has(ha-tile-container, mushroom-card, mushroom-state-item, mushroom-shape-icon):hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px -14px var(--accent-color), 0 0 0 1px color-mix(in srgb, var(--accent-color) 50%, transparent);
+    }
+    ha-card:has(ha-tile-container, mushroom-card, mushroom-state-item, mushroom-shape-icon):active {
+      transform: translateY(0) scale(.985);
+      box-shadow: 0 4px 12px -8px var(--accent-color);
+    }
+    @media (prefers-reduced-motion: reduce) {
+      ha-card:has(ha-tile-container, mushroom-card, mushroom-state-item, mushroom-shape-icon), ha-card:has(ha-tile-container, mushroom-card, mushroom-state-item, mushroom-shape-icon):hover, ha-card:has(ha-tile-container, mushroom-card, mushroom-state-item, mushroom-shape-icon):active {
+        transform: none;
+        transition: none;
+      }
     }
 
   modes:
@@ -2689,6 +3258,32 @@ Nova:
 
   # card-mod (optional). Needs the card-mod or UIX HACS integration; Home Assistant ignores these keys without it.
   card-mod-theme: "Nova"                         # must repeat this theme's own name exactly
+  card-mod-sidebar: |
+    ha-list-item-button {
+      border-radius: 12px;
+      margin: 2px 10px;
+      transition: background .2s ease, box-shadow .2s ease, transform .15s ease;
+    }
+    ha-list-item-button:hover {
+      background: color-mix(in srgb, var(--primary-color) 10%, transparent);
+    }
+    ha-list-item-button:active {
+      transform: scale(.98);
+    }
+    ha-list-item-button.selected {
+      background: color-mix(in srgb, var(--primary-color) 18%, transparent);
+      box-shadow: inset 3px 0 0 var(--accent-color), 0 0 18px -6px var(--accent-color);
+    }
+
+  card-mod-root: |
+    .header {
+      background: color-mix(in srgb, var(--app-header-background-color) 62%, transparent) !important;
+      -webkit-backdrop-filter: blur(16px) saturate(1.3);
+      backdrop-filter: blur(16px) saturate(1.3);
+      border-bottom: 1px solid color-mix(in srgb, var(--accent-color) 32%, transparent);
+      box-shadow: 0 10px 30px -18px color-mix(in srgb, var(--accent-color) 45%, transparent);
+    }
+
   card-mod-card: |
     ha-card {
       position: relative;
@@ -2725,6 +3320,24 @@ Nova:
     ha-card:hover {
       border-color: #8fffe070;
       box-shadow: 0 0 18px 1px #8fffe022;
+    }
+    ha-card:has(ha-tile-container, mushroom-card, mushroom-state-item, mushroom-shape-icon) {
+      transition: transform .18s ease, box-shadow .2s ease, border-color .2s ease;
+      cursor: pointer;
+    }
+    ha-card:has(ha-tile-container, mushroom-card, mushroom-state-item, mushroom-shape-icon):hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px -14px var(--accent-color), 0 0 0 1px color-mix(in srgb, var(--accent-color) 50%, transparent);
+    }
+    ha-card:has(ha-tile-container, mushroom-card, mushroom-state-item, mushroom-shape-icon):active {
+      transform: translateY(0) scale(.985);
+      box-shadow: 0 4px 12px -8px var(--accent-color);
+    }
+    @media (prefers-reduced-motion: reduce) {
+      ha-card:has(ha-tile-container, mushroom-card, mushroom-state-item, mushroom-shape-icon), ha-card:has(ha-tile-container, mushroom-card, mushroom-state-item, mushroom-shape-icon):hover, ha-card:has(ha-tile-container, mushroom-card, mushroom-state-item, mushroom-shape-icon):active {
+        transform: none;
+        transition: none;
+      }
     }
 
   modes:

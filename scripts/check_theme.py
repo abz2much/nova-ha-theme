@@ -171,6 +171,21 @@ def main():
         elif "backdrop-filter" in css:
             errors.append(f"{name}: glass is not enabled for this theme")
 
+    # Sidebar pill, header bar and tile states: every theme has them. The header only
+    # blurs where cards do (not on Compact).
+    for name, theme in data.items():
+        side, root, card = theme.get("card-mod-sidebar", ""), theme.get("card-mod-root", ""), theme.get("card-mod-card", "")
+        if "ha-list-item-button" not in side or ".selected" not in side:
+            errors.append(f"{name}: card-mod-sidebar must style the selected sidebar item")
+        if ".header" not in root:
+            errors.append(f"{name}: card-mod-root must style the header bar")
+        if ":has(" not in card or ":active" not in card:
+            errors.append(f"{name}: card-mod-card must have tile hover and press states")
+        if name in GLASS_THEMES and "backdrop-filter" not in root:
+            errors.append(f"{name}: header bar should be frosted like the cards")
+        if name not in GLASS_THEMES and "backdrop-filter" in root:
+            errors.append(f"{name}: header bar must not blur on this theme")
+
     # "Nova" is an alias of Deep Teal, so dashboards and profiles that still name
     # the old single theme keep working.
     alias, deep = data.get("Nova"), data.get("Nova Deep Teal")
