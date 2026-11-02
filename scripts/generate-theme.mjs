@@ -222,6 +222,63 @@ function glassCss(k, light) {
   ].join("\n");
 }
 
+// Tiles (Home Assistant tile cards and Mushroom cards) lift and glow on hover, and press in.
+const TILE = "ha-card:has(ha-tile-container, mushroom-card, mushroom-state-item, mushroom-shape-icon)";
+const TILE_CSS = [
+  `    ${TILE} {`,
+  "      transition: transform .18s ease, box-shadow .2s ease, border-color .2s ease;",
+  "      cursor: pointer;",
+  "    }",
+  `    ${TILE}:hover {`,
+  "      transform: translateY(-2px);",
+  "      box-shadow: 0 12px 28px -14px var(--accent-color), 0 0 0 1px color-mix(in srgb, var(--accent-color) 50%, transparent);",
+  "    }",
+  `    ${TILE}:active {`,
+  "      transform: translateY(0) scale(.985);",
+  "      box-shadow: 0 4px 12px -8px var(--accent-color);",
+  "    }",
+  "    @media (prefers-reduced-motion: reduce) {",
+  `      ${TILE}, ${TILE}:hover, ${TILE}:active {`,
+  "        transform: none;",
+  "        transition: none;",
+  "      }",
+  "    }",
+].join("\n");
+
+// The selected sidebar item is a pill with an accent edge and a soft glow.
+const SIDEBAR_CSS = [
+  "    ha-list-item-button {",
+  "      border-radius: 12px;",
+  "      margin: 2px 10px;",
+  "      transition: background .2s ease, box-shadow .2s ease, transform .15s ease;",
+  "    }",
+  "    ha-list-item-button:hover {",
+  "      background: color-mix(in srgb, var(--primary-color) 10%, transparent);",
+  "    }",
+  "    ha-list-item-button:active {",
+  "      transform: scale(.98);",
+  "    }",
+  "    ha-list-item-button.selected {",
+  "      background: color-mix(in srgb, var(--primary-color) 18%, transparent);",
+  "      box-shadow: inset 3px 0 0 var(--accent-color), 0 0 18px -6px var(--accent-color);",
+  "    }",
+].join("\n");
+
+// The header bar gets an accent underline, and is frosted where cards are.
+function headerCss(glass) {
+  return [
+    "    .header {",
+    ...(glass ? [
+      "      background: color-mix(in srgb, var(--app-header-background-color) 62%, transparent) !important;",
+      "      -webkit-backdrop-filter: blur(16px) saturate(1.3);",
+      "      backdrop-filter: blur(16px) saturate(1.3);",
+    ] : []),
+    "      border-bottom: 1px solid color-mix(in srgb, var(--accent-color) 32%, transparent);",
+    "      box-shadow: 0 10px 30px -18px color-mix(in srgb, var(--accent-color) 45%, transparent);",
+    "    }",
+  ].join("\n");
+}
+
 function cardMod(k, glass, light) {
   return [
     "    ha-card {",
@@ -245,6 +302,7 @@ function cardMod(k, glass, light) {
     `      border-color: ${k.ember}70;`,
     `      box-shadow: 0 0 18px 1px ${k.ember}22;`,
     "    }",
+    TILE_CSS,
   ].join("\n");
 }
 
@@ -275,7 +333,7 @@ function themeYaml(name, seed, shapeName, glass = false) {
   if (shape.space) for (const [n, v] of Object.entries(shape.space)) top(`ha-space-${n}`, v, "compact: tighter spacing");
   lines.push("", "  # card-mod (optional). Needs the card-mod or UIX HACS integration; Home Assistant ignores these keys without it.");
   top("card-mod-theme", name, "must repeat this theme's own name exactly");
-  lines.push("  card-mod-card: |", cardMod(k, glass, seed.style === "light"), "", "  modes:", `    ${mode}:`);
+  lines.push("  card-mod-sidebar: |", SIDEBAR_CSS, "", "  card-mod-root: |", headerCss(glass), "", "  card-mod-card: |", cardMod(k, glass, seed.style === "light"), "", "  modes:", `    ${mode}:`);
   for (const [title, list] of themeEntries(seed, shape, glass)) {
     lines.push(`      # === ${title} ===`);
     for (const [key, value, comment] of list) lines.push("      " + pad(`${key}: ${q(value)}`, 54, comment) + (comment ? " # " + comment : ""));
