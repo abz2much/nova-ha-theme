@@ -185,6 +185,8 @@ def main():
             errors.append(f"{name}: card-mod-card must have tile hover and press states")
         if name in GLASS_THEMES and "backdrop-filter" not in root:
             errors.append(f"{name}: header bar should be frosted like the cards")
+        if name in GLASS_THEMES and "backdrop-filter: blur(16px) saturate(1.3) !important" not in root:
+            errors.append(f"{name}: header blur needs !important (Home Assistant's own header styles win otherwise)")
         if name not in GLASS_THEMES and "backdrop-filter" in root:
             errors.append(f"{name}: header bar must not blur on this theme")
 

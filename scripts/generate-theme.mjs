@@ -270,8 +270,8 @@ function headerCss(glass) {
     "    .header {",
     ...(glass ? [
       "      background: color-mix(in srgb, var(--app-header-background-color) 62%, transparent) !important;",
-      "      -webkit-backdrop-filter: blur(16px) saturate(1.3);",
-      "      backdrop-filter: blur(16px) saturate(1.3);",
+      "      -webkit-backdrop-filter: blur(16px) saturate(1.3) !important;",
+      "      backdrop-filter: blur(16px) saturate(1.3) !important;",
     ] : []),
     "      border-bottom: 1px solid color-mix(in srgb, var(--accent-color) 32%, transparent);",
     "      box-shadow: 0 10px 30px -18px color-mix(in srgb, var(--accent-color) 45%, transparent);",
