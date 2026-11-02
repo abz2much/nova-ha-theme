@@ -183,6 +183,8 @@ def main():
         if "border-radius: 12px !important" not in side or "margin: 2px 10px !important" not in side:
             errors.append(f"{name}: sidebar pill radius and margin need !important (Home Assistant's own styles win otherwise)")
         row = theme.get("card-mod-row", "")
+        if "display: block !important" not in row:
+            errors.append(f"{name}: card-mod-row must use display: block !important (flex squeezes the row inside the wrapper and wraps its values)")
         if ":host" not in row or "border-radius: 14px" not in row or ":hover" not in row:
             errors.append(f"{name}: card-mod-row must turn entity rows into pills with a hover state")
         if ".header" not in root:

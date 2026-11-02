@@ -268,8 +268,7 @@ const SIDEBAR_CSS = [
 // Rows in entities cards become pills, so lists read like the rest of the glass.
 const ROW_CSS = [
   "    :host {",
-  "      display: flex;",
-  "      align-items: center;",
+  "      display: block !important;",
   "      box-sizing: border-box;",
   "      margin: 4px 0;",
   "      padding: 6px 12px;",
