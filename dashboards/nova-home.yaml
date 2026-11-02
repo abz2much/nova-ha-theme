@@ -4,68 +4,84 @@
 # then the three-dot menu -> Raw configuration editor, and paste this file.
 #
 # The entity IDs below are examples. Replace each one with an entity from your own home.
-# The greeting and the card titles look best with the card-mod (or UIX) HACS integration
+# The greeting and the pill-shaped rows need the card-mod (or UIX) HACS integration
 # installed; without it the dashboard still works, just plainer.
 title: Nova Home
 views:
   - title: Home
     path: home
-    cards:
-      # Large greeting in the heading font, with no card around it.
-      - type: markdown
-        content: |
-          {% set h = now().hour %}
-          # Good {{ 'morning' if h < 12 else 'afternoon' if h < 18 else 'evening' }}
-          Everything is calm.
-        card_mod:
-          style: |
-            ha-card {
-              background: none !important;
-              backdrop-filter: none !important;
-              -webkit-backdrop-filter: none !important;
-              border: 0 !important;
-              box-shadow: none !important;
-            }
-            ha-markdown h1 {
-              font-family: var(--ha-font-family-heading);
-              font-size: 2.4em;
-              margin: 0;
-            }
+    type: sections
+    max_columns: 2
+    sections:
+      - type: grid
+        cards:
+          # Large greeting in the heading font, with no card around it.
+          - type: markdown
+            grid_options:
+              columns: full
+            content: |
+              {% set h = now().hour %}
+              # Good {{ 'morning' if h < 12 else 'afternoon' if h < 18 else 'evening' }}
+              Everything is calm.
+            card_mod:
+              style:
+                .: |
+                  ha-card {
+                    background: none !important;
+                    backdrop-filter: none !important;
+                    -webkit-backdrop-filter: none !important;
+                    border: 0 !important;
+                    box-shadow: none !important;
+                  }
+                ha-markdown $: |
+                  h1 {
+                    font-family: var(--ha-font-family-heading);
+                    font-size: 2.4em;
+                    margin: 0;
+                  }
 
-      - type: entities
-        title: Lights and locks
-        entities:
-          - entity: light.living_room
-            name: Living room
-          - entity: lock.front_door
-            name: Front door
-          - entity: alarm_control_panel.home
-            name: Alarm
-          - entity: climate.living_room
-            name: Heating
-
-      - type: entities
-        title: Energy now
-        entities:
-          - entity: sensor.solar_power
-            name: Solar
-          - entity: sensor.home_power
-            name: Home
-          - entity: sensor.battery_power
-            name: Battery
-          - entity: sensor.grid_power
-            name: Grid
+          - type: entities
+            title: Lights and locks
+            grid_options:
+              columns: full
+            entities:
+              - entity: light.living_room
+                name: Living room
+              - entity: lock.front_door
+                name: Front door
+              - entity: alarm_control_panel.home
+                name: Alarm
+              - entity: climate.living_room
+                name: Heating
 
       - type: grid
-        columns: 3
-        square: false
         cards:
-          - type: tile
-            entity: light.kitchen
-            name: Kitchen
-          - type: tile
-            entity: light.hallway
-            name: Hallway
-          - type: tile
-            entity: light.study
-            name: Study
+          - type: entities
+            title: Energy now
+            grid_options:
+              columns: full
+            entities:
+              - entity: sensor.solar_power
+                name: Solar
+              - entity: sensor.home_power
+                name: Home
+              - entity: sensor.battery_power
+                name: Battery
+              - entity: sensor.grid_power
+                name: Grid
+
+          - type: grid
+            columns: 3
+            square: false
+            grid_options:
+              columns: full
+            cards:
+              - type: tile
+                entity: light.kitchen
+                name: Kitchen
+              - type: tile
+                entity: light.hallway
+                name: Hallway
+              - type: tile
+                entity: light.study
+                name: Study

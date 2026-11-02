@@ -35,6 +35,7 @@ Pick any of the twelve themes above from your profile to change it.
 ## What you get
 
 - Frosted glass cards over a softly lit page, with a frosted header bar (card-mod).
+- Entity rows turn into pills (card-mod), and a ready-made example dashboard sits in `dashboards/`.
 - A sidebar pill with an accent edge and glow, and tiles that lift and glow when you hover them (card-mod).
 - Fraunces card titles and Manrope body text, with IBM Plex Mono for values and code.
 - Rounder corners and a consistent shape across cards and dialogs.
@@ -92,6 +93,19 @@ lovelace:
   until you reload the page. A reload fixes it.
 - **The built-in Home (Overview) page ignores dashboard resources.** The fonts and the card-mod
   stripe show on classic dashboards, such as Security and Energy, but not on that page.
+
+## An example dashboard
+
+`dashboards/nova-home.yaml` is a ready-made dashboard laid out to suit the themes: a large
+greeting, lists with pill-shaped rows, and a row of tiles. It uses example entity IDs, so
+replace them with your own.
+
+1. **Settings → Dashboards → Add dashboard → New dashboard from scratch.**
+2. Open it, then the three-dot menu → **Raw configuration editor**.
+3. Paste the contents of `dashboards/nova-home.yaml` and save.
+
+The greeting and the pill rows need card-mod (or UIX). Without it, the dashboard still works,
+only plainer.
 
 ## Optional card-mod accents
 

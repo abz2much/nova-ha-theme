@@ -60,6 +60,22 @@ Nova Deep Teal:
       box-shadow: 0 10px 30px -18px color-mix(in srgb, var(--accent-color) 45%, transparent);
     }
 
+  card-mod-row: |
+    :host {
+      display: flex;
+      align-items: center;
+      box-sizing: border-box;
+      margin: 4px 0;
+      padding: 6px 12px;
+      min-height: 44px;
+      border-radius: 14px;
+      background: color-mix(in srgb, var(--primary-text-color) 6%, transparent);
+      transition: background .2s ease;
+    }
+    :host(:hover) {
+      background: color-mix(in srgb, var(--primary-color) 12%, transparent);
+    }
+
   card-mod-card: |
     ha-card {
       position: relative;
@@ -307,6 +323,22 @@ Nova Midnight Signal:
       backdrop-filter: blur(16px) saturate(1.3) !important;
       border-bottom: 1px solid color-mix(in srgb, var(--accent-color) 32%, transparent);
       box-shadow: 0 10px 30px -18px color-mix(in srgb, var(--accent-color) 45%, transparent);
+    }
+
+  card-mod-row: |
+    :host {
+      display: flex;
+      align-items: center;
+      box-sizing: border-box;
+      margin: 4px 0;
+      padding: 6px 12px;
+      min-height: 44px;
+      border-radius: 14px;
+      background: color-mix(in srgb, var(--primary-text-color) 6%, transparent);
+      transition: background .2s ease;
+    }
+    :host(:hover) {
+      background: color-mix(in srgb, var(--primary-color) 12%, transparent);
     }
 
   card-mod-card: |
@@ -558,6 +590,22 @@ Nova Plum Dusk:
       box-shadow: 0 10px 30px -18px color-mix(in srgb, var(--accent-color) 45%, transparent);
     }
 
+  card-mod-row: |
+    :host {
+      display: flex;
+      align-items: center;
+      box-sizing: border-box;
+      margin: 4px 0;
+      padding: 6px 12px;
+      min-height: 44px;
+      border-radius: 14px;
+      background: color-mix(in srgb, var(--primary-text-color) 6%, transparent);
+      transition: background .2s ease;
+    }
+    :host(:hover) {
+      background: color-mix(in srgb, var(--primary-color) 12%, transparent);
+    }
+
   card-mod-card: |
     ha-card {
       position: relative;
@@ -805,6 +853,22 @@ Nova Cocoa Bark:
       backdrop-filter: blur(16px) saturate(1.3) !important;
       border-bottom: 1px solid color-mix(in srgb, var(--accent-color) 32%, transparent);
       box-shadow: 0 10px 30px -18px color-mix(in srgb, var(--accent-color) 45%, transparent);
+    }
+
+  card-mod-row: |
+    :host {
+      display: flex;
+      align-items: center;
+      box-sizing: border-box;
+      margin: 4px 0;
+      padding: 6px 12px;
+      min-height: 44px;
+      border-radius: 14px;
+      background: color-mix(in srgb, var(--primary-text-color) 6%, transparent);
+      transition: background .2s ease;
+    }
+    :host(:hover) {
+      background: color-mix(in srgb, var(--primary-color) 12%, transparent);
     }
 
   card-mod-card: |
@@ -1056,6 +1120,22 @@ Nova Forest Mint:
       box-shadow: 0 10px 30px -18px color-mix(in srgb, var(--accent-color) 45%, transparent);
     }
 
+  card-mod-row: |
+    :host {
+      display: flex;
+      align-items: center;
+      box-sizing: border-box;
+      margin: 4px 0;
+      padding: 6px 12px;
+      min-height: 44px;
+      border-radius: 14px;
+      background: color-mix(in srgb, var(--primary-text-color) 6%, transparent);
+      transition: background .2s ease;
+    }
+    :host(:hover) {
+      background: color-mix(in srgb, var(--primary-color) 12%, transparent);
+    }
+
   card-mod-card: |
     ha-card {
       position: relative;
@@ -1303,6 +1383,22 @@ Nova Slate Harbour:
       backdrop-filter: blur(16px) saturate(1.3) !important;
       border-bottom: 1px solid color-mix(in srgb, var(--accent-color) 32%, transparent);
       box-shadow: 0 10px 30px -18px color-mix(in srgb, var(--accent-color) 45%, transparent);
+    }
+
+  card-mod-row: |
+    :host {
+      display: flex;
+      align-items: center;
+      box-sizing: border-box;
+      margin: 4px 0;
+      padding: 6px 12px;
+      min-height: 44px;
+      border-radius: 14px;
+      background: color-mix(in srgb, var(--primary-text-color) 6%, transparent);
+      transition: background .2s ease;
+    }
+    :host(:hover) {
+      background: color-mix(in srgb, var(--primary-color) 12%, transparent);
     }
 
   card-mod-card: |
@@ -1554,6 +1650,22 @@ Nova Classic:
       box-shadow: 0 10px 30px -18px color-mix(in srgb, var(--accent-color) 45%, transparent);
     }
 
+  card-mod-row: |
+    :host {
+      display: flex;
+      align-items: center;
+      box-sizing: border-box;
+      margin: 4px 0;
+      padding: 6px 12px;
+      min-height: 44px;
+      border-radius: 14px;
+      background: color-mix(in srgb, var(--primary-text-color) 6%, transparent);
+      transition: background .2s ease;
+    }
+    :host(:hover) {
+      background: color-mix(in srgb, var(--primary-color) 12%, transparent);
+    }
+
   card-mod-card: |
     ha-card {
       position: relative;
@@ -1801,6 +1913,22 @@ Nova Violet Mist:
       backdrop-filter: blur(16px) saturate(1.3) !important;
       border-bottom: 1px solid color-mix(in srgb, var(--accent-color) 32%, transparent);
       box-shadow: 0 10px 30px -18px color-mix(in srgb, var(--accent-color) 45%, transparent);
+    }
+
+  card-mod-row: |
+    :host {
+      display: flex;
+      align-items: center;
+      box-sizing: border-box;
+      margin: 4px 0;
+      padding: 6px 12px;
+      min-height: 44px;
+      border-radius: 14px;
+      background: color-mix(in srgb, var(--primary-text-color) 6%, transparent);
+      transition: background .2s ease;
+    }
+    :host(:hover) {
+      background: color-mix(in srgb, var(--primary-color) 12%, transparent);
     }
 
   card-mod-card: |
@@ -2052,6 +2180,22 @@ Nova Berry Sky:
       box-shadow: 0 10px 30px -18px color-mix(in srgb, var(--accent-color) 45%, transparent);
     }
 
+  card-mod-row: |
+    :host {
+      display: flex;
+      align-items: center;
+      box-sizing: border-box;
+      margin: 4px 0;
+      padding: 6px 12px;
+      min-height: 44px;
+      border-radius: 14px;
+      background: color-mix(in srgb, var(--primary-text-color) 6%, transparent);
+      transition: background .2s ease;
+    }
+    :host(:hover) {
+      background: color-mix(in srgb, var(--primary-color) 12%, transparent);
+    }
+
   card-mod-card: |
     ha-card {
       position: relative;
@@ -2299,6 +2443,22 @@ Nova Quantum Ice:
       backdrop-filter: blur(16px) saturate(1.3) !important;
       border-bottom: 1px solid color-mix(in srgb, var(--accent-color) 32%, transparent);
       box-shadow: 0 10px 30px -18px color-mix(in srgb, var(--accent-color) 45%, transparent);
+    }
+
+  card-mod-row: |
+    :host {
+      display: flex;
+      align-items: center;
+      box-sizing: border-box;
+      margin: 4px 0;
+      padding: 6px 12px;
+      min-height: 44px;
+      border-radius: 14px;
+      background: color-mix(in srgb, var(--primary-text-color) 6%, transparent);
+      transition: background .2s ease;
+    }
+    :host(:hover) {
+      background: color-mix(in srgb, var(--primary-color) 12%, transparent);
     }
 
   card-mod-card: |
@@ -2550,6 +2710,22 @@ Nova Pine Mist:
       box-shadow: 0 10px 30px -18px color-mix(in srgb, var(--accent-color) 45%, transparent);
     }
 
+  card-mod-row: |
+    :host {
+      display: flex;
+      align-items: center;
+      box-sizing: border-box;
+      margin: 4px 0;
+      padding: 6px 12px;
+      min-height: 44px;
+      border-radius: 14px;
+      background: color-mix(in srgb, var(--primary-text-color) 6%, transparent);
+      transition: background .2s ease;
+    }
+    :host(:hover) {
+      background: color-mix(in srgb, var(--primary-color) 12%, transparent);
+    }
+
   card-mod-card: |
     ha-card {
       position: relative;
@@ -2797,6 +2973,22 @@ Nova Ember:
       backdrop-filter: blur(16px) saturate(1.3) !important;
       border-bottom: 1px solid color-mix(in srgb, var(--accent-color) 32%, transparent);
       box-shadow: 0 10px 30px -18px color-mix(in srgb, var(--accent-color) 45%, transparent);
+    }
+
+  card-mod-row: |
+    :host {
+      display: flex;
+      align-items: center;
+      box-sizing: border-box;
+      margin: 4px 0;
+      padding: 6px 12px;
+      min-height: 44px;
+      border-radius: 14px;
+      background: color-mix(in srgb, var(--primary-text-color) 6%, transparent);
+      transition: background .2s ease;
+    }
+    :host(:hover) {
+      background: color-mix(in srgb, var(--primary-color) 12%, transparent);
     }
 
   card-mod-card: |
@@ -3051,6 +3243,22 @@ Nova Deep Teal Compact:
       box-shadow: 0 10px 30px -18px color-mix(in srgb, var(--accent-color) 45%, transparent);
     }
 
+  card-mod-row: |
+    :host {
+      display: flex;
+      align-items: center;
+      box-sizing: border-box;
+      margin: 4px 0;
+      padding: 6px 12px;
+      min-height: 44px;
+      border-radius: 14px;
+      background: color-mix(in srgb, var(--primary-text-color) 6%, transparent);
+      transition: background .2s ease;
+    }
+    :host(:hover) {
+      background: color-mix(in srgb, var(--primary-color) 12%, transparent);
+    }
+
   card-mod-card: |
     ha-card {
       position: relative;
@@ -3282,6 +3490,22 @@ Nova:
       backdrop-filter: blur(16px) saturate(1.3) !important;
       border-bottom: 1px solid color-mix(in srgb, var(--accent-color) 32%, transparent);
       box-shadow: 0 10px 30px -18px color-mix(in srgb, var(--accent-color) 45%, transparent);
+    }
+
+  card-mod-row: |
+    :host {
+      display: flex;
+      align-items: center;
+      box-sizing: border-box;
+      margin: 4px 0;
+      padding: 6px 12px;
+      min-height: 44px;
+      border-radius: 14px;
+      background: color-mix(in srgb, var(--primary-text-color) 6%, transparent);
+      transition: background .2s ease;
+    }
+    :host(:hover) {
+      background: color-mix(in srgb, var(--primary-color) 12%, transparent);
     }
 
   card-mod-card: |

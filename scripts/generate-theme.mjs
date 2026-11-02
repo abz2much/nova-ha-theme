@@ -265,6 +265,24 @@ const SIDEBAR_CSS = [
   "    }",
 ].join("\n");
 
+// Rows in entities cards become pills, so lists read like the rest of the glass.
+const ROW_CSS = [
+  "    :host {",
+  "      display: flex;",
+  "      align-items: center;",
+  "      box-sizing: border-box;",
+  "      margin: 4px 0;",
+  "      padding: 6px 12px;",
+  "      min-height: 44px;",
+  "      border-radius: 14px;",
+  "      background: color-mix(in srgb, var(--primary-text-color) 6%, transparent);",
+  "      transition: background .2s ease;",
+  "    }",
+  "    :host(:hover) {",
+  "      background: color-mix(in srgb, var(--primary-color) 12%, transparent);",
+  "    }",
+].join("\n");
+
 // The header bar gets an accent underline, and is frosted where cards are.
 function headerCss(glass) {
   return [
@@ -334,7 +352,7 @@ function themeYaml(name, seed, shapeName, glass = false) {
   if (shape.space) for (const [n, v] of Object.entries(shape.space)) top(`ha-space-${n}`, v, "compact: tighter spacing");
   lines.push("", "  # card-mod (optional). Needs the card-mod or UIX HACS integration; Home Assistant ignores these keys without it.");
   top("card-mod-theme", name, "must repeat this theme's own name exactly");
-  lines.push("  card-mod-sidebar: |", SIDEBAR_CSS, "", "  card-mod-root: |", headerCss(glass), "", "  card-mod-card: |", cardMod(k, glass, seed.style === "light"), "", "  modes:", `    ${mode}:`);
+  lines.push("  card-mod-sidebar: |", SIDEBAR_CSS, "", "  card-mod-root: |", headerCss(glass), "", "  card-mod-row: |", ROW_CSS, "", "  card-mod-card: |", cardMod(k, glass, seed.style === "light"), "", "  modes:", `    ${mode}:`);
   for (const [title, list] of themeEntries(seed, shape, glass)) {
     lines.push(`      # === ${title} ===`);
     for (const [key, value, comment] of list) lines.push("      " + pad(`${key}: ${q(value)}`, 54, comment) + (comment ? " # " + comment : ""));
