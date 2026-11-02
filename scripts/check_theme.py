@@ -177,6 +177,8 @@ def main():
         side, root, card = theme.get("card-mod-sidebar", ""), theme.get("card-mod-root", ""), theme.get("card-mod-card", "")
         if "ha-list-item-button" not in side or ".selected" not in side:
             errors.append(f"{name}: card-mod-sidebar must style the selected sidebar item")
+        if "border-radius: 12px !important" not in side or "margin: 2px 10px !important" not in side:
+            errors.append(f"{name}: sidebar pill radius and margin need !important (Home Assistant's own styles win otherwise)")
         if ".header" not in root:
             errors.append(f"{name}: card-mod-root must style the header bar")
         if ":has(" not in card or ":active" not in card:

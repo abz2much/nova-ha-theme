@@ -248,8 +248,8 @@ const TILE_CSS = [
 // The selected sidebar item is a pill with an accent edge and a soft glow.
 const SIDEBAR_CSS = [
   "    ha-list-item-button {",
-  "      border-radius: 12px;",
-  "      margin: 2px 10px;",
+  "      border-radius: 12px !important;",
+  "      margin: 2px 10px !important;",
   "      transition: background .2s ease, box-shadow .2s ease, transform .15s ease;",
   "    }",
   "    ha-list-item-button:hover {",
